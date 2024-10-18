@@ -1494,7 +1494,7 @@ shape = SubResource("RectangleShape2D_eujn5")
 
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animated_sprite", "punch_area", "punch_cooldown")]
 position = Vector2(513, 508)
-scale = Vector2(4, 4)
+scale = Vector2(3, 3)
 script = ExtResource("2_n4jk3")
 animated_sprite = NodePath("Sprite2D")
 punch_area = NodePath("PunchArea")
@@ -1502,6 +1502,7 @@ punch_cooldown = NodePath("PunchCooldown")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Player"]
+rotation = 3.14159
 sprite_frames = SubResource("SpriteFrames_ytphf")
 
 [node name="PunchArea" type="Area2D" parent="Player"]
