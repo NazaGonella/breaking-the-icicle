@@ -1,12 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://b1ik2ctx5ysx4"]
+[gd_scene load_steps=11 format=3 uid="uid://b1ik2ctx5ysx4"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_6onwb"]
 [ext_resource type="Script" path="res://player.gd" id="2_n4jk3"]
-[ext_resource type="Texture2D" uid="uid://dd2gh2ti6h23" path="res://icon.svg" id="2_tip5q"]
 [ext_resource type="Texture2D" uid="uid://bqeojlr7a8ggk" path="res://assets/player_punch.png" id="3_04ore"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eujn5"]
-size = Vector2(127, 127)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g44l7"]
 atlas = ExtResource("3_04ore")
@@ -48,8 +44,9 @@ animations = [{
 radius = 3.99994
 height = 14.6667
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tdsl3"]
-radius = 2.13601
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qnxjg"]
+radius = 1.5
+height = 11.0
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_6onwb")
@@ -1481,32 +1478,21 @@ layout_mode = 2
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
-[node name="BodyDeGoma" type="CharacterBody2D" parent="."]
-position = Vector2(513, 703)
-collision_layer = 3
-
-[node name="Sprite2D" type="Sprite2D" parent="BodyDeGoma"]
-texture = ExtResource("2_tip5q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyDeGoma"]
-position = Vector2(-0.5, 0.5)
-shape = SubResource("RectangleShape2D_eujn5")
-
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animated_sprite", "punch_area", "punch_cooldown")]
 position = Vector2(513, 508)
-scale = Vector2(4, 4)
+scale = Vector2(6, 6)
 script = ExtResource("2_n4jk3")
 animated_sprite = NodePath("Sprite2D")
 punch_area = NodePath("PunchArea")
 punch_cooldown = NodePath("PunchCooldown")
-speed = 200.0
+speed = 500.0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_ytphf")
 
 [node name="PunchArea" type="Area2D" parent="Player"]
-collision_mask = 2
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/PunchArea"]
 position = Vector2(0, 6.16682)
@@ -1515,7 +1501,7 @@ shape = SubResource("CapsuleShape2D_sq4w0")
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="Player"]
 rotation = 1.5708
-shape = SubResource("CircleShape2D_tdsl3")
+shape = SubResource("CapsuleShape2D_qnxjg")
 
 [node name="PunchCooldown" type="Timer" parent="Player"]
 wait_time = 0.05
