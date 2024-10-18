@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5tur5fuer4si"]
+
+[ext_resource type="Texture2D" uid="uid://c4q33xi6w710e" path="res://assets/muro.png" id="1_4stk3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wha0"]
+size = Vector2(32, 32)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4stk3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4wha0")
