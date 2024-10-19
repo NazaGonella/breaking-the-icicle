@@ -10,22 +10,20 @@ extends Control
 signal options_menu()
 signal main_menu()
 
-func _ready(): 
+func _ready():
 	if visible: 
 		options_button.grab_focus()
 
-func _on_options_button_pressed():
+func _on_opciones_pressed():
 	click.play()
 	options_menu.emit()
 	hide()
 
-func _on_menu_button_pressed():
-	click.play()
-	main_menu.emit()
-	hide()
+func _on_menu_pressed():
+	pass
 
-func _on_options_button_focus_entered():
+func _on_opciones_focus_entered():
 	focus.play()
 
-func _on_menu_button_focus_entered():
+func _on_menu_focus_entered():
 	focus.play()

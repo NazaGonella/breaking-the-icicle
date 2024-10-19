@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ixw4qiyfr64k"]
 
-[ext_resource type="VideoStream" path="res://assets/background_animation.ogv" id="1_o64j1"]
+[ext_resource type="FontFile" uid="uid://cxrjbihbo0njl" path="res://fonts/kenney_kenney-fonts/Fonts/Kenney High.ttf" id="1_0w5ht"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -10,18 +10,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-clip_contents = true
+[node name="PausaRects" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-stream = ExtResource("1_o64j1")
-autoplay = true
-expand = true
-loop = true
+color = Color(0, 0, 0, 0.643137)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -33,3 +29,39 @@ grow_vertical = 2
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Opciones" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_0w5ht")
+theme_override_font_sizes/font_size = 64
+text = "Opciones"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="settings" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/settings"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/settings"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/settings"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/settings"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3

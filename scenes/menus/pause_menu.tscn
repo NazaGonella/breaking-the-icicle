@@ -1,11 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsqthxqvefxlr"]
+[gd_scene load_steps=7 format=3 uid="uid://dsqthxqvefxlr"]
 
 [ext_resource type="Script" path="res://scripts/menus/pause_menu.gd" id="1_jjks4"]
 [ext_resource type="FontFile" uid="uid://cxrjbihbo0njl" path="res://fonts/kenney_kenney-fonts/Fonts/Kenney High.ttf" id="1_ux6wi"]
+[ext_resource type="Texture2D" uid="uid://61fhng54q71s" path="res://assets/asepritefiles/tilemap_white_packed.png" id="3_8orxh"]
 [ext_resource type="AudioStream" uid="uid://bd6d6v05782bw" path="res://assets/sounds/Clic03.ogg" id="3_hhd7t"]
 [ext_resource type="AudioStream" uid="uid://um8mmg471h7m" path="res://assets/sounds/mouse_hover.ogg" id="4_gi7te"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6e8b"]
+atlas = ExtResource("3_8orxh")
+region = Rect2(272, 0, 16, 16)
+
 [node name="PauseMenu" type="Control"]
+process_mode = 3
 top_level = true
 layout_mode = 3
 anchors_preset = 15
@@ -49,6 +55,23 @@ text = "Pausa"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Botones" type="VBoxContainer" parent="PausaMargin/PausaContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="Opciones" type="Button" parent="PausaMargin/PausaContainer/Botones"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ux6wi")
+theme_override_font_sizes/font_size = 42
+text = "Opciones"
+
+[node name="Menu" type="Button" parent="PausaMargin/PausaContainer/Botones"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ux6wi")
+theme_override_font_sizes/font_size = 42
+text = "Menu"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="PausaMargin"]
 layout_mode = 2
 size_flags_vertical = 8
@@ -57,11 +80,21 @@ size_flags_vertical = 8
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_ux6wi")
 theme_override_font_sizes/font_size = 42
-text = "presione esc para volver"
+text = "presione           para volver"
 horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="PausaMargin/VBoxContainer/Label"]
+position = Vector2(456, 21.0001)
+scale = Vector2(2.02574, 2.125)
+texture = SubResource("AtlasTexture_k6e8b")
 
 [node name="button_pressing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_hhd7t")
 
 [node name="button_switching" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_gi7te")
+
+[connection signal="focus_entered" from="PausaMargin/PausaContainer/Botones/Opciones" to="." method="_on_opciones_focus_entered"]
+[connection signal="pressed" from="PausaMargin/PausaContainer/Botones/Opciones" to="." method="_on_opciones_pressed"]
+[connection signal="focus_entered" from="PausaMargin/PausaContainer/Botones/Menu" to="." method="_on_menu_focus_entered"]
+[connection signal="pressed" from="PausaMargin/PausaContainer/Botones/Menu" to="." method="_on_menu_pressed"]
