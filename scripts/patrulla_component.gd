@@ -25,8 +25,8 @@ func _ready():
 func _physics_process(_delta):
 	#print("tauro.CHASING: ", tauro.CHASING)
 	#print(current_position.global_position)
-	print("cur: ", current_position.global_position)
-	print("pos: ", global_position)
+	#print("cur: ", current_position.global_position)
+	#print("pos: ", global_position)
 	if global_position.distance_to(current_position.position) < 2 and not tauro.CHASING:
 		lookout_directions = current_position.directions
 		tauro.global_position = current_position.global_position
@@ -76,11 +76,14 @@ func _get_lookout_direction(dir : String) -> float:
 	return 0
 
 func _tauro_crash():
-	#if direction.x != 0:
-		#direction.x = -direction.x
-	#direction = to_local(last_marker.position).normalized()
 	temp_positions.push_front(current_position)
 	temp_positions.push_front(last_marker)
 	_get_next_position()
+	timer.wait_time = 1.5
+	WAITING = true
+	timer.start()
+	await timer.timeout
+	WAITING = false
 	var rot = atan2(direction.y, direction.x) - PI/2
 	rotated_tauro.rotation = rot
+	

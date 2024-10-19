@@ -5,13 +5,16 @@ extends CharacterBody2D
 var playing_animation : bool = false
 const SPEED : float = 30.0
 
+var catched : bool = false
+
 func _physics_process(delta):
-	var velocity_length = handle_movement()
-	if velocity_length != 0:
-		handle_rotation()
-	handle_actions()
-	handle_animations()
-	move_and_slide()
+	if not catched:
+		var velocity_length = handle_movement()
+		if velocity_length != 0:
+			handle_rotation()
+		handle_actions()
+		handle_animations()
+		move_and_slide()
 
 func handle_movement():
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down").normalized()

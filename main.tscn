@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://b1ik2ctx5ysx4"]
+[gd_scene load_steps=48 format=3 uid="uid://b1ik2ctx5ysx4"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_6onwb"]
 [ext_resource type="Texture2D" uid="uid://c4q33xi6w710e" path="res://assets/muro.png" id="2_hl7ng"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://scripts/duplicados.gd" id="11_hv18s"]
 [ext_resource type="Script" path="res://scripts/tauro.gd" id="12_xuscl"]
 [ext_resource type="Texture2D" uid="uid://dn02wrfpbavn8" path="res://assets/tauro_01.png" id="13_r6wwb"]
+[ext_resource type="Texture2D" uid="uid://cg7eiwkxwxp1l" path="res://assets/mino_caminata.png" id="14_fc3n6"]
 [ext_resource type="Script" path="res://scripts/patrulla_component.gd" id="14_jv4t2"]
 [ext_resource type="Script" path="res://tauro_checkpoint.gd" id="15_wpwh7"]
 
@@ -177,9 +178,86 @@ height = 8.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsg3v"]
 size = Vector2(30, 20)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcd23"]
+atlas = ExtResource("14_fc3n6")
+region = Rect2(0, 0, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wauwk"]
+atlas = ExtResource("14_fc3n6")
+region = Rect2(28, 0, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4i0q"]
+atlas = ExtResource("14_fc3n6")
+region = Rect2(56, 0, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3niry"]
+atlas = ExtResource("14_fc3n6")
+region = Rect2(84, 0, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n24p2"]
+atlas = ExtResource("14_fc3n6")
+region = Rect2(112, 0, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjqfk"]
+atlas = ExtResource("14_fc3n6")
+region = Rect2(140, 0, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xa2o3"]
+atlas = ExtResource("14_fc3n6")
+region = Rect2(168, 0, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ycmm"]
+atlas = ExtResource("14_fc3n6")
+region = Rect2(196, 0, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq5xl"]
+atlas = ExtResource("14_fc3n6")
+region = Rect2(224, 0, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1nmh"]
+atlas = ExtResource("14_fc3n6")
+region = Rect2(252, 0, 28, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xf603"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcd23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wauwk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4i0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3niry")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_n24p2")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_rjqfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xa2o3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ycmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq5xl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1nmh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mk5rg"]
-radius = 3.0
-height = 26.0
+radius = 4.0
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_6onwb")
@@ -269,6 +347,7 @@ script = ExtResource("2_n4jk3")
 animated_sprite = NodePath("Sprite2D")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(4, 4)
 position_smoothing_speed = 16.0
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Player"]
@@ -296,9 +375,10 @@ position = Vector2(336, 16)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("10_rxe3t")
 
-[node name="Duplicados" type="Node2D" parent="." node_paths=PackedStringArray("player")]
+[node name="Duplicados" type="Node2D" parent="." node_paths=PackedStringArray("player", "tauro")]
 script = ExtResource("11_hv18s")
 player = NodePath("../Player")
+tauro = NodePath("../Tauro")
 
 [node name="Players" type="Node2D" parent="Duplicados"]
 
@@ -350,11 +430,39 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Duplicados/Players/Player6"]
 shape = SubResource("CircleShape2D_hff34")
 
-[node name="Tauro" type="CharacterBody2D" parent="." node_paths=PackedStringArray("patrulla_component", "raycasts")]
-position = Vector2(240, 80)
+[node name="Tauros" type="Node2D" parent="Duplicados"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Duplicados/Tauros"]
+position = Vector2(-240, -16)
+texture = ExtResource("13_r6wwb")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Duplicados/Tauros"]
+position = Vector2(-240, 464)
+texture = ExtResource("13_r6wwb")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Duplicados/Tauros"]
+position = Vector2(240, 720)
+texture = ExtResource("13_r6wwb")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Duplicados/Tauros"]
+position = Vector2(720, 496)
+texture = ExtResource("13_r6wwb")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Duplicados/Tauros"]
+position = Vector2(720, 16)
+texture = ExtResource("13_r6wwb")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Duplicados/Tauros"]
+position = Vector2(240, -240)
+texture = ExtResource("13_r6wwb")
+
+[node name="Tauro" type="CharacterBody2D" parent="." node_paths=PackedStringArray("sprite", "rotated_tauro", "patrulla_component", "raycasts")]
+position = Vector2(240, 240)
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("12_xuscl")
+sprite = NodePath("RotatedTauro/Sprite2D")
+rotated_tauro = NodePath("RotatedTauro")
 patrulla_component = NodePath("PatrullaComponent")
 raycasts = NodePath("RotatedTauro/Raycasts")
 metadata/_edit_group_ = true
@@ -369,11 +477,17 @@ remote_path = NodePath("../../CollisionShape2D")
 update_position = false
 update_scale = false
 
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Tauro/RotatedTauro"]
+scale = Vector2(1.1, 1.1)
+sprite_frames = SubResource("SpriteFrames_xf603")
+
 [node name="Area2D" type="Area2D" parent="Tauro/RotatedTauro"]
 collision_layer = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="Tauro/RotatedTauro"]
-texture = ExtResource("13_r6wwb")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tauro/RotatedTauro/Area2D"]
+position = Vector2(0, 12)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_mk5rg")
 
 [node name="Raycasts" type="Node2D" parent="Tauro/RotatedTauro"]
 
@@ -400,10 +514,6 @@ collision_mask = 5
 position = Vector2(-7.5, 0)
 target_position = Vector2(0, 400)
 collision_mask = 5
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tauro/RotatedTauro"]
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_mk5rg")
 
 [node name="PatrullaComponent" type="Node2D" parent="Tauro" node_paths=PackedStringArray("tauro", "rotated_tauro", "timer")]
 script = ExtResource("14_jv4t2")
@@ -520,3 +630,5 @@ script = ExtResource("15_wpwh7")
 [connection signal="body_entered" from="Laberinto/Teleporters/R1" to="Laberinto/Teleporters" method="_on_r_1_body_entered"]
 [connection signal="body_entered" from="Laberinto/Teleporters/L2" to="Laberinto/Teleporters" method="_on_l_2_body_entered"]
 [connection signal="body_entered" from="Laberinto/Teleporters/R2" to="Laberinto/Teleporters" method="_on_r_2_body_entered"]
+[connection signal="body_entered" from="Tauro/RotatedTauro/Area2D" to="Tauro" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Tauro/RotatedTauro/Area2D" to="Tauro" method="_on_area_2d_body_exited"]
