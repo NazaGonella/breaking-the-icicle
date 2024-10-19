@@ -15,7 +15,10 @@ func _on_start_game_pressed():
 	click.play()
 	start_game.emit()
 	hide()
-
+	
+func refocus(): 
+	start_game_button.grab_focus()
+	
 func _on_quit_game_button_pressed():
 	click.play()
 	get_tree().quit()

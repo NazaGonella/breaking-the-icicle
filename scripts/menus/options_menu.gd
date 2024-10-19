@@ -1,6 +1,7 @@
 extends Control
 
 var prev : Control = null
+@onready var volver = $MarginContainer/VBoxContainer/botones/volver
 
 func _on_volver_pressed():
 	hide()
@@ -11,3 +12,6 @@ func open_from(previo: Control):
 	prev.hide()
 	show()
 	
+func _ready(): 
+	if visible: 
+		volver.grab_focus()

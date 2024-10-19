@@ -3,7 +3,7 @@ extends Control
 
 @onready var click : AudioStreamPlayer = $button_pressing
 @onready var focus : AudioStreamPlayer = $button_switching
-@onready var options_button = $PausaMargin/PausaContainer/BoonesPausa/OptionsButton
+@onready var options_button = $PausaMargin/PausaContainer/Botones/Opciones
 
 signal options_menu()
 signal main_menu()
@@ -18,7 +18,8 @@ func _on_opciones_pressed():
 	hide()
 
 func _on_menu_pressed():
-	pass
+	main_menu.emit()
+	hide()
 
 func _on_opciones_focus_entered():
 	focus.play()
