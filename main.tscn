@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b1ik2ctx5ysx4"]
+[gd_scene load_steps=16 format=3 uid="uid://b1ik2ctx5ysx4"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_6onwb"]
 [ext_resource type="Script" path="res://player.gd" id="2_n4jk3"]
@@ -53,8 +53,6 @@ height = 14.6667
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tdsl3"]
 radius = 2.13601
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mduk"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_6onwb")
@@ -1533,9 +1531,6 @@ one_shot = true
 
 [node name="Tauro" type="CharacterBody2D" parent="."]
 script = ExtResource("6_kod0b")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tauro"]
-shape = SubResource("RectangleShape2D_6mduk")
 
 [node name="Sprite2D" type="Sprite2D" parent="Tauro"]
 texture = ExtResource("7_3ftfr")
