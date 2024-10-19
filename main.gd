@@ -1,11 +1,22 @@
 extends Node2D
 
+@onready var main_menu = $MainMenu
+@onready var game_scene = $GameScene
+@onready var camera = $Camera2D
+@onready var options_menu = $OptionsMenu
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	main_menu.start_game.connect(game_started)
+	main_menu.options_menu.connect(options_menu_opened)
+	main_menu.visible = true
+	camera.visible = false
+	game_scene.visible = false
+	options_menu.visible = false
 
+func game_started(): 
+	game_scene.visible = true
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func options_menu_opened(): 
+	options_menu.show()
+	
+	

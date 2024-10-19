@@ -1,11 +1,35 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1729275641
-icon.svg::CompressedTexture2D::218410147992761830::1729270271::1729270311::1::::<><>::
-main.gd::GDScript::-1::1729270549::0::1::::<>Node2D<>::
-main.tscn::PackedScene::4228501162161572019::1729275641::0::1::::<><>::res://main.gd<>res://player.gd<>uid://bqeojlr7a8ggk::::res://assets/player_punch.png
-player.gd::GDScript::-1::1729275635::0::1::::<>CharacterBody2D<>::
-README.md::TextFile::-1::1729270271::0::1::::<><>::
-::res://assets/::1729275604
-player.png::CompressedTexture2D::3853370360586435676::1729273595::1729273597::1::::<><>::
-player_punch.png::CompressedTexture2D::3518566408435497270::1729275728::1729275729::1::::<><>::
-::res://assets/asepritefiles/::1729275602
+::res://::1729288758
+icon.svg::CompressedTexture2D::218410147992761830::1729288364::1729288760::1::::<><>::
+main.gd::GDScript::-1::1729288364::0::1::::<>Node2D<>::
+main.tscn::PackedScene::4228501162161572019::1729288364::0::1::::<><>::res://main.gd<>res://player.gd<>uid://dd2gh2ti6h23::::res://icon.svg<>uid://bqeojlr7a8ggk::::res://assets/player_punch.png
+player.gd::GDScript::-1::1729288364::0::1::::<>CharacterBody2D<>::
+README.md::TextFile::-1::1729288364::0::1::::<><>::
+::res://assets/::1729288548
+player.png::CompressedTexture2D::3853370360586435676::1729288364::1729288364::1::::<><>::
+player_punch.png::CompressedTexture2D::3518566408435497270::1729288364::1729288364::1::::<><>::
+::res://assets/asepritefiles/::1729288364
+::res://fonts/::1729217953
+::res://fonts/kenney_kenney-fonts/::1729217949
+License.txt::TextFile::-1::1729217949::0::1::::<><>::
+::res://fonts/kenney_kenney-fonts/Fonts/::1729217953
+Kenney Blocks.ttf::FontFile::853605561925805693::1729217949::1729288760::1::::<><>::
+Kenney Future Narrow.ttf::FontFile::4820022377162435505::1729217949::1729288760::1::::<><>::
+Kenney Future.ttf::FontFile::2086011595502923978::1729217949::1729288760::1::::<><>::
+Kenney High Square.ttf::FontFile::1636563555561242523::1729217949::1729288760::1::::<><>::
+Kenney High.ttf::FontFile::6422827862674340345::1729217949::1729288760::1::::<><>::
+Kenney Mini Square Mono.ttf::FontFile::1305071606340165319::1729217949::1729288760::1::::<><>::
+Kenney Mini Square.ttf::FontFile::527994196035435758::1729217949::1729288760::1::::<><>::
+Kenney Mini.ttf::FontFile::8306286961611819949::1729217949::1729288760::1::::<><>::
+Kenney Pixel Square.ttf::FontFile::173403162636443594::1729217949::1729288760::1::::<><>::
+Kenney Pixel.ttf::FontFile::330394504395347440::1729217949::1729288760::1::::<><>::
+Kenney Rocket Square.ttf::FontFile::7671915616807192104::1729217949::1729288760::1::::<><>::
+Kenney Rocket.ttf::FontFile::5890026179401830720::1729217949::1729288760::1::::<><>::
+::res://scenes/::1729262162
+::res://scenes/menus/::1729262411
+main_menu.tscn::PackedScene::7663560617917158423::1729262411::0::1::::<><>::uid://bwp50pxnj3jro::::res://scripts/themes/default_theme.tres<>uid://cp86pasg1gni::::res://assets/fonts/kenney_kenney-fonts/Fonts/Kenney Pixel Square.ttf<>res://scripts/menus/main_menu.gd
+::res://scripts/::1729262271
+::res://scripts/menus/::1729224855
+main_menu.gd::GDScript::-1::1729224855::0::1::::<>Control<>::
+::res://scripts/themes/::1729223729
+default_theme.tres::Theme::3963407888655879236::1729223729::0::1::::<><>::
