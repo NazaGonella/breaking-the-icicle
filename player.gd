@@ -3,10 +3,10 @@ extends CharacterBody2D
 @export var animated_sprite : AnimatedSprite2D
 @export var campo_de_vision : Sprite2D
 
-const SPEED : float = 40.0
-
-func _ready():
-	campo_de_vision.visible = true
+const SPEED : float = 30.0
+#
+#func _ready():
+	#campo_de_vision.visible = true
 
 func _physics_process(delta):
 	var velocity_length = handle_movement()
