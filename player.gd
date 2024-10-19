@@ -31,7 +31,6 @@ func handle_movement():
 	return velocity.length()
 
 func handle_rotation(delta, rotation_speed):
-	var mouse_position = get_global_mouse_position()
 	var direction = Input.get_axis("rotate_left", "rotate_right")
 	#rotation = atan2((global_position.x - mouse_position.x), -(global_position.y - mouse_position.y))
 	rotation += rotation_speed * delta * direction

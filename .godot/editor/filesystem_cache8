@@ -1,19 +1,20 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1729314817
+::res://::1729343346
 icon.svg::CompressedTexture2D::218410147992761830::1729288364::1729288760::1::::<><>::
 main.gd::GDScript::-1::1729300010::0::1::::<>Node2D<>::
-main.tscn::PackedScene::4228501162161572019::1729314817::0::1::::<><>::res://main.gd<>uid://ixw4qiyfr64k::::res://scenes/menus/options_menu.tscn<>res://player.gd<>uid://dd2gh2ti6h23::::res://icon.svg<>uid://bqeojlr7a8ggk::::res://assets/player_punch.png<>uid://dhgjyuu76ffv8::::res://scenes/menus/main_menu.tscn
-player.gd::GDScript::-1::1729288364::0::1::::<>CharacterBody2D<>::
+main.tscn::PackedScene::4228501162161572019::1729343346::0::1::::<><>::res://main.gd<>uid://ixw4qiyfr64k::::res://scenes/menus/options_menu.tscn<>res://player.gd<>uid://dd2gh2ti6h23::::res://icon.svg<>uid://bqeojlr7a8ggk::::res://assets/player_punch.png<>uid://dhgjyuu76ffv8::::res://scenes/menus/main_menu.tscn
+player.gd::GDScript::-1::1729315409::0::1::::<>CharacterBody2D<>::
 README.md::TextFile::-1::1729288364::0::1::::<><>::
 ::res://assets/::1729313449
 background_animation.ogv::VideoStreamTheora::-1::1729298097::0::1::::<><>::
 player.png::CompressedTexture2D::3853370360586435676::1729288364::1729288364::1::::<><>::
 player_punch.png::CompressedTexture2D::3518566408435497270::1729288364::1729288364::1::::<><>::
 ::res://assets/asepritefiles/::1729299384
-::res://assets/sounds/::1729315028
+::res://assets/sounds/::1729343633
 button_switching.ogg::AudioStreamOggVorbis::4649795944380693040::1729312745::1729313452::1::::<><>::
 button_switching.wav::AudioStreamWAV::8080040404041241933::1729312505::1729313452::1::::<><>::
 button_switching_audacity.ogg::AudioStreamOggVorbis::4943120514559113808::1729313361::1729313452::1::::<><>::
+Clic03.ogg::AudioStreamOggVorbis::2661221578590019628::1729343633::1729343636::1::::<><>::
 click01.ogg::AudioStreamOggVorbis::4432396498665518533::1729314968::1729315035::1::::<><>::
 click02.ogg::AudioStreamOggVorbis::8170704932437120371::1729315028::1729315035::1::::<><>::
 click.ogg::AudioStreamOggVorbis::3417115972570398602::1729314234::1729314259::1::::<><>::
@@ -37,14 +38,14 @@ Kenney Pixel.ttf::FontFile::330394504395347440::1729217949::1729288760::1::::<><
 Kenney Rocket Square.ttf::FontFile::7671915616807192104::1729217949::1729288760::1::::<><>::
 Kenney Rocket.ttf::FontFile::5890026179401830720::1729217949::1729288760::1::::<><>::
 ::res://scenes/::1729262162
-::res://scenes/menus/::1729314817
-main_menu.tscn::PackedScene::7663560617917158423::1729314817::0::1::::<><>::uid://bwp50pxnj3jro::::res://scripts/themes/default_theme.tres<>uid://cp86pasg1gni::::res://fonts/kenney_kenney-fonts/Fonts/Kenney Pixel Square.ttf<>res://scripts/menus/main_menu.gd<>res://assets/background_animation.ogv<>uid://um8mmg471h7m::::res://assets/sounds/mouse_hover.ogg<>uid://boxjnvl48wm3c::::res://assets/sounds/click.ogg
-options_menu.tscn::PackedScene::610379853141612600::1729314817::0::1::::<><>::res://assets/background_animation.ogv
-pause_menu.tscn::PackedScene::8456858637762376299::1729314817::0::1::::<><>::uid://cp86pasg1gni::::res://fonts/kenney_kenney-fonts/Fonts/Kenney Pixel Square.ttf
+::res://scenes/menus/::1729343346
+main_menu.tscn::PackedScene::7663560617917158423::1729343346::0::1::::<><>::uid://bwp50pxnj3jro::::res://scripts/themes/default_theme.tres<>res://scripts/menus/main_menu.gd<>res://assets/background_animation.ogv<>uid://cxrjbihbo0njl::::res://fonts/kenney_kenney-fonts/Fonts/Kenney High.ttf<>uid://um8mmg471h7m::::res://assets/sounds/mouse_hover.ogg<>uid://uql47ghm5eeh::::res://assets/sounds/pressing_button.ogg
+options_menu.tscn::PackedScene::610379853141612600::1729343346::0::1::::<><>::res://assets/background_animation.ogv
+pause_menu.tscn::PackedScene::8456858637762376299::1729343346::0::1::::<><>::uid://cxrjbihbo0njl::::res://fonts/kenney_kenney-fonts/Fonts/Kenney High.ttf
 ::res://scripts/::1729294119
 menu.gd::GDScript::-1::1729294119::0::1::::<>Control<>::
-::res://scripts/menus/::1729313827
-main_menu.gd::GDScript::-1::1729313827::0::1::::<>Control<>::
+::res://scripts/menus/::1729343154
+main_menu.gd::GDScript::-1::1729343154::0::1::::<>Control<>::
 options_menu.gd::GDScript::-1::1729299718::0::1::::<>Control<>::
 ::res://scripts/themes/::1729223729
 default_theme.tres::Theme::3963407888655879236::1729223729::0::1::::<><>::

@@ -1,16 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://dsqthxqvefxlr"]
+[gd_scene load_steps=5 format=3 uid="uid://dsqthxqvefxlr"]
 
-[ext_resource type="FontFile" uid="uid://cp86pasg1gni" path="res://fonts/kenney_kenney-fonts/Fonts/Kenney Pixel Square.ttf" id="1_qk0sa"]
+[ext_resource type="Script" path="res://scripts/menus/pause_menu.gd" id="1_jjks4"]
+[ext_resource type="FontFile" uid="uid://cxrjbihbo0njl" path="res://fonts/kenney_kenney-fonts/Fonts/Kenney High.ttf" id="1_ux6wi"]
+[ext_resource type="AudioStream" uid="uid://bd6d6v05782bw" path="res://assets/sounds/Clic03.ogg" id="3_hhd7t"]
+[ext_resource type="AudioStream" uid="uid://um8mmg471h7m" path="res://assets/sounds/mouse_hover.ogg" id="4_gi7te"]
 
 [node name="PauseMenu" type="Control"]
+top_level = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jjks4")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="PausaRects" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,7 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.643137)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="PausaMargin" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,50 +36,32 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="PausaContainer" type="VBoxContainer" parent="PausaMargin"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Pausa" type="Label" parent="PausaMargin/PausaContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("1_qk0sa")
-theme_override_font_sizes/font_size = 48
+theme_override_fonts/font = ExtResource("1_ux6wi")
+theme_override_font_sizes/font_size = 64
 text = "Pausa"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ButtonsVBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PausaMargin"]
 layout_mode = 2
-size_flags_vertical = 6
+size_flags_vertical = 8
 
-[node name="StartGame" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVBox"]
+[node name="Label" type="Label" parent="PausaMargin/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-focus_neighbor_top = NodePath("../QuitGameButton")
-focus_neighbor_bottom = NodePath("../OptionsButton")
-focus_next = NodePath("../OptionsButton")
-focus_previous = NodePath("../QuitGameButton")
-theme_override_fonts/font = ExtResource("1_qk0sa")
-theme_override_font_sizes/font_size = 24
-text = "Continuar"
+theme_override_fonts/font = ExtResource("1_ux6wi")
+theme_override_font_sizes/font_size = 42
+text = "presione esc para volver"
+horizontal_alignment = 1
 
-[node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVBox"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("1_qk0sa")
-theme_override_font_sizes/font_size = 24
-text = "Opciones"
+[node name="button_pressing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hhd7t")
 
-[node name="QuitGameButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVBox"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-focus_neighbor_top = NodePath("../StartGame")
-focus_neighbor_bottom = NodePath("../StartGame")
-focus_next = NodePath("../StartGame")
-focus_previous = NodePath("../StartGame")
-theme_override_fonts/font = ExtResource("1_qk0sa")
-theme_override_font_sizes/font_size = 24
-text = "Menu"
+[node name="button_switching" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_gi7te")
