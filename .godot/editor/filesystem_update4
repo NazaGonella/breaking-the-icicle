@@ -1,3 +1,5 @@
 res://main.tscn
 res://muro.tscn
 res://player.gd
+res://teleporters.gd
+res://duplicados.gd
