@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://b1ik2ctx5ysx4"]
+[gd_scene load_steps=49 format=3 uid="uid://b1ik2ctx5ysx4"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_6onwb"]
 [ext_resource type="Texture2D" uid="uid://c4q33xi6w710e" path="res://assets/muro.png" id="2_hl7ng"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cg7eiwkxwxp1l" path="res://assets/mino_caminata.png" id="14_fc3n6"]
 [ext_resource type="Script" path="res://scripts/patrulla_component.gd" id="14_jv4t2"]
 [ext_resource type="Script" path="res://tauro_checkpoint.gd" id="15_wpwh7"]
+[ext_resource type="Script" path="res://scripts/soga.gd" id="17_o2rhp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qevnq"]
 texture = ExtResource("2_hl7ng")
@@ -340,19 +341,32 @@ position = Vector2(512, 160)
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_04386")
 
-[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animated_sprite")]
+[node name="Sprite2D2" type="Sprite2D" parent="Laberinto"]
+position = Vector2(336, 16)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("10_rxe3t")
+
+[node name="Soga" type="Node2D" parent="." node_paths=PackedStringArray("player", "tauro")]
+script = ExtResource("17_o2rhp")
+player = NodePath("../Player")
+tauro = NodePath("../Tauro")
+
+[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animated_sprite", "mano")]
 position = Vector2(272, 336)
 collision_mask = 6
 script = ExtResource("2_n4jk3")
 animated_sprite = NodePath("Sprite2D")
+mano = NodePath("Mano")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(4, 4)
 position_smoothing_speed = 16.0
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Player"]
 rotation = 3.14159
 sprite_frames = SubResource("SpriteFrames_ytphf")
+
+[node name="Mano" type="Marker2D" parent="Player"]
+position = Vector2(-6, -1)
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="Player"]
 rotation = 1.5708
@@ -367,13 +381,7 @@ texture = ExtResource("8_r1j7q")
 texture_scale = 0.8
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.05, 0.01, 0, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(336, 16)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("10_rxe3t")
 
 [node name="Duplicados" type="Node2D" parent="." node_paths=PackedStringArray("player", "tauro")]
 script = ExtResource("11_hv18s")
@@ -623,8 +631,6 @@ script = ExtResource("15_wpwh7")
 [node name="Marker2D22" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
 position = Vector2(240, 304)
 script = ExtResource("15_wpwh7")
-
-[node name="Area2D" type="Area2D" parent="."]
 
 [connection signal="body_entered" from="Laberinto/Teleporters/L1" to="Laberinto/Teleporters" method="_on_l_1_body_entered"]
 [connection signal="body_entered" from="Laberinto/Teleporters/R1" to="Laberinto/Teleporters" method="_on_r_1_body_entered"]

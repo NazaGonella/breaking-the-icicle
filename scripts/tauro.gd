@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var CHASING : bool = false
+var griddedpos: Vector2i = Vector2i(0,0)
 
 @onready var kill_animation_res : SpriteFrames = preload("res://kill_animation.tres")
 
@@ -18,7 +19,8 @@ const SPEED = 30.0
 const CHASE_SPEED = 100.0
 
 func _physics_process(delta):
-	print(sprite.is_playing())
+	#print(sprite.is_playing())
+	griddedpos= Vector2i(global_position.x/32,global_position.y/32)
 	#print(sprite.frame)
 	if not check_for_player():
 		reproducir_sonidos()
