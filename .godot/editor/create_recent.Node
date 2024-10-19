@@ -1,6 +1,9 @@
 Sprite2D
 CollisionShape2D
 CharacterBody2D
+Node2D
+Line2D
+RayCast2D
 Timer
 Area2D
 AnimatedSprite2D

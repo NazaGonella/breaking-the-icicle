@@ -7,12 +7,25 @@ extends CharacterBody2D
 const SPEED : float = 80.0
 const ROTATION_SPEED : float = 3.0
 
+var griddedhistory : Array = []
+var globalhistory : Array = []
+var griddedpos: Vector2i
+var drawNow: bool = false
+
 func _physics_process(delta):
+	drawNow=false
 	var velocity_length = handle_movement()
 	if velocity_length != 0:
 		handle_rotation()
 	handle_actions()
 	
+	griddedpos= Vector2i(global_position.x/32,global_position.y/32)
+	if griddedhistory.size()==0 or griddedpos!=griddedhistory[-1]:
+		griddedhistory.append(griddedpos)
+	
+	if globalhistory.size()==0 or global_position.distance_to(globalhistory[-1])>=5:
+		globalhistory.append(global_position)
+		drawNow=true
 	move_and_slide()
 
 func handle_movement():
@@ -39,4 +52,4 @@ func handle_actions():
 func punch_action():
 	for body in punch_area.get_overlapping_bodies():
 		print("Punched ", body)
-
+		

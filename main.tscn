@@ -1,9 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://b1ik2ctx5ysx4"]
+[gd_scene load_steps=17 format=3 uid="uid://b1ik2ctx5ysx4"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_6onwb"]
 [ext_resource type="Script" path="res://player.gd" id="2_n4jk3"]
 [ext_resource type="Texture2D" uid="uid://dd2gh2ti6h23" path="res://icon.svg" id="2_tip5q"]
 [ext_resource type="Texture2D" uid="uid://bqeojlr7a8ggk" path="res://assets/player_punch.png" id="3_04ore"]
+[ext_resource type="Script" path="res://soga.gd" id="5_oq6vg"]
+[ext_resource type="Script" path="res://Tauro.gd" id="6_kod0b"]
+[ext_resource type="Texture2D" uid="uid://bu5upgtfvjkuu" path="res://assets/player.png" id="7_3ftfr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eujn5"]
 size = Vector2(127, 127)
@@ -50,6 +53,8 @@ height = 14.6667
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tdsl3"]
 radius = 2.13601
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mduk"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_6onwb")
@@ -1492,6 +1497,11 @@ texture = ExtResource("2_tip5q")
 position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_eujn5")
 
+[node name="soga" type="Node2D" parent="." node_paths=PackedStringArray("player", "tauro")]
+script = ExtResource("5_oq6vg")
+player = NodePath("../Player")
+tauro = NodePath("../Tauro")
+
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animated_sprite", "punch_area", "punch_cooldown")]
 position = Vector2(513, 508)
 scale = Vector2(3, 3)
@@ -1520,3 +1530,12 @@ shape = SubResource("CircleShape2D_tdsl3")
 [node name="PunchCooldown" type="Timer" parent="Player"]
 wait_time = 0.05
 one_shot = true
+
+[node name="Tauro" type="CharacterBody2D" parent="."]
+script = ExtResource("6_kod0b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tauro"]
+shape = SubResource("RectangleShape2D_6mduk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tauro"]
+texture = ExtResource("7_3ftfr")
