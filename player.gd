@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var punch_cooldown : Timer
 @export var mano:Marker2D
 
+var spriteOvillo = preload("res://assets/player.png")
+var spriteCuchillo= preload("res://assets/player.png")
 
 const SPEED : float = 80.0
 const ROTATION_SPEED : float = 3.0
@@ -30,15 +32,17 @@ func _physics_process(delta):
 		if griddedhistory.size()==0 or griddedpos!=griddedhistory[-1]:
 			griddedhistory.append(griddedpos)
 			#print(griddedhistory)
-		if globalhistory.size()==0 or global_position.distance_to(globalhistory[-1])>=20:
+		if globalhistory.size()==0 or global_position.distance_to(globalhistory[-1])>=25:
 			globalhistory.append(mano.global_position)
-			print(mano.global_position)
+			#print(mano.global_position)
 			drawNow=true
 	if canSwitch and Input.is_action_just_pressed("f"):
 		if hasOvillo:
 			hasOvillo=false
+			$Sprite.texture=spriteCuchillo
 		else:
 			hasOvillo=true
+			$Sprite.texture=spriteCuchillo
 	move_and_slide()
 
 func handle_movement():

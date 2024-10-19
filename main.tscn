@@ -1499,13 +1499,12 @@ script = ExtResource("5_oq6vg")
 player = NodePath("../Player")
 tauro = NodePath("../Tauro")
 
-[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animated_sprite", "punch_area", "punch_cooldown", "mano")]
+[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animated_sprite", "punch_cooldown", "mano")]
 position = Vector2(513, 508)
 scale = Vector2(3, 3)
 collision_mask = 4
 script = ExtResource("2_n4jk3")
 animated_sprite = NodePath("Sprite2D")
-punch_area = NodePath("")
 punch_cooldown = NodePath("PunchCooldown")
 mano = NodePath("Marker2D")
 metadata/_edit_group_ = true
@@ -1532,7 +1531,7 @@ script = ExtResource("6_kod0b")
 texture = ExtResource("7_3ftfr")
 
 [node name="arma" type="Area2D" parent="."]
-position = Vector2(394, 54)
+position = Vector2(359, 399)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="arma"]

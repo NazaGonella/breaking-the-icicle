@@ -2,6 +2,8 @@ extends Node2D
 @export var player:CharacterBody2D
 @export var tauro:CharacterBody2D
 
+var restos: Array = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -18,8 +20,10 @@ func _process(delta):
 				#print(dist==player.globalhistory[j])
 				if share_tile(tauro.griddedpos,player.globalhistory[j]/64):
 					#print("tauro:",tauro.griddedpos,"player:",player.globalhistory[j]/64)
+					restos.append(player.globalhistory[j])
 					player.globalhistory=player.globalhistory.slice(j+1,len(player.globalhistory)-1)
 					player.griddedhistory=player.griddedhistory.slice(i+1,len(player.griddedhistory)-1)
+
 					#print(player.globalhistory)
 					break
 			break
@@ -34,6 +38,10 @@ func _draw():
 	for coord in player.globalhistory:
 		string.append(Vector2(coord[0], coord[1]))
 	draw_polyline(string, Color.DARK_RED, 3)
+	for casilla in restos:
+		draw_rect(Rect2(casilla.x,casilla.y,3,3),Color.DARK_RED)
+		draw_rect(Rect2(casilla.x+10,casilla.y+10,3,6),Color.DARK_RED)
+		#draw_rect(Rect2(casilla.x*64+16,casilla.y*64+32,3,3),Color.DARK_RED)
 	
 func share_tile(vector1 : Vector2, vector2 : Vector2):
 	var dist : Vector2 = (vector2)-(vector1)
