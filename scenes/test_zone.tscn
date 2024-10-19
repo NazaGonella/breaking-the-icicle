@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4rq6pf66w4qb"]
+
+[ext_resource type="Texture2D" uid="uid://c3c67e56ssvml" path="res://assets/fondo.png" id="1_q1ljv"]
+[ext_resource type="TileSet" uid="uid://q42oo4vhpu2f" path="res://wallress.tres" id="2_r0uje"]
+[ext_resource type="Texture2D" uid="uid://dn02wrfpbavn8" path="res://assets/tauro_01.png" id="3_6pwjt"]
+[ext_resource type="Script" path="res://scripts/tauro.gd" id="3_jmgd6"]
+[ext_resource type="Script" path="res://scenes/patrulla_component.gd" id="5_fnyww"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aevgm"]
+size = Vector2(30, 20)
+
+[node name="TestZone" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(256, 256)
+texture = ExtResource("1_q1ljv")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_r0uje")
+format = 2
+layer_0/tile_data = PackedInt32Array(983040, 65540, 1, 917504, 65540, 1, 851968, 65540, 1, 786432, 65540, 1, 0, 65540, 1, 65536, 65540, 1, 131072, 65540, 1, 196608, 65540, 1, 262144, 65540, 1, 327680, 65540, 1, 393216, 65540, 1, 458752, 65540, 1, 524288, 65540, 1, 589824, 65540, 1, 655360, 65540, 1, 720896, 65540, 1, 1, 65540, 1, 2, 65540, 1, 3, 65540, 1, 4, 65540, 1, 5, 65540, 1, 6, 65540, 1, 7, 65540, 1, 8, 65540, 1, 9, 65540, 1, 10, 65540, 1, 11, 65540, 1, 12, 65540, 1, 13, 65540, 1, 14, 65540, 1, 15, 65540, 1, 65551, 65540, 1, 131087, 65540, 1, 196623, 65540, 1, 262159, 65540, 1, 327695, 65540, 1, 393231, 65540, 1, 458767, 65540, 1, 524303, 65540, 1, 589839, 65540, 1, 655375, 65540, 1, 720911, 65540, 1, 786447, 65540, 1, 851983, 65540, 1, 917519, 65540, 1, 983055, 65540, 1, 983041, 65540, 1, 983042, 65540, 1, 983043, 65540, 1, 983044, 65540, 1, 983045, 65540, 1, 983046, 65540, 1, 983047, 65540, 1, 983048, 65540, 1, 983049, 65540, 1, 983050, 65540, 1, 983051, 65540, 1, 983052, 65540, 1, 983053, 65540, 1, 983054, 65540, 1, 851970, 65540, 1, 786434, 65540, 1, 720898, 65540, 1, 655362, 65540, 1, 589826, 65540, 1, 524290, 65540, 1, 851972, 65540, 1, 786436, 65540, 1, 720900, 65540, 1, 655364, 65540, 1, 589828, 65540, 1, 524292, 65540, 1, 851974, 65540, 1, 851975, 65540, 1, 851976, 65540, 1, 851977, 65540, 1, 851978, 65540, 1, 851979, 65540, 1, 720902, 65540, 1, 720903, 65540, 1, 720904, 65540, 1, 720905, 65540, 1, 720906, 65540, 1, 720907, 65540, 1, 851981, 65540, 1, 786445, 65540, 1, 720909, 65540, 1, 655373, 65540, 1, 589837, 65540, 1, 524301, 65540, 1, 458765, 65540, 1, 393229, 65540, 1, 589832, 65540, 1, 589833, 65540, 1, 589834, 65540, 1, 589835, 65540, 1, 589830, 65540, 1, 524294, 65540, 1, 458758, 65540, 1, 393222, 65540, 1, 327686, 65540, 1, 458761, 65540, 1, 458760, 65540, 1, 458763, 65540, 1, 458762, 65540, 1, 393218, 65540, 1, 393219, 65540, 1, 393220, 65540, 1, 262146, 65540, 1, 262147, 65540, 1, 262148, 65540, 1, 262150, 65540, 1, 196614, 65540, 1, 131078, 65540, 1, 131079, 65540, 1, 131080, 65540, 1, 131081, 65540, 1, 131082, 65540, 1, 131083, 65540, 1, 131084, 65540, 1, 262152, 65540, 1, 327688, 65540, 1, 327689, 65540, 1, 327690, 65540, 1, 262154, 65540, 1, 262155, 65540, 1, 262153, 65540, 1, 327691, 65540, 1, 131076, 65540, 1, 131075, 65540, 1, 131074, 65540, 1, 262157, 65540, 1, 131085, 65540, 1)
+
+[node name="Tauro" type="CharacterBody2D" parent="." node_paths=PackedStringArray("patrulla_component")]
+position = Vector2(48, 48)
+script = ExtResource("3_jmgd6")
+patrulla_component = NodePath("PatrullaComponent")
+metadata/_edit_group_ = true
+
+[node name="RotatedTauro" type="Node2D" parent="Tauro"]
+
+[node name="Area2D" type="Area2D" parent="Tauro/RotatedTauro"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tauro/RotatedTauro/Area2D"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_aevgm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tauro/RotatedTauro"]
+texture = ExtResource("3_6pwjt")
+
+[node name="RayCast2D" type="RayCast2D" parent="Tauro/RotatedTauro"]
+target_position = Vector2(0, 400)
+
+[node name="PatrullaComponent" type="Node2D" parent="Tauro" node_paths=PackedStringArray("tauro", "rotated_tauro")]
+script = ExtResource("5_fnyww")
+group_name = "TauroCheckpoint"
+tauro = NodePath("..")
+rotated_tauro = NodePath("../RotatedTauro")
+
+[node name="TauroCheckpoints" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
+position = Vector2(48, 240)
+
+[node name="Marker2D2" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
+position = Vector2(176, 240)
+
+[node name="Marker2D3" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
+position = Vector2(176, 336)
+
+[node name="Marker2D4" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
+position = Vector2(400, 336)
+
+[node name="Marker2D5" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
+position = Vector2(400, 464)
+
+[node name="Marker2D6" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
+position = Vector2(48, 464)

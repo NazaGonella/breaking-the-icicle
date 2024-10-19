@@ -1,5 +1,9 @@
 res://main.tscn
+res://wallress.tres
 res://muro.tscn
-res://player.gd
+res://scenes/test_zone.tscn
 res://teleporters.gd
 res://duplicados.gd
+res://scripts/tauro.gd
+res://tauro_checkpoint.gd
+res://scenes/patrulla_component.gd

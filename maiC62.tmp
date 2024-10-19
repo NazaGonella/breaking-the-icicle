@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b1ik2ctx5ysx4"]
+[gd_scene load_steps=30 format=3 uid="uid://b1ik2ctx5ysx4"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_6onwb"]
 [ext_resource type="Texture2D" uid="uid://c4q33xi6w710e" path="res://assets/muro.png" id="2_hl7ng"]
@@ -14,7 +14,6 @@
 [ext_resource type="Script" path="res://scripts/tauro.gd" id="12_xuscl"]
 [ext_resource type="Texture2D" uid="uid://dn02wrfpbavn8" path="res://assets/tauro_01.png" id="13_r6wwb"]
 [ext_resource type="Script" path="res://scenes/patrulla_component.gd" id="14_jv4t2"]
-[ext_resource type="Script" path="res://tauro_checkpoint.gd" id="15_wpwh7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qevnq"]
 texture = ExtResource("2_hl7ng")
@@ -148,10 +147,6 @@ height = 8.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsg3v"]
 size = Vector2(30, 20)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mk5rg"]
-radius = 3.0
-height = 26.0
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_6onwb")
@@ -323,27 +318,20 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Duplicados/Players/Player6"]
 shape = SubResource("CircleShape2D_hff34")
 
-[node name="Tauro" type="CharacterBody2D" parent="." node_paths=PackedStringArray("patrulla_component", "raycasts")]
-position = Vector2(240, 80)
-collision_layer = 2
-collision_mask = 5
+[node name="Tauro" type="CharacterBody2D" parent="." node_paths=PackedStringArray("patrulla_component")]
+position = Vector2(176, 176)
 script = ExtResource("12_xuscl")
 patrulla_component = NodePath("PatrullaComponent")
-raycasts = NodePath("RotatedTauro/Raycasts")
 metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tauro"]
-shape = SubResource("RectangleShape2D_qsg3v")
 
 [node name="RotatedTauro" type="Node2D" parent="Tauro"]
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Tauro/RotatedTauro"]
-remote_path = NodePath("../../CollisionShape2D")
-update_position = false
-update_scale = false
-
 [node name="Area2D" type="Area2D" parent="Tauro/RotatedTauro"]
 collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tauro/RotatedTauro/Area2D"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_qsg3v")
 
 [node name="Sprite2D" type="Sprite2D" parent="Tauro/RotatedTauro"]
 texture = ExtResource("13_r6wwb")
@@ -352,142 +340,74 @@ texture = ExtResource("13_r6wwb")
 
 [node name="RayCast2D" type="RayCast2D" parent="Tauro/RotatedTauro/Raycasts"]
 target_position = Vector2(0, 400)
-collision_mask = 5
 
 [node name="RayCast2D3" type="RayCast2D" parent="Tauro/RotatedTauro/Raycasts"]
 position = Vector2(15, 0)
 target_position = Vector2(0, 400)
 collision_mask = 5
 
-[node name="RayCast2D5" type="RayCast2D" parent="Tauro/RotatedTauro/Raycasts"]
-position = Vector2(7.5, 0)
-target_position = Vector2(0, 400)
-collision_mask = 5
-
 [node name="RayCast2D2" type="RayCast2D" parent="Tauro/RotatedTauro/Raycasts"]
 position = Vector2(-15, 0)
 target_position = Vector2(0, 400)
-collision_mask = 5
 
-[node name="RayCast2D4" type="RayCast2D" parent="Tauro/RotatedTauro/Raycasts"]
-position = Vector2(-7.5, 0)
-target_position = Vector2(0, 400)
-collision_mask = 5
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tauro/RotatedTauro"]
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_mk5rg")
-
-[node name="PatrullaComponent" type="Node2D" parent="Tauro" node_paths=PackedStringArray("tauro", "rotated_tauro", "timer")]
+[node name="PatrullaComponent" type="Node2D" parent="Tauro" node_paths=PackedStringArray("tauro", "rotated_tauro")]
 script = ExtResource("14_jv4t2")
 group_name = "TauroCheckpoint"
 tauro = NodePath("..")
 rotated_tauro = NodePath("../RotatedTauro")
-timer = NodePath("Timer")
-
-[node name="Timer" type="Timer" parent="Tauro/PatrullaComponent"]
-wait_time = 0.05
-one_shot = true
 
 [node name="TauroCheckpoints" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
-position = Vector2(240, 240)
-script = ExtResource("15_wpwh7")
-lookout_directions = 4
+position = Vector2(176, 272)
 
 [node name="Marker2D2" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
-position = Vector2(240, 272)
-script = ExtResource("15_wpwh7")
+position = Vector2(48, 272)
 
 [node name="Marker2D3" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
-position = Vector2(112, 272)
-script = ExtResource("15_wpwh7")
+position = Vector2(48, 400)
 
 [node name="Marker2D4" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
-position = Vector2(112, 336)
-script = ExtResource("15_wpwh7")
+position = Vector2(144, 400)
 
 [node name="Marker2D5" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
-position = Vector2(144, 336)
-script = ExtResource("15_wpwh7")
+position = Vector2(144, 432)
 
 [node name="Marker2D6" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
-position = Vector2(144, 432)
-script = ExtResource("15_wpwh7")
+position = Vector2(208, 432)
 
 [node name="Marker2D7" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
-position = Vector2(208, 432)
-script = ExtResource("15_wpwh7")
-lookout_directions = 3
+position = Vector2(208, 304)
 
 [node name="Marker2D8" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
-position = Vector2(208, 304)
-script = ExtResource("15_wpwh7")
+position = Vector2(336, 304)
 
 [node name="Marker2D9" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
-position = Vector2(240, 304)
-script = ExtResource("15_wpwh7")
+position = Vector2(336, 336)
 
 [node name="Marker2D10" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
-position = Vector2(240, 112)
-script = ExtResource("15_wpwh7")
-lookout_directions = 6
+position = Vector2(400, 336)
 
 [node name="Marker2D11" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
-position = Vector2(400, 112)
-script = ExtResource("15_wpwh7")
-lookout_directions = 2
+position = Vector2(400, 272)
 
 [node name="Marker2D12" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
-position = Vector2(400, 80)
-script = ExtResource("15_wpwh7")
+position = Vector2(464, 272)
 
 [node name="Marker2D13" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
 position = Vector2(464, 80)
-script = ExtResource("15_wpwh7")
 
 [node name="Marker2D14" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
-position = Vector2(464, 272)
-script = ExtResource("15_wpwh7")
-lookout_directions = 1
+position = Vector2(400, 80)
 
 [node name="Marker2D15" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
-position = Vector2(400, 272)
-script = ExtResource("15_wpwh7")
-lookout_directions = 1
+position = Vector2(400, 112)
 
 [node name="Marker2D16" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
-position = Vector2(400, 464)
-script = ExtResource("15_wpwh7")
-lookout_directions = 4
+position = Vector2(240, 112)
 
 [node name="Marker2D17" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
-position = Vector2(464, 464)
-script = ExtResource("15_wpwh7")
-lookout_directions = 1
-
-[node name="Marker2D18" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
-position = Vector2(400, 464)
-script = ExtResource("15_wpwh7")
-
-[node name="Marker2D19" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
-position = Vector2(400, 336)
-script = ExtResource("15_wpwh7")
-
-[node name="Marker2D20" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
-position = Vector2(336, 336)
-script = ExtResource("15_wpwh7")
-
-[node name="Marker2D21" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
-position = Vector2(336, 304)
-script = ExtResource("15_wpwh7")
-
-[node name="Marker2D22" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
-position = Vector2(240, 304)
-script = ExtResource("15_wpwh7")
-
-[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(240, 272)
 
 [connection signal="body_entered" from="Laberinto/Teleporters/L1" to="Laberinto/Teleporters" method="_on_l_1_body_entered"]
 [connection signal="body_entered" from="Laberinto/Teleporters/R1" to="Laberinto/Teleporters" method="_on_r_1_body_entered"]
