@@ -21,6 +21,9 @@ func _on_menu_pressed():
 	main_menu.emit()
 	hide()
 
+func refocus(): 
+	options_button.grab_focus()
+
 func _on_opciones_focus_entered():
 	focus.play()
 

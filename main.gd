@@ -10,6 +10,9 @@ extends Node2D
 
 var preloaded_game_scene = preload("res://scenes/game_scene.tscn")
 var preloaded_pause_scene = preload("res://scenes/menus/pause_menu.tscn")
+var preloaded_main_menu = preload("res://scenes/menus/main_menu.tscn")
+var preloaded_options_menu = preload("res://scenes/menus/options_menu.tscn")
+
 var paused : bool = false
 
 func _ready():
@@ -27,31 +30,38 @@ func _ready():
 
 func game_started(): 
 	game_scene.visible = true
+	camera.visible = true
 	main_menu.hide()
 	
+func reload_pause_menu(): 
+	pause_menu.queue_free()
+	pause_menu = preloaded_pause_scene.instantiate()
+	menus.add_child(pause_menu)
+	pause_menu.options_menu.connect(options_menu_opened_from_pause)
+	pause_menu.main_menu.connect(reopen_main_menu)
+
+func reload_options_menu(): 
+	options_menu.queue_free()
+	options_menu = preloaded_options_menu.instantiate()
+	menus.add_child(options_menu)
+
 func options_menu_opened_from_menu(): 
 	options_menu.open_from(main_menu)
+	options_menu.refocus()
 
 func options_menu_opened_from_pause(): 
 	options_menu.open_from(pause_menu)
+	options_menu.refocus()
 
 func reopen_main_menu():
-	pause()
-	game_scene.queue_free()
-	game_scene = preloaded_game_scene.instantiate()
-	add_child(game_scene)
-	game_scene.visible = false
-	main_menu.show()
-	pause_menu.queue_free()
-	pause_menu = preloaded_pause_scene.instantiate()
-	add_child(pause_menu)
-	pause_menu.hide()
+	if not get_tree().paused: 
+		get_tree().paused = true
+	else: 
+		get_tree().paused = false
+	get_tree().reload_current_scene()
+
 
 func _process(delta):
-	main_menu.start_game.connect(game_started)
-	main_menu.options_menu.connect(options_menu_opened_from_menu)
-	pause_menu.options_menu.connect(options_menu_opened_from_pause)
-	pause_menu.main_menu.connect(reopen_main_menu)
 	if game_scene.visible:
 		if Input.is_action_just_pressed("pausa"): 
 			button_switching.play()
@@ -60,15 +70,10 @@ func _process(delta):
 func pause(): 
 	if not get_tree().paused: 
 		get_tree().paused = true
-		pause_menu.queue_free()
-		pause_menu = preloaded_pause_scene.instantiate()
-		add_child(pause_menu)
 		pause_menu.show()
+		pause_menu.refocus()
 	else: 
 		get_tree().paused = false
-		pause_menu.queue_free()
-		pause_menu = preloaded_pause_scene.instantiate()
-		add_child(pause_menu)
 		pause_menu.hide()
 		
 		

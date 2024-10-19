@@ -6,6 +6,7 @@ var prev : Control = null
 func _on_volver_pressed():
 	hide()
 	prev.show()
+	prev.refocus()
 
 func open_from(previo: Control): 
 	prev = previo
@@ -15,3 +16,6 @@ func open_from(previo: Control):
 func _ready(): 
 	if visible: 
 		volver.grab_focus()
+
+func refocus(): 
+	volver.grab_focus()
