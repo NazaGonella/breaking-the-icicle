@@ -1,7 +1,10 @@
+AudioStreamPlayer
+Label
+VBoxContainer
+ColorRect
 VideoStreamPlayer
 TextureRect
 Control
-ColorRect
 Node2D
 Button
 Node
@@ -9,6 +12,3 @@ Sprite2D
 CollisionShape2D
 CharacterBody2D
 Timer
-Area2D
-AnimatedSprite2D
-AnimationPlayer

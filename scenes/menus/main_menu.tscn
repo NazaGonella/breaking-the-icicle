@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhgjyuu76ffv8"]
+[gd_scene load_steps=7 format=3 uid="uid://dhgjyuu76ffv8"]
 
 [ext_resource type="Theme" uid="uid://bwp50pxnj3jro" path="res://scripts/themes/default_theme.tres" id="1_fbkf6"]
 [ext_resource type="FontFile" uid="uid://cp86pasg1gni" path="res://fonts/kenney_kenney-fonts/Fonts/Kenney Pixel Square.ttf" id="2_2dh55"]
 [ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="2_bjjfn"]
 [ext_resource type="VideoStream" path="res://assets/background_animation.ogv" id="4_6l8oe"]
+[ext_resource type="AudioStream" uid="uid://um8mmg471h7m" path="res://assets/sounds/mouse_hover.ogg" id="5_axtv3"]
+[ext_resource type="AudioStream" uid="uid://don7k04ax5mqd" path="res://assets/sounds/click02.ogg" id="6_k355n"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -61,7 +63,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_2dh55")
 theme_override_font_sizes/font_size = 48
-text = "Godot Fundamentals"
+text = "el escape de teseo"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -100,6 +102,18 @@ theme_override_fonts/font = ExtResource("2_2dh55")
 theme_override_font_sizes/font_size = 24
 text = "Salir"
 
+[node name="button_switching" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_axtv3")
+
+[node name="button_pressing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_k355n")
+
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/ButtonsVBox/StartGame" to="." method="_on_start_game_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonsVBox/StartGame" to="." method="_on_start_game_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVBox/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/ButtonsVBox/OptionsButton" to="." method="_on_options_button_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonsVBox/OptionsButton" to="." method="_on_options_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVBox/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/ButtonsVBox/QuitGameButton" to="." method="_on_quit_game_button_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonsVBox/QuitGameButton" to="." method="_on_quit_game_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVBox/QuitGameButton" to="." method="_on_quit_game_button_pressed"]

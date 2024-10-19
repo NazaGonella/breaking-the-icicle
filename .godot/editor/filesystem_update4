@@ -5,3 +5,4 @@ res://scripts/menus/main_menu.gd
 res://scripts/menu.gd
 res://scenes/menus/options_menu.tscn
 res://scripts/menus/options_menu.gd
+res://scenes/menus/pause_menu.tscn
