@@ -1,11 +1,9 @@
 extends Control
 
 
-
 @onready var click : AudioStreamPlayer = $button_pressing
 @onready var focus : AudioStreamPlayer = $button_switching
 @onready var options_button = $PausaMargin/PausaContainer/BoonesPausa/OptionsButton
-
 
 signal options_menu()
 signal main_menu()

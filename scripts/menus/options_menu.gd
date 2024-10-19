@@ -1,13 +1,13 @@
 extends Control
 
-@onready var video_stream_player = $VideoStreamPlayer
+var prev : Control = null
 
+func _on_volver_pressed():
+	hide()
+	prev.show()
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	video_stream_player.play()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func open_from(previo: Control): 
+	prev = previo
+	prev.hide()
+	show()
+	

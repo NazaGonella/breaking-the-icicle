@@ -57,6 +57,7 @@ height = 14.6667
 radius = 2.13601
 
 [node name="main" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_6onwb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -1543,12 +1544,6 @@ offset_bottom = 40.0
 [node name="GameOver" parent="Menus" instance=ExtResource("2_cudxd")]
 layout_mode = 1
 
-[node name="OptionsMenu" parent="Menus" instance=ExtResource("2_m1f2q")]
-visible = false
-layout_mode = 1
-offset_right = 984.0
-offset_bottom = 856.0
-
 [node name="MainMenu" parent="Menus" instance=ExtResource("5_cnvbh")]
 anchors_preset = 0
 anchor_right = 0.0
@@ -1559,5 +1554,12 @@ offset_bottom = 896.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="PauseMenu" parent="." instance=ExtResource("4_1v7qq")]
+[node name="PauseMenu" parent="Menus" instance=ExtResource("4_1v7qq")]
 visible = false
+layout_mode = 1
+
+[node name="OptionsMenu" parent="Menus" instance=ExtResource("2_m1f2q")]
+visible = false
+layout_mode = 1
+offset_right = 984.0
+offset_bottom = 856.0

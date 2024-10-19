@@ -6,3 +6,4 @@ res://scenes/menus/pause_menu.tscn
 res://scripts/menus/pause_menu.gd
 res://main.gd
 res://scenes/menus/game_over.tscn
+res://scripts/menus/options_menu.gd

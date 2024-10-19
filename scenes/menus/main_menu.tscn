@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhgjyuu76ffv8"]
+[gd_scene load_steps=8 format=3 uid="uid://dhgjyuu76ffv8"]
 
 [ext_resource type="Theme" uid="uid://bwp50pxnj3jro" path="res://scripts/themes/default_theme.tres" id="1_fbkf6"]
 [ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="2_bjjfn"]
+[ext_resource type="Texture2D" uid="uid://duc7vbwhatvpe" path="res://assets/ia_battle.png" id="3_w164f"]
 [ext_resource type="VideoStream" path="res://assets/background_animation.ogv" id="4_6l8oe"]
 [ext_resource type="FontFile" uid="uid://cxrjbihbo0njl" path="res://fonts/kenney_kenney-fonts/Fonts/Kenney High.ttf" id="4_rsa7s"]
 [ext_resource type="AudioStream" uid="uid://um8mmg471h7m" path="res://assets/sounds/mouse_hover.ogg" id="5_axtv3"]
@@ -19,6 +20,18 @@ grow_vertical = 2
 theme = ExtResource("1_fbkf6")
 script = ExtResource("2_bjjfn")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_w164f")
+expand_mode = 1
+
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 layout_mode = 1
@@ -30,6 +43,7 @@ grow_vertical = 2
 color = Color(0.0896605, 0.0113452, 0.257484, 1)
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+visible = false
 clip_contents = true
 layout_mode = 1
 anchors_preset = 15
@@ -47,6 +61,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 32
