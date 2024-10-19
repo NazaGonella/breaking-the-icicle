@@ -53,10 +53,13 @@ func _get_positions():
 	temp_positions = positions.duplicate()
 	#temp_positions.shuffle()
  
-func _get_next_position():
+func _get_next_position(pop : bool = true):
 	if temp_positions.is_empty():
 		_get_positions()
-	current_position = temp_positions.pop_front()
+	if pop:
+		current_position = temp_positions.pop_front()
+	else:
+		current_position = temp_positions[0]
 	direction = to_local(current_position.position).normalized()
 
 func _get_lookout_direction(dir : String) -> float:

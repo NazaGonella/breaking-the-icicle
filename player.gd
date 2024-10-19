@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var animated_sprite : AnimatedSprite2D
 
+var playing_animation : bool = false
 const SPEED : float = 30.0
 
 func _physics_process(delta):
@@ -9,6 +10,7 @@ func _physics_process(delta):
 	if velocity_length != 0:
 		handle_rotation()
 	handle_actions()
+	handle_animations()
 	move_and_slide()
 
 func handle_movement():
@@ -28,3 +30,11 @@ func handle_actions():
 		animated_sprite.frame = 0
 		animated_sprite.play()
 
+func handle_animations():
+	if not playing_animation and velocity.length() != 0:
+		animated_sprite.play()
+		playing_animation = true
+	if velocity.length() == 0:
+		animated_sprite.stop()
+		animated_sprite.frame = 0
+		playing_animation = false
