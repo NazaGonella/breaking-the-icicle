@@ -7,13 +7,15 @@ var WAITING : bool = false
 @export var rotated_tauro : Node2D
 @export var timer : Timer
 #@export var tauro_collision : CollisionShape2D
- 
+
 var positions : Array 
 var temp_positions : Array
 var current_position : Marker2D
  
 var direction : Vector2 = Vector2.ZERO
 var lookout_directions : Array[String] = []
+
+var last_marker : Marker2D = null
 
 func _ready():
 	positions = get_tree().get_nodes_in_group(group_name)
@@ -23,43 +25,43 @@ func _ready():
 func _physics_process(_delta):
 	#print("tauro.CHASING: ", tauro.CHASING)
 	#print(current_position.global_position)
+	print("cur: ", current_position.global_position)
+	print("pos: ", global_position)
 	if global_position.distance_to(current_position.position) < 2 and not tauro.CHASING:
 		lookout_directions = current_position.directions
-		#print(lookout_directions)
 		tauro.global_position = current_position.global_position
+		last_marker = current_position
 		_get_next_position()
-		#print(atan2(direction.y, direction.x) - PI/2) 
 		var rot = atan2(direction.y, direction.x) - PI/2
-		
 		timer.wait_time = 0.25
 		WAITING = true
 		timer.start()
 		await timer.timeout
 		for d in lookout_directions:
-			#print("rot before: ", rotated_tauro.rotation)
+			if tauro.CHASING:
+				#print("pushed: ", current_position.global_position)
+				#print("pushed: ", last_marker.global_position)
+				#temp_positions.push_front(current_position)
+				#temp_positions.push_front(last_marker)
+				break
 			rotated_tauro.rotation = _get_lookout_direction(d)
-			#print("rot after: ", rotated_tauro.rotation)
 			timer.wait_time = current_position.wait_seconds
-			#print(timer.wait_time)
-			#WAITING = true
 			timer.start()
 			await timer.timeout
-			#WAITING = false
 		WAITING = false
-		rotated_tauro.rotation = rot
-		#tauro_collision.rotation = rot
+		if not tauro.CHASING:
+			rotated_tauro.rotation = rot
  
 func _get_positions():
 	temp_positions = positions.duplicate()
 	#temp_positions.shuffle()
  
-func _get_next_position(pop : bool = true):
+func _get_next_position():
+	#print("hola")
 	if temp_positions.is_empty():
 		_get_positions()
-	if pop:
-		current_position = temp_positions.pop_front()
-	else:
-		current_position = temp_positions[0]
+	current_position = temp_positions.pop_front()
+	#current_position = temp_positions[0]
 	direction = to_local(current_position.position).normalized()
 
 func _get_lookout_direction(dir : String) -> float:
@@ -72,3 +74,13 @@ func _get_lookout_direction(dir : String) -> float:
 	if dir == "RIGHT":
 		return -PI/2
 	return 0
+
+func _tauro_crash():
+	#if direction.x != 0:
+		#direction.x = -direction.x
+	#direction = to_local(last_marker.position).normalized()
+	temp_positions.push_front(current_position)
+	temp_positions.push_front(last_marker)
+	_get_next_position()
+	var rot = atan2(direction.y, direction.x) - PI/2
+	rotated_tauro.rotation = rot

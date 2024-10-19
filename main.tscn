@@ -3,17 +3,17 @@
 [ext_resource type="Script" path="res://main.gd" id="1_6onwb"]
 [ext_resource type="Texture2D" uid="uid://c4q33xi6w710e" path="res://assets/muro.png" id="2_hl7ng"]
 [ext_resource type="Texture2D" uid="uid://c3c67e56ssvml" path="res://assets/fondo.png" id="2_mrnkn"]
-[ext_resource type="Script" path="res://player.gd" id="2_n4jk3"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="2_n4jk3"]
 [ext_resource type="Texture2D" uid="uid://b6kgfqs0rwms5" path="res://assets/muros_2.png" id="3_ahkdu"]
 [ext_resource type="Texture2D" uid="uid://0dlicstsrkpy" path="res://assets/hilorojo.png" id="4_rbpka"]
 [ext_resource type="Script" path="res://teleporters.gd" id="6_ndj6h"]
 [ext_resource type="Texture2D" uid="uid://cxidut0x032cc" path="res://assets/Prota_wenardo_caminando.png" id="8_o4oal"]
 [ext_resource type="Texture2D" uid="uid://bap5sls2vvgrb" path="res://assets/light_01.png" id="8_r1j7q"]
 [ext_resource type="Texture2D" uid="uid://dd2gh2ti6h23" path="res://icon.svg" id="10_rxe3t"]
-[ext_resource type="Script" path="res://duplicados.gd" id="11_xifiu"]
+[ext_resource type="Script" path="res://scripts/duplicados.gd" id="11_hv18s"]
 [ext_resource type="Script" path="res://scripts/tauro.gd" id="12_xuscl"]
 [ext_resource type="Texture2D" uid="uid://dn02wrfpbavn8" path="res://assets/tauro_01.png" id="13_r6wwb"]
-[ext_resource type="Script" path="res://scenes/patrulla_component.gd" id="14_jv4t2"]
+[ext_resource type="Script" path="res://scripts/patrulla_component.gd" id="14_jv4t2"]
 [ext_resource type="Script" path="res://tauro_checkpoint.gd" id="15_wpwh7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qevnq"]
@@ -262,16 +262,14 @@ position = Vector2(512, 160)
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_04386")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(112, 304)
-zoom = Vector2(0.5, 0.5)
-position_smoothing_speed = 16.0
-
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animated_sprite")]
-position = Vector2(112, 304)
+position = Vector2(272, 336)
 collision_mask = 6
 script = ExtResource("2_n4jk3")
 animated_sprite = NodePath("Sprite2D")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_speed = 16.0
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Player"]
 rotation = 3.14159
@@ -299,7 +297,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("10_rxe3t")
 
 [node name="Duplicados" type="Node2D" parent="." node_paths=PackedStringArray("player")]
-script = ExtResource("11_xifiu")
+script = ExtResource("11_hv18s")
 player = NodePath("../Player")
 
 [node name="Players" type="Node2D" parent="Duplicados"]

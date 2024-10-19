@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://q42oo4vhpu2f" path="res://wallress.tres" id="2_r0uje"]
 [ext_resource type="Texture2D" uid="uid://dn02wrfpbavn8" path="res://assets/tauro_01.png" id="3_6pwjt"]
 [ext_resource type="Script" path="res://scripts/tauro.gd" id="3_jmgd6"]
-[ext_resource type="Script" path="res://scenes/patrulla_component.gd" id="5_fnyww"]
+[ext_resource type="Script" path="res://scripts/patrulla_component.gd" id="5_fnyww"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aevgm"]
 size = Vector2(30, 20)

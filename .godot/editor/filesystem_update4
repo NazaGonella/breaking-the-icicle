@@ -8,3 +8,4 @@ res://scripts/tauro.gd
 res://tauro_checkpoint.gd
 res://scenes/patrulla_component.gd
 res://player.gd
+res://scripts/patrulla_component.gd

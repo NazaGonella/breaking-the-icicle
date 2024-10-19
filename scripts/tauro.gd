@@ -29,7 +29,7 @@ func _physics_process(delta):
 		move_and_slide()
 	if CHASING and velocity.length() < 1:
 		CHASING = false
-		patrulla_component.direction = -patrulla_component.direction
+		patrulla_component._tauro_crash()
 	if not patrulla_component.WAITING and not CHASING:
 		#print("patrolling")
 		velocity = patrulla_component.direction * SPEED
