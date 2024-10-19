@@ -17,7 +17,7 @@ func _process(delta):
 				#print(Vector2(player.globalhistory[j]))
 				#print(dist==player.globalhistory[j])
 				if share_tile(tauro.griddedpos,player.globalhistory[j]/64):
-					print("tauro:",tauro.griddedpos,"player:",player.globalhistory[j]/64)
+					#print("tauro:",tauro.griddedpos,"player:",player.globalhistory[j]/64)
 					player.globalhistory=player.globalhistory.slice(j+1,len(player.globalhistory)-1)
 					player.griddedhistory=player.griddedhistory.slice(i+1,len(player.griddedhistory)-1)
 					#print(player.globalhistory)

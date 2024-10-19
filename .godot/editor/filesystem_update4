@@ -1,4 +1,5 @@
 res://main.tscn
-res://soga.gd
 res://player.gd
-res://Tauro.gd
+res://soga.gd
+res://arma.gd
+res://interactuar.gd

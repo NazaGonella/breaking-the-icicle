@@ -1,12 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1729340196
+::res://::1729345429
 icon.svg::CompressedTexture2D::218410147992761830::1729272068::1729290529::1::::<><>::
 main.gd::GDScript::-1::1729299025::0::1::::<>Node2D<>::
-main.tscn::PackedScene::4228501162161572019::1729313297::0::1::::<><>::res://main.gd<>res://player.gd<>uid://dd2gh2ti6h23::::res://icon.svg<>uid://bqeojlr7a8ggk::::res://assets/player_punch.png<>res://soga.gd<>res://Tauro.gd<>uid://bu5upgtfvjkuu::::res://assets/player.png
-player.gd::GDScript::-1::1729311305::0::1::::<>CharacterBody2D<>::
+main.tscn::PackedScene::4228501162161572019::1729344394::0::1::::<><>::res://main.gd<>res://player.gd<>uid://dd2gh2ti6h23::::res://icon.svg<>uid://bqeojlr7a8ggk::::res://assets/player_punch.png<>res://soga.gd<>res://Tauro.gd<>uid://bu5upgtfvjkuu::::res://assets/player.png
+player.gd::GDScript::-1::1729343814::0::1::::<>CharacterBody2D<>::
 README.md::TextFile::-1::1729272068::0::1::::<><>::
-soga.gd::GDScript::-1::1729313294::0::1::::<>Node2D<>::
-Tauro.gd::GDScript::-1::1729310128::0::1::::<>CharacterBody2D<>::
+soga.gd::GDScript::-1::1729343996::0::1::::<>Node2D<>::
+Tauro.gd::GDScript::-1::1729341874::0::1::::<>CharacterBody2D<>::
 ::res://assets/::1729287453
 player.png::CompressedTexture2D::3853370360586435676::1729276245::1729276245::1::::<><>::
 player_punch.png::CompressedTexture2D::3518566408435497270::1729287453::1729287453::1::::<><>::

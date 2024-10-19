@@ -47,12 +47,11 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sq4w0"]
-radius = 3.99994
-height = 14.6667
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_tdsl3"]
 radius = 2.13601
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ig1d"]
+size = Vector2(60, 52)
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_6onwb")
@@ -1500,26 +1499,20 @@ script = ExtResource("5_oq6vg")
 player = NodePath("../Player")
 tauro = NodePath("../Tauro")
 
-[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animated_sprite", "punch_area", "punch_cooldown")]
+[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animated_sprite", "punch_area", "punch_cooldown", "mano")]
 position = Vector2(513, 508)
 scale = Vector2(3, 3)
+collision_mask = 4
 script = ExtResource("2_n4jk3")
 animated_sprite = NodePath("Sprite2D")
-punch_area = NodePath("PunchArea")
+punch_area = NodePath("")
 punch_cooldown = NodePath("PunchCooldown")
+mano = NodePath("Marker2D")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Player"]
 rotation = 3.14159
 sprite_frames = SubResource("SpriteFrames_ytphf")
-
-[node name="PunchArea" type="Area2D" parent="Player"]
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/PunchArea"]
-position = Vector2(0, 6.16682)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_sq4w0")
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="Player"]
 rotation = 1.5708
@@ -1529,8 +1522,24 @@ shape = SubResource("CircleShape2D_tdsl3")
 wait_time = 0.05
 one_shot = true
 
+[node name="Marker2D" type="Marker2D" parent="Player"]
+position = Vector2(-5.33333, -1.90735e-06)
+
 [node name="Tauro" type="CharacterBody2D" parent="."]
 script = ExtResource("6_kod0b")
 
 [node name="Sprite2D" type="Sprite2D" parent="Tauro"]
 texture = ExtResource("7_3ftfr")
+
+[node name="arma" type="Area2D" parent="."]
+position = Vector2(394, 54)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="arma"]
+texture = ExtResource("7_3ftfr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arma"]
+shape = SubResource("RectangleShape2D_4ig1d")
+
+[connection signal="body_entered" from="arma" to="Player" method="_on_arma_body_entered"]
+[connection signal="body_exited" from="arma" to="Player" method="_on_arma_body_exited"]

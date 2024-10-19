@@ -2,6 +2,8 @@ extends CharacterBody2D
 @export var animated_sprite : AnimatedSprite2D
 @export var punch_area : Area2D
 @export var punch_cooldown : Timer
+@export var mano:Marker2D
+
 
 const SPEED : float = 80.0
 const ROTATION_SPEED : float = 3.0
@@ -12,22 +14,31 @@ var griddedpos: Vector2i
 
 var drawNow: bool = false
 
+var canSwitch: bool = true
+var hasOvillo: bool = true
+
 func _physics_process(delta):
-	print(globalhistory)
+	#print(globalhistory)
 	drawNow=false
 	var velocity_length = handle_movement()
 	if velocity_length != 0:
 		handle_rotation()
-	handle_actions()
 	
 	griddedpos= Vector2i(global_position.x/64,global_position.y/64)
 	#print(griddedpos)
-	if griddedhistory.size()==0 or griddedpos!=griddedhistory[-1]:
-		griddedhistory.append(griddedpos)
-		#print(griddedhistory)
-	if globalhistory.size()==0 or global_position.distance_to(globalhistory[-1])>=20:
-		globalhistory.append(global_position)
-		drawNow=true
+	if hasOvillo:
+		if griddedhistory.size()==0 or griddedpos!=griddedhistory[-1]:
+			griddedhistory.append(griddedpos)
+			#print(griddedhistory)
+		if globalhistory.size()==0 or global_position.distance_to(globalhistory[-1])>=20:
+			globalhistory.append(mano.global_position)
+			print(mano.global_position)
+			drawNow=true
+	if canSwitch and Input.is_action_just_pressed("f"):
+		if hasOvillo:
+			hasOvillo=false
+		else:
+			hasOvillo=true
 	move_and_slide()
 
 func handle_movement():
@@ -44,14 +55,12 @@ func handle_movement():
 func handle_rotation():
 	#var direction = Input.get_axis("rotate_left", "rotate_right")
 	rotation = atan2((velocity.x), -(velocity.y))
+	
 
-func handle_actions():
-	if Input.is_action_just_pressed("punch"):
-		animated_sprite.frame = 0
-		animated_sprite.play()
-		punch_action()
 
-func punch_action():
-	for body in punch_area.get_overlapping_bodies():
-		print("Punched ", body)
-		
+func _on_arma_body_entered(body):
+	canSwitch=true
+
+
+func _on_arma_body_exited(body):
+	canSwitch=false
