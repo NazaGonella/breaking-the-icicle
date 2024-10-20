@@ -51,7 +51,6 @@ func _process(delta):
 		if is_tauro_killed:
 			play_sound(slash_sound)
 			after_tauro_killed()
-	
 
 func _on_catched_timer_timeout():
 	player.visible = false

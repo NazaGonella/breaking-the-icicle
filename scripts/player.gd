@@ -11,6 +11,9 @@ var playing_animation : bool = false
 #const SPEED : float = 30.0
 const SPEED : float = 150.0
 
+@export var sound : AudioStreamPlayer2D
+
+var walking_sound = preload("res://assets/sounds2/teseo.mp3")
 var slash2_sound = preload("res://assets/sounds2/pickupsword.mp3")
 var soga_sound = preload("res://assets/sounds2/lana.ogg")
 
@@ -27,6 +30,12 @@ var hasOvillo: bool = true
 
 func _physics_process(delta):
 	#print(hasOvillo)
+	if velocity != Vector2.ZERO:
+		if sound.playing == false:
+			sound.stream = walking_sound
+			sound.play()
+	else:
+		sound.stream = null
 	colocar_ovillo()
 	if not catched:
 		var velocity_length = handle_movement()

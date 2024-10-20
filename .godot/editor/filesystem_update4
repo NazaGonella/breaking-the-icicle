@@ -9,3 +9,4 @@ res://scripts/player.gd
 res://raiz_menu.gd
 res://scenes/ambiente.tscn
 res://assets/raiz_menu.tscn
+res://default_bus_layout.tres

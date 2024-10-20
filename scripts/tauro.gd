@@ -15,7 +15,8 @@ var is_playing_embestida : bool = false
 
 var embestida_sound = preload("res://assets/sounds2/tauro_embestida.ogg")
 var patrulla_sound = preload("res://assets/sounds2/robot-heavy-mechanical-footsteps-194039.mp3")
-var choque_sound = preload("res://assets/sounds2/thud2.mp3")
+var choque_sound = preload("res://assets/sounds2/thud3.mp3")
+var soplido = preload("res://assets/sounds2/soplido.mp3")
 
 var temp_vel = Vector2.ZERO
 var playing_animation : bool = false
@@ -29,6 +30,7 @@ const CHASE_SPEED = 100.0
 
 func _physics_process(delta):
 	#print(reaction_timer.time_left)
+	#print(sound.attenuation)
 	griddedpos= Vector2i(global_position.x/32,global_position.y/32)
 	if not check_for_player():
 		check_for_chase()
@@ -50,6 +52,8 @@ func check_for_chase():
 func start_chase(direction):
 	#if not CHASING:
 		#temp_vel = direction * CHASE_SPEED
+	if instant_sound.playing == false:
+		play_sound(soplido)
 	CHASING = true
 	#if reaction_timer.is_stopped():
 		#reaction_timer.start()
@@ -61,7 +65,7 @@ func handle_movement():
 		if not is_playing_embestida:
 			#sonido.stream = embestida_sound
 			#sonido.playing = true
-			change_sonido_to(embestida_sound)
+			change_sonido_to(embestida_sound, 0.2)
 			is_playing_embestida = true
 		if abs(temp_vel.x) > abs(temp_vel.y):
 			temp_vel.y = 0
@@ -101,11 +105,12 @@ func _on_area_2d_body_exited(body):
 	if body.name == "Player":
 		colliding_player = null
 
-func change_sonido_to(new_sonido, play : bool = true):
+func change_sonido_to(new_sonido, play : bool = true, attenuation : float = 50.1):
 	#var sonidos_c = sonidos.get_children()
 	sound.stream = new_sonido
 	sound.playing = true
 
 func play_sound(new_sound):
+	#print("A")
 	instant_sound.stream = new_sound
 	instant_sound.play()
