@@ -325,7 +325,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mk5rg"]
-radius = 4.0
+radius = 13.0
+height = 40.0
 
 [node name="main" type="Node2D" node_paths=PackedStringArray("player", "tauro", "catch_timer")]
 script = ExtResource("1_6onwb")
@@ -442,7 +443,7 @@ mano = NodePath("Mano")
 light = NodePath("PointLight2D")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(4, 4)
 position_smoothing_speed = 16.0
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Player"]
@@ -551,7 +552,7 @@ texture = ExtResource("13_r6wwb")
 [node name="Tauro" type="CharacterBody2D" parent="." node_paths=PackedStringArray("sprite", "rotated_tauro", "patrulla_component", "raycasts")]
 position = Vector2(240, 240)
 collision_layer = 2
-collision_mask = 5
+collision_mask = 4
 script = ExtResource("12_xuscl")
 sprite = NodePath("RotatedTauro/Sprite2D")
 rotated_tauro = NodePath("RotatedTauro")
@@ -577,12 +578,6 @@ sprite_frames = SubResource("SpriteFrames_xf603")
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tauro/RotatedTauro/Area2D"]
-position = Vector2(0, 12)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_mk5rg")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tauro/RotatedTauro/Area2D"]
-position = Vector2(0, -8)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_mk5rg")
 

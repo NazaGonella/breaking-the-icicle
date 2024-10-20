@@ -23,10 +23,11 @@ func _process(delta):
 				#print(dist==player.globalhistory[j])
 				if share_tile(tauro.griddedpos,player.globalhistory[j]/32):
 					#print("tauro:",tauro.griddedpos,"player:",player.globalhistory[j]/32)
-					restos.append(player.globalhistory[j])
-					player.tphistory.append(player.globalhistory[j+1])
-					player.globalhistory=player.globalhistory.slice(0,j-5)+player.globalhistory.slice(j+1,len(player.globalhistory)-1)
-					player.griddedhistory=player.griddedhistory.slice(i+1,len(player.griddedhistory)-1)
+					if len(player.globalhistory) <= j:
+						restos.append(player.globalhistory[j])
+						player.tphistory.append(player.globalhistory[j+1])
+						player.globalhistory=player.globalhistory.slice(0,j-5)+player.globalhistory.slice(j+1,len(player.globalhistory)-1)
+						player.griddedhistory=player.griddedhistory.slice(i+1,len(player.griddedhistory)-1)
 
 					#print(player.globalhistory)
 					break

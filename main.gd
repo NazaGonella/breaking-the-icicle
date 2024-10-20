@@ -22,6 +22,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#print(catch_timer.time_left)
+	#print("pos: ", player.global_position)
+	print(catch_timer.time_left)
 	if not faded_in:
 		player.light.energy += 0.1 * delta * fade_speed
 		if player.light.energy >= 0.7:
@@ -35,19 +37,24 @@ func _process(delta):
 			catch_timer.start()
 		if is_tauro_killed:
 			catch_timer.stop()
-			player.global_position = tauro.global_position
+			var old_tau_pos = tauro.global_position
 			tauro.visible = false
 			tauro.global_position = Vector2(5000, 5000)
+			#player.global_position = old_tau_pos
 			player.catched = false
 			player.animated_sprite.visible = true
 			is_player_grabbed = false
 
 func _on_catched_timer_timeout():
 	player.visible = false
-	finish_game()
+	finish_game(false)
 
-func finish_game():
-	pass
+func finish_game(killed_tauro : bool):
+	if killed_tauro:
+		catch_timer.wait_time = 2
+		catch_timer.start()
+		await catch_timer.timeout
+		get_tree().quit()
 
 func kill_tauro():
 	is_tauro_killed = true
