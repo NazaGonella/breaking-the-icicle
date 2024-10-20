@@ -1,0 +1,127 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhgjyuu76ffv8"]
+
+[ext_resource type="Theme" uid="uid://bwp50pxnj3jro" path="res://scripts/themes/default_theme.tres" id="1_fbkf6"]
+[ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="2_bjjfn"]
+[ext_resource type="VideoStream" path="res://assets/background_animation.ogv" id="4_6l8oe"]
+[ext_resource type="FontFile" uid="uid://cxrjbihbo0njl" path="res://fonts/kenney_kenney-fonts/Fonts/Kenney High.ttf" id="4_n7040"]
+[ext_resource type="AudioStream" uid="uid://um8mmg471h7m" path="res://assets/sounds/mouse_hover.ogg" id="5_axtv3"]
+[ext_resource type="Theme" path="res://assets/botones.tres" id="6_2karj"]
+[ext_resource type="AudioStream" uid="uid://bd6d6v05782bw" path="res://assets/sounds/Clic03.ogg" id="6_trhj6"]
+
+[node name="MainMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_fbkf6")
+script = ExtResource("2_bjjfn")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("4_6l8oe")
+autoplay = true
+expand = true
+loop = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(1024, 896)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+process_mode = 1
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1024, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_n7040")
+theme_override_font_sizes/font_size = 64
+text = "el escape de teseo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonsVBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="StartGame" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../QuitGameButton")
+focus_neighbor_bottom = NodePath("../OptionsButton")
+focus_next = NodePath("../OptionsButton")
+focus_previous = NodePath("../QuitGameButton")
+theme = ExtResource("6_2karj")
+theme_override_font_sizes/font_size = 42
+text = "Jugar"
+
+[node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_2karj")
+theme_override_font_sizes/font_size = 42
+text = "Opciones"
+
+[node name="QuitGameButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../OptionsButton")
+focus_neighbor_bottom = NodePath("../StartGame")
+focus_next = NodePath("../StartGame")
+focus_previous = NodePath("../StartGame")
+theme = ExtResource("6_2karj")
+theme_override_font_sizes/font_size = 42
+text = "Salir"
+
+[node name="button_switching" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_axtv3")
+volume_db = 21.045
+
+[node name="button_pressing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_trhj6")
+
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/ButtonsVBox/StartGame" to="." method="_on_start_game_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonsVBox/StartGame" to="." method="_on_start_game_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVBox/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/ButtonsVBox/OptionsButton" to="." method="_on_options_button_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonsVBox/OptionsButton" to="." method="_on_options_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVBox/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/ButtonsVBox/QuitGameButton" to="." method="_on_quit_game_button_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonsVBox/QuitGameButton" to="." method="_on_quit_game_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVBox/QuitGameButton" to="." method="_on_quit_game_button_pressed"]

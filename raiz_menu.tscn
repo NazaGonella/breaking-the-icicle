@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://8wk01cw8kc5x"]
+
+[ext_resource type="Script" path="res://raiz_menu.gd" id="1_q5g2e"]
+[ext_resource type="AudioStream" uid="uid://um8mmg471h7m" path="res://assets/sounds/mouse_hover.ogg" id="2_truni"]
+[ext_resource type="PackedScene" uid="uid://cik1otii6myr3" path="res://scenes/menus/game_over.tscn" id="3_yjqnw"]
+[ext_resource type="PackedScene" uid="uid://dhgjyuu76ffv8" path="res://scenes/menus/main_menu.tscn" id="4_642k5"]
+[ext_resource type="PackedScene" uid="uid://dsqthxqvefxlr" path="res://scenes/menus/pause_menu.tscn" id="5_b16rx"]
+[ext_resource type="PackedScene" uid="uid://ixw4qiyfr64k" path="res://scenes/menus/options_menu.tscn" id="6_6uohw"]
+
+[node name="RaizMenu" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_q5g2e")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_truni")
+volume_db = 20.662
+
+[node name="Menus" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameOver" parent="Menus" instance=ExtResource("3_yjqnw")]
+layout_mode = 1
+offset_right = 984.0
+offset_bottom = 856.0
+
+[node name="MainMenu" parent="Menus" instance=ExtResource("4_642k5")]
+layout_mode = 1
+offset_left = 0.0
+offset_right = 984.0
+offset_bottom = 856.0
+
+[node name="PauseMenu" parent="Menus" instance=ExtResource("5_b16rx")]
+visible = false
+layout_mode = 1
+
+[node name="OptionsMenu" parent="Menus" instance=ExtResource("6_6uohw")]
+visible = false
+layout_mode = 1
+offset_right = 984.0
+offset_bottom = 856.0

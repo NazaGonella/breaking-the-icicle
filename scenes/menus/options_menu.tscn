@@ -1,0 +1,84 @@
+[gd_scene load_steps=4 format=3 uid="uid://ixw4qiyfr64k"]
+
+[ext_resource type="Script" path="res://scripts/menus/options_menu.gd" id="1_mv8d3"]
+[ext_resource type="FontFile" uid="uid://cxrjbihbo0njl" path="res://fonts/kenney_kenney-fonts/Fonts/Kenney High.ttf" id="2_qfjfs"]
+[ext_resource type="Theme" path="res://assets/botones.tres" id="3_4plxo"]
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mv8d3")
+
+[node name="PausaRects" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Opciones" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_qfjfs")
+theme_override_font_sizes/font_size = 64
+text = "Opciones"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ajustes" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="labels" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ajustes"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="sonido" type="Label" parent="MarginContainer/VBoxContainer/ajustes/labels"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qfjfs")
+theme_override_font_sizes/font_size = 24
+text = "sonido"
+
+[node name="settings" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ajustes"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="sonidoSlider" type="HSlider" parent="MarginContainer/VBoxContainer/ajustes/settings"]
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="botones" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="volver" type="Button" parent="MarginContainer/VBoxContainer/botones"]
+layout_mode = 2
+theme = ExtResource("3_4plxo")
+theme_override_fonts/font = ExtResource("2_qfjfs")
+theme_override_font_sizes/font_size = 42
+text = "Volver"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/ajustes/settings/sonidoSlider" to="." method="_on_sonido_slider_value_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/botones/volver" to="." method="_on_volver_pressed"]

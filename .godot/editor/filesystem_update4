@@ -3,3 +3,8 @@ res://kill_animation.tres
 res://minotaur_corpse.tres
 res://scenes/game.tscn
 res://scripts/game.gd
+res://raiz_menu.tscn
+res://raiz_menu.gd
+res://scenes/menus/pause_menu.tscn
+res://scenes/menus/main_menu.tscn
+res://scenes/menus/options_menu.tscn
