@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh4w03dhn7b7g"]
+
+[ext_resource type="AudioStream" uid="uid://emwvc4ntig5p" path="res://assets/sounds2/socapex2.ogg" id="1_wlu7f"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_wlu7f")
+autoplay = true

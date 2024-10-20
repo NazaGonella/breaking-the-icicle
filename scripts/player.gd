@@ -11,6 +11,9 @@ var playing_animation : bool = false
 #const SPEED : float = 30.0
 const SPEED : float = 150.0
 
+var slash2_sound = preload("res://assets/sounds2/pickupsword.mp3")
+var soga_sound = preload("res://assets/sounds2/lana.ogg")
+
 var catched : bool = false
 
 var CHOPEO_SOGA : int = 10
@@ -72,12 +75,14 @@ func colocar_ovillo():
 		#drawNow=true
 	if canSwitch and Input.is_action_just_pressed("interactuar"):
 		if hasOvillo:
+			get_parent().play_sound(slash2_sound)
 			hasOvillo=false
 			animated_sprite.animation="alt"
 			grab_item.emit()
 		else:
 			hasOvillo=true
 			animated_sprite.animation="default"
+			get_parent().play_sound(soga_sound)
 			grab_item.emit()
 		
 

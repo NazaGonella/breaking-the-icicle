@@ -1,12 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1729421928
-export_presets.cfg::TextFile::-1::1729419789::0::1::::<><>::
+::res://::1729429139
+export_presets.cfg::TextFile::-1::1729420464::0::1::::<><>::
 icon.svg::CompressedTexture2D::218410147992761830::1729412323::1729412323::1::::<><>::
-raiz_menu.gd::GDScript::-1::1729418644::0::1::::<>Node2D<>::
-raiz_menu.tscn::PackedScene::2362301335160458171::1729420901::0::1::::<><>::res://raiz_menu.gd<>uid://um8mmg471h7m::::res://assets/sounds/mouse_hover.ogg<>uid://cik1otii6myr3::::res://scenes/menus/game_over.tscn<>uid://dhgjyuu76ffv8::::res://scenes/menus/main_menu.tscn<>uid://dsqthxqvefxlr::::res://scenes/menus/pause_menu.tscn<>uid://ixw4qiyfr64k::::res://scenes/menus/options_menu.tscn<>res://videos/VideoTadeoFile.ogv
+raiz_menu.gd::GDScript::-1::1729428948::0::1::::<>Node2D<>::
 README.md::TextFile::-1::1729412323::0::1::::<><>::
 wallress.tres::TileSet::1184553594085956659::1729420899::0::1::::<><>::uid://c4q33xi6w710e::::res://assets/muro.png<>uid://b6kgfqs0rwms5::::res://assets/muros_2.png
-::res://assets/::1729421067
+::res://assets/::1729429139
 background_animation.ogv::VideoStreamTheora::-1::1729392189::0::1::::<><>::
 botones.tres::Theme::-1::1729392189::0::1::::<><>::
 campo_de_vision.png::CompressedTexture2D::1668656205149225059::1729412323::1729412323::1::::<><>::
@@ -21,7 +20,7 @@ light_02.png::CompressedTexture2D::7114182717022019079::1729412323::1729412323::
 mino_caminata.png::CompressedTexture2D::5260292843703697971::1729412323::1729412323::1::::<><>::
 mino_corre.png::CompressedTexture2D::8274583072803061365::1729412323::1729412323::1::::<><>::
 mino_muerto-sheet.png::CompressedTexture2D::363152840455832121::1729412323::1729412323::1::::<><>::
-mino_muerto.png::CompressedTexture2D::8033669459311662632::1729412323::1729412323::1::::<><>::
+mino_muerto.png::CompressedTexture2D::8033669459311662632::1729427673::1729427677::1::::<><>::
 muro.png::CompressedTexture2D::6843099176815570558::1729412323::1729412323::1::::<><>::
 muros_2.png::CompressedTexture2D::4583292714278390290::1729412323::1729412323::1::::<><>::
 muros_3.png::CompressedTexture2D::3346371122045733880::1729412323::1729412323::1::::<><>::
@@ -34,6 +33,7 @@ player_punch.png::CompressedTexture2D::3518566408435497270::1729412323::17294123
 Prota wenardo con cuchillo.png::CompressedTexture2D::4296503484331277442::1729412323::1729412323::1::::<><>::
 prota-basico- caminata.png::CompressedTexture2D::3253663217751816800::1729412323::1729412323::1::::<><>::
 Prota_wenardo_caminando.png::CompressedTexture2D::6403918697593140546::1729412323::1729412323::1::::<><>::
+raiz_menu.tscn::PackedScene::2362301335160458171::1729429063::0::1::::<><>::res://raiz_menu.gd<>uid://um8mmg471h7m::::res://assets/sounds/mouse_hover.ogg<>uid://cik1otii6myr3::::res://scenes/menus/game_over.tscn<>uid://dhgjyuu76ffv8::::res://scenes/menus/main_menu.tscn<>uid://dsqthxqvefxlr::::res://scenes/menus/pause_menu.tscn<>uid://ixw4qiyfr64k::::res://scenes/menus/options_menu.tscn<>res://videos/VideoTadeoFile.ogv
 soga.png::CompressedTexture2D::3486492764357589614::1729412323::1729412323::1::::<><>::
 tauro_01.png::CompressedTexture2D::8125006009799687775::1729412323::1729412323::1::::<><>::
 ::res://assets/asepritefiles/::1729420433
@@ -53,11 +53,15 @@ pressing_button.ogg::AudioStreamOggVorbis::1437528282120576175::1729392189::1729
 sword.7.ogg::AudioStreamOggVorbis::3475862884347056668::1729392189::1729412800::1::::<><>::
 ::res://assets/sounds/pasos_teseo/::1729412800
 paso0.ogg::AudioStreamOggVorbis::1053353941465888745::1729392189::1729412800::1::::<><>::
-::res://assets/sounds2/::1729423642
+::res://assets/sounds2/::1729428583
 753178__vilkas_sound__monster-stomp-footsteps-sequence.mp3::AudioStreamMP3::1473785816144287918::1729421042::1729421071::1::::<><>::
+crush.mp3::AudioStreamMP3::5452658254953341532::1729424289::1729424292::1::::<><>::
 horror-background-music-252095.mp3::AudioStreamMP3::2127172423327276378::1729421046::1729421071::1::::<><>::
+lana.ogg::AudioStreamOggVorbis::9020811429491755270::1729425796::1729425804::1::::<><>::
+pickupsword.mp3::AudioStreamMP3::2171511297216198553::1729428581::1729428583::1::::<><>::
 robot-heavy-mechanical-footsteps-194039.mp3::AudioStreamMP3::247624340392486363::1729421040::1729421071::1::::<><>::
-socapex2.ogg::AudioStreamOggVorbis::306901333576113523::1729421033::1729421071::1::::<><>::
+slash.mp3::AudioStreamMP3::8246636261007859911::1729424558::1729424573::1::::<><>::
+socapex2.ogg::AudioStreamOggVorbis::306901333576113523::1729421033::1729429161::1::::<><>::
 tauro_embestida.ogg::AudioStreamOggVorbis::8341986840827538908::1729421037::1729421071::1::::<><>::
 thud2.mp3::AudioStreamMP3::3064213200746864542::1729423642::1729423644::1::::<><>::
 thud.mp3::AudioStreamMP3::5302327700563952081::1729423427::1729423445::1::::<><>::
@@ -89,8 +93,8 @@ Kenney Rocket.ttf::FontFile::5890026179401830720::1729392189::1729413184::1::::<
 ::res://resources/::1729412448
 kill_animation.tres::SpriteFrames::2175268458047966191::1729412401::0::1::::<><>::uid://o5rhvjx87wfb::::res://assets/grabbed_player.png
 minotaur_corpse.tres::SpriteFrames::1836798693649911290::1729412401::0::1::::<><>::uid://ff6cr2ls7yij::::res://assets/mino_muerto-sheet.png
-::res://scenes/::1729423491
-game.tscn::PackedScene::4228501162161572019::1729423491::0::1::::<><>::res://scripts/game.gd<>uid://cv0yc8xfobx27::::res://assets/piso_01.png<>uid://c3c67e56ssvml::::res://assets/fondo.png<>res://scripts/soga.gd<>uid://c4q33xi6w710e::::res://assets/muro.png<>uid://bnxaijpkuhu6s::::res://assets/muros_3.png<>uid://c3p0fwjpxxu12::::res://assets/muros_4.png<>uid://b6kgfqs0rwms5::::res://assets/muros_2.png<>res://scripts/teleporters.gd<>res://scripts/exit_lights.gd<>uid://bap5sls2vvgrb::::res://assets/light_01.png<>res://scripts/item.gd<>uid://cru7qck5yigsj::::res://assets/espada.png<>res://scripts/player.gd<>uid://b2hi1xcjkheo5::::res://assets/Prota wenardo con cuchillo.png<>uid://cxidut0x032cc::::res://assets/Prota_wenardo_caminando.png<>res://scripts/duplicados.gd<>uid://dp5jf6p2djomn::::res://assets/mino_corre.png<>res://scripts/tauro.gd<>uid://dr7lph748vsl::::res://assets/sounds2/robot-heavy-mechanical-footsteps-194039.mp3<>uid://cg7eiwkxwxp1l::::res://assets/mino_caminata.png<>res://scripts/patrulla_component.gd<>res://scripts/tauro_checkpoint.gd
+::res://scenes/::1729429114
+game.tscn::PackedScene::4228501162161572019::1729429114::0::1::::<><>::res://scripts/game.gd<>uid://cv0yc8xfobx27::::res://assets/piso_01.png<>uid://c3c67e56ssvml::::res://assets/fondo.png<>res://scripts/soga.gd<>uid://c4q33xi6w710e::::res://assets/muro.png<>uid://bnxaijpkuhu6s::::res://assets/muros_3.png<>uid://c3p0fwjpxxu12::::res://assets/muros_4.png<>uid://b6kgfqs0rwms5::::res://assets/muros_2.png<>res://scripts/teleporters.gd<>res://scripts/exit_lights.gd<>uid://bap5sls2vvgrb::::res://assets/light_01.png<>res://scripts/item.gd<>uid://cru7qck5yigsj::::res://assets/espada.png<>res://scripts/player.gd<>uid://b2hi1xcjkheo5::::res://assets/Prota wenardo con cuchillo.png<>uid://cxidut0x032cc::::res://assets/Prota_wenardo_caminando.png<>res://scripts/duplicados.gd<>uid://dp5jf6p2djomn::::res://assets/mino_corre.png<>res://scripts/tauro.gd<>uid://dr7lph748vsl::::res://assets/sounds2/robot-heavy-mechanical-footsteps-194039.mp3<>uid://cg7eiwkxwxp1l::::res://assets/mino_caminata.png<>res://scripts/patrulla_component.gd<>res://scripts/tauro_checkpoint.gd
 game_scene.tscn::PackedScene::-1::1729392189::0::1::::<><>::
 test_zone.tscn::PackedScene::6844439883228570197::1729412323::0::1::::<><>::uid://c3c67e56ssvml::::res://assets/fondo.png<>uid://q42oo4vhpu2f::::res://wallress.tres<>uid://dn02wrfpbavn8::::res://assets/tauro_01.png<>res://scripts/tauro.gd<>res://scripts/patrulla_component.gd
 ::res://scenes/menus/::1729420901
@@ -99,16 +103,16 @@ main_menu.tscn::PackedScene::7663560617917158423::1729413729::0::1::::<><>::uid:
 options_menu.tscn::PackedScene::610379853141612600::1729413729::0::1::::<><>::res://scripts/menus/options_menu.gd<>uid://cxrjbihbo0njl::::res://fonts/kenney_kenney-fonts/Fonts/Kenney High.ttf<>res://assets/botones.tres
 pause_menu.tscn::PackedScene::8456858637762376299::1729420901::0::1::::<><>::res://scripts/menus/pause_menu.gd<>uid://cxrjbihbo0njl::::res://fonts/kenney_kenney-fonts/Fonts/Kenney High.ttf<>res://assets/botones.tres<>uid://dglqx7rt3h3ml::::res://assets/asepritefiles/tilemap_white_packed.png<>uid://bd6d6v05782bw::::res://assets/sounds/Clic03.ogg<>uid://um8mmg471h7m::::res://assets/sounds/mouse_hover.ogg
 world_environment.tscn::PackedScene::495278642413447377::1729392189::0::1::::<><>::
-::res://scripts/::1729423473
+::res://scripts/::1729428958
 duplicados.gd::GDScript::-1::1729417974::0::1::::<>Node2D<>::
 exit_lights.gd::GDScript::-1::1729412323::0::1::::<>Node2D<>::
-game.gd::GDScript::-1::1729422099::0::1::::<>Node2D<>::
+game.gd::GDScript::-1::1729427905::0::1::::<>Node2D<>::
 item.gd::GDScript::-1::1729412323::0::1::::<>Area2D<>::
 menu.gd::GDScript::-1::1729392189::0::1::::<>Control<>::
 patrulla_component.gd::GDScript::-1::1729412323::0::1::::<>Node2D<>::
-player.gd::GDScript::-1::1729422498::0::1::::<>CharacterBody2D<>::
+player.gd::GDScript::-1::1729428958::0::1::::<>CharacterBody2D<>::
 soga.gd::GDScript::-1::1729412323::0::1::::<>Node2D<>::
-tauro.gd::GDScript::-1::1729423473::0::1::::<>CharacterBody2D<>::
+tauro.gd::GDScript::-1::1729423903::0::1::::<>CharacterBody2D<>::
 tauro_checkpoint.gd::GDScript::-1::1729412323::0::1::::<>Marker2D<>::
 teleporters.gd::GDScript::-1::1729412323::0::1::::<>Node2D<>::
 ::res://scripts/menus/::1729412750

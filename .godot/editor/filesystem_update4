@@ -6,3 +6,6 @@ res://scripts/tauro.gd
 res://scripts/game.gd
 res://scripts/tauro_sonidos.gd
 res://scripts/player.gd
+res://raiz_menu.gd
+res://scenes/ambiente.tscn
+res://assets/raiz_menu.tscn

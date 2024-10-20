@@ -5,11 +5,15 @@ signal go_to_menu
 @export var player : CharacterBody2D
 @export var tauro : CharacterBody2D
 @export var catch_timer : Timer
+@export var instant_sound : AudioStreamPlayer
 
 @export var canvas_modulate : CanvasModulate
 @export var exit_lights : Node2D
 @export var teleporters : Node2D
 @export var soga : Node2D
+
+var crush_sound = preload("res://assets/sounds2/crush.mp3")
+var slash_sound = preload("res://assets/sounds2/slash.mp3")
 
 @onready var kill_animation_res : SpriteFrames = preload("res://resources/kill_animation.tres")
 @onready var mino_muerto_texture : Texture = preload("res://assets/mino_muerto.png")
@@ -45,11 +49,13 @@ func _process(delta):
 		if catch_timer.is_stopped():
 			catch_timer.start()
 		if is_tauro_killed:
+			play_sound(slash_sound)
 			after_tauro_killed()
 	
 
 func _on_catched_timer_timeout():
 	player.visible = false
+	play_sound(crush_sound)
 	finish_game(false)
 
 func after_tauro_killed():
@@ -69,10 +75,12 @@ func after_tauro_killed():
 	faded_in = false
 	game_playing(false)
 	
-	var mino_muerto : AnimatedSprite2D = AnimatedSprite2D.new()
-	mino_muerto.sprite_frames = mino_muerto_sprite_frame
-	mino_muerto.play()
-	print(2 * Vector2(cos(player.rotation), sin(player.rotation)))
+	#var mino_muerto : AnimatedSprite2D = AnimatedSprite2D.new()
+	#mino_muerto.sprite_frames = mino_muerto_sprite_frame
+	#mino_muerto.play()
+	var mino_muerto : Sprite2D = Sprite2D.new()
+	mino_muerto.texture = preload("res://assets/mino_muerto.png")
+	#print(2 * Vector2(cos(player.rotation), sin(player.rotation)))
 	#mino_muerto.global_position = player.global_position + 32 * Vector2(cos(player.rotation - PI/2), sin(player.rotation - PI/2))
 	mino_muerto.global_position = (dead_body_pos * 32 ) + Vector2i(16, 16)
 	#mino_muerto.global_position = player.global_position
@@ -111,3 +119,8 @@ func grabbed_player():
 func game_playing(is_playing : bool):
 	player.set_physics_process(is_playing)
 	tauro.set_physics_process(is_playing)
+
+func play_sound(new_sound):
+	print("A")
+	instant_sound.stream = new_sound
+	instant_sound.play()

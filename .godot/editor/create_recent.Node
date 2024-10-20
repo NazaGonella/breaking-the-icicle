@@ -1,14 +1,14 @@
+AudioStreamPlayer
+Sprite2D
 AudioStreamPlayer2D
 Node2D
 AudioListener2D
 VideoStreamPlayer
 CanvasLayer
 Control
-AudioStreamPlayer
 AudioStreamPlayer3D
 Camera2D
 TileMap
 CollisionShape2D
 Area2D
 Timer
-Sprite2D

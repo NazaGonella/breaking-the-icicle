@@ -449,15 +449,19 @@ animations = [{
 radius = 13.0
 height = 40.0
 
-[node name="game" type="Node2D" node_paths=PackedStringArray("player", "tauro", "catch_timer", "canvas_modulate", "exit_lights", "teleporters", "soga")]
+[node name="game" type="Node2D" node_paths=PackedStringArray("player", "tauro", "catch_timer", "instant_sound", "canvas_modulate", "exit_lights", "teleporters", "soga")]
 script = ExtResource("1_3pu6e")
 player = NodePath("Player")
 tauro = NodePath("Tauro")
 catch_timer = NodePath("CatchedTimer")
+instant_sound = NodePath("InstantSounds")
 canvas_modulate = NodePath("CanvasModulate")
 exit_lights = NodePath("Laberinto/ExitLights")
 teleporters = NodePath("Laberinto/Teleporters")
 soga = NodePath("Laberinto/Soga")
+
+[node name="InstantSounds" type="AudioStreamPlayer" parent="."]
+volume_db = 6.5
 
 [node name="Laberinto" type="Node2D" parent="."]
 metadata/_edit_group_ = true
@@ -856,8 +860,8 @@ metadata/_edit_group_ = true
 
 [node name="sonido" type="AudioStreamPlayer2D" parent="Tauro"]
 stream = ExtResource("20_urmk5")
-volume_db = 0.2
-attenuation = 11.3
+volume_db = 10.0
+attenuation = 50.1524
 
 [node name="InstantSound" type="AudioStreamPlayer2D" parent="Tauro"]
 volume_db = 0.5
@@ -911,6 +915,7 @@ target_position = Vector2(0, 400)
 collision_mask = 5
 
 [node name="PatrullaComponent" type="Node2D" parent="Tauro" node_paths=PackedStringArray("tauro", "rotated_tauro", "timer")]
+visible = false
 script = ExtResource("21_70qtj")
 group_name = "TauroCheckpoint"
 tauro = NodePath("..")

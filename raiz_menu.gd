@@ -93,5 +93,6 @@ func _on_video_stream_player_2_finished():
 	add_child(game_scene)
 
 func return_menu():
-	reopen_main_menu()
+	#reopen_main_menu()
+	get_tree().reload_current_scene()
 	#main_menu.show()

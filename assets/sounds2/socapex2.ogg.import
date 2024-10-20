@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/socapex2.ogg-983c067f66d93065b1a95f084acc67ef
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

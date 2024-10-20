@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://8wk01cw8kc5x"]
+
+[ext_resource type="Script" path="res://raiz_menu.gd" id="1_cbwjm"]
+[ext_resource type="AudioStream" uid="uid://um8mmg471h7m" path="res://assets/sounds/mouse_hover.ogg" id="2_t4xes"]
+[ext_resource type="PackedScene" uid="uid://cik1otii6myr3" path="res://scenes/menus/game_over.tscn" id="3_tprls"]
+[ext_resource type="PackedScene" uid="uid://dhgjyuu76ffv8" path="res://scenes/menus/main_menu.tscn" id="4_k7keg"]
+[ext_resource type="PackedScene" uid="uid://dsqthxqvefxlr" path="res://scenes/menus/pause_menu.tscn" id="5_pul8m"]
+[ext_resource type="PackedScene" uid="uid://ixw4qiyfr64k" path="res://scenes/menus/options_menu.tscn" id="6_6id24"]
+[ext_resource type="VideoStream" path="res://videos/VideoTadeoFile.ogv" id="7_2b46y"]
+
+[node name="RaizMenu" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_cbwjm")
+
+[node name="button_switching" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_t4xes")
+volume_db = 20.662
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Menus" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameOver" parent="CanvasLayer/Menus" instance=ExtResource("3_tprls")]
+visible = false
+layout_mode = 1
+offset_right = 984.0
+offset_bottom = 856.0
+
+[node name="MainMenu" parent="CanvasLayer/Menus" instance=ExtResource("4_k7keg")]
+layout_mode = 1
+offset_left = 0.0
+offset_right = 984.0
+offset_bottom = 856.0
+
+[node name="PauseMenu" parent="CanvasLayer/Menus" instance=ExtResource("5_pul8m")]
+layout_mode = 1
+
+[node name="OptionsMenu" parent="CanvasLayer/Menus" instance=ExtResource("6_6id24")]
+visible = false
+layout_mode = 1
+offset_right = 984.0
+offset_bottom = 856.0
+
+[node name="VideoTadeo" type="VideoStreamPlayer" parent="CanvasLayer/Menus"]
+visible = false
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 896.0
+stream = ExtResource("7_2b46y")
+
+[connection signal="finished" from="CanvasLayer/Menus/VideoTadeo" to="." method="_on_video_stream_player_2_finished"]
