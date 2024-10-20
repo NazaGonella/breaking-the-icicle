@@ -1,11 +1,10 @@
-res://main.tscn
-res://scripts/menus/main_menu.gd
 res://scenes/menus/main_menu.tscn
+res://scripts/menus/main_menu.gd
 res://scenes/menus/options_menu.tscn
+res://main.tscn
 res://scenes/menus/pause_menu.tscn
-res://scripts/menus/pause_menu.gd
-res://main.gd
 res://scenes/menus/game_over.tscn
-res://scripts/menus/options_menu.gd
 res://scenes/game_scene.tscn
-res://player.gd
+res://scripts/menus/options_menu.gd
+res://scripts/menus/brilloSlider.gd
+res://scenes/menus/world_environment.tscn

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ixw4qiyfr64k"]
+[gd_scene load_steps=4 format=3 uid="uid://ixw4qiyfr64k"]
 
 [ext_resource type="FontFile" uid="uid://cxrjbihbo0njl" path="res://fonts/kenney_kenney-fonts/Fonts/Kenney High.ttf" id="1_0w5ht"]
 [ext_resource type="Script" path="res://scripts/menus/options_menu.gd" id="1_mv8d3"]
+[ext_resource type="Script" path="res://scripts/menus/brilloSlider.gd" id="3_2tlr7"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -56,13 +57,13 @@ size_flags_horizontal = 3
 [node name="sonido" type="Label" parent="MarginContainer/VBoxContainer/ajustes/labels"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_0w5ht")
-theme_override_font_sizes/font_size = 42
+theme_override_font_sizes/font_size = 24
 text = "sonido"
 
 [node name="brillo" type="Label" parent="MarginContainer/VBoxContainer/ajustes/labels"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_0w5ht")
-theme_override_font_sizes/font_size = 42
+theme_override_font_sizes/font_size = 24
 text = "brillo
 "
 
@@ -76,6 +77,7 @@ size_flags_vertical = 1
 
 [node name="brilloSlider" type="HSlider" parent="MarginContainer/VBoxContainer/ajustes/settings"]
 layout_mode = 2
+script = ExtResource("3_2tlr7")
 
 [node name="botones" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -88,4 +90,6 @@ theme_override_fonts/font = ExtResource("1_0w5ht")
 theme_override_font_sizes/font_size = 42
 text = "Volver"
 
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/ajustes/settings/sonidoSlider" to="." method="_on_sonido_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/ajustes/settings/brilloSlider" to="MarginContainer/VBoxContainer/ajustes/settings/brilloSlider" method="_on_value_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/botones/volver" to="." method="_on_volver_pressed"]

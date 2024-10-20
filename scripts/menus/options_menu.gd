@@ -19,3 +19,8 @@ func _ready():
 
 func refocus(): 
 	volver.grab_focus()
+
+
+func _on_sonido_slider_value_changed(value):
+	AudioServer.set_bus_volume_db(0, value)
+	

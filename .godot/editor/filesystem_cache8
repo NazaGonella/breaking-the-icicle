@@ -12,7 +12,7 @@ player.png::CompressedTexture2D::3853370360586435676::1729288364::1729288364::1:
 player_punch.png::CompressedTexture2D::3518566408435497270::1729288364::1729288364::1::::<><>::
 ::res://assets/asepritefiles/::1729352274
 tilemap_white_packed.png::CompressedTexture2D::2229844753380586262::1707070744::1729352274::1::::<><>::
-::res://assets/sounds/::1729366347
+::res://assets/sounds/::1729387177
 button_switching.ogg::AudioStreamOggVorbis::4649795944380693040::1729312745::1729313452::1::::<><>::
 button_switching.wav::AudioStreamWAV::8080040404041241933::1729312505::1729313452::1::::<><>::
 button_switching_audacity.ogg::AudioStreamOggVorbis::4943120514559113808::1729313361::1729313452::1::::<><>::
@@ -21,6 +21,7 @@ click01.ogg::AudioStreamOggVorbis::4432396498665518533::1729314968::1729315035::
 click02.ogg::AudioStreamOggVorbis::8170704932437120371::1729315028::1729315035::1::::<><>::
 click.ogg::AudioStreamOggVorbis::3417115972570398602::1729314234::1729314259::1::::<><>::
 mouse_hover.ogg::AudioStreamOggVorbis::1430575137007966424::1729314070::1729314076::1::::<><>::
+pasos.wav::AudioStreamWAV::5098523458205799751::1729309500::1729387235::1::::<><>::
 pressing_button.mp3::AudioStreamMP3::4068988439595516481::1729312582::1729313452::1::::<><>::
 pressing_button.ogg::AudioStreamOggVorbis::1437528282120576175::1729312790::1729313452::1::::<><>::
 sword.7.ogg::AudioStreamOggVorbis::3475862884347056668::1614017770::1729354925::1::::<><>::
