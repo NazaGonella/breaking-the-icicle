@@ -1,11 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1729365886
+::res://::1729382934
 icon.svg::CompressedTexture2D::218410147992761830::1729288364::1729288760::1::::<><>::
-main.gd::GDScript::-1::1729362258::0::1::::<>Node2D<>::
-main.tscn::PackedScene::4228501162161572019::1729365886::0::1::::<><>::res://main.gd<>uid://cik1otii6myr3::::res://scenes/menus/game_over.tscn<>uid://ixw4qiyfr64k::::res://scenes/menus/options_menu.tscn<>res://player.gd<>uid://dd2gh2ti6h23::::res://icon.svg<>uid://bqeojlr7a8ggk::::res://assets/player_punch.png<>uid://dsqthxqvefxlr::::res://scenes/menus/pause_menu.tscn<>uid://dhgjyuu76ffv8::::res://scenes/menus/main_menu.tscn<>uid://um8mmg471h7m::::res://assets/sounds/mouse_hover.ogg
-player.gd::GDScript::-1::1729315409::0::1::::<>CharacterBody2D<>::
+main.gd::GDScript::-1::1729381322::0::1::::<>Node2D<>::
+main.tscn::PackedScene::4228501162161572019::1729382934::0::1::::<><>::res://main.gd<>uid://bop8ulvpw1vh5::::res://scenes/game_scene.tscn<>uid://cik1otii6myr3::::res://scenes/menus/game_over.tscn<>uid://ixw4qiyfr64k::::res://scenes/menus/options_menu.tscn<>uid://dsqthxqvefxlr::::res://scenes/menus/pause_menu.tscn<>uid://dhgjyuu76ffv8::::res://scenes/menus/main_menu.tscn<>uid://um8mmg471h7m::::res://assets/sounds/mouse_hover.ogg
+player.gd::GDScript::-1::1729374567::0::1::::<>CharacterBody2D<>::
 README.md::TextFile::-1::1729288364::0::1::::<><>::
-::res://assets/::1729365657
+::res://assets/::1729382736
 background_animation.ogv::VideoStreamTheora::-1::1729298097::0::1::::<><>::
 ia_battle.png::CompressedTexture2D::8569148211616466894::1729365411::1729365657::1::::<><>::
 player.png::CompressedTexture2D::3853370360586435676::1729288364::1729288364::1::::<><>::
@@ -24,8 +24,16 @@ mouse_hover.ogg::AudioStreamOggVorbis::1430575137007966424::1729314070::17293140
 pressing_button.mp3::AudioStreamMP3::4068988439595516481::1729312582::1729313452::1::::<><>::
 pressing_button.ogg::AudioStreamOggVorbis::1437528282120576175::1729312790::1729313452::1::::<><>::
 sword.7.ogg::AudioStreamOggVorbis::3475862884347056668::1614017770::1729354925::1::::<><>::
-::res://assets/sounds/pasos_teseo/::1729366354
+::res://assets/sounds/pasos_teseo/::1729366377
 paso0.ogg::AudioStreamOggVorbis::1053353941465888745::1729366354::1729366377::1::::<><>::
+::res://assets/teclas/::1729383188
+tile_0017.png::CompressedTexture2D::4137796725473433101::1707070798::1729383151::1::::<><>::
+tile_0086.png::CompressedTexture2D::8225093124308023282::1707070800::1729383151::1::::<><>::
+tile_0120.png::CompressedTexture2D::4240090316106334310::1707070802::1729383232::1::::<><>::
+tile_0121.png::CompressedTexture2D::6603685776188447067::1707070802::1729383163::1::::<><>::
+tile_0122.png::CompressedTexture2D::7037568637887131627::1707070802::1729383182::1::::<><>::
+tile_0123.png::CompressedTexture2D::4128860981499243816::1707070802::1729383151::1::::<><>::
+tile_0156.png::CompressedTexture2D::2637222865831730354::1707070802::1729383151::1::::<><>::
 ::res://fonts/::1729217953
 ::res://fonts/kenney_kenney-fonts/::1729217949
 License.txt::TextFile::-1::1729217949::0::1::::<><>::
@@ -42,17 +50,18 @@ Kenney Pixel Square.ttf::FontFile::173403162636443594::1729217949::1729288760::1
 Kenney Pixel.ttf::FontFile::330394504395347440::1729217949::1729288760::1::::<><>::
 Kenney Rocket Square.ttf::FontFile::7671915616807192104::1729217949::1729288760::1::::<><>::
 Kenney Rocket.ttf::FontFile::5890026179401830720::1729217949::1729288760::1::::<><>::
-::res://scenes/::1729262162
-::res://scenes/menus/::1729365886
-main_menu.tscn::PackedScene::7663560617917158423::1729365886::0::1::::<><>::uid://bwp50pxnj3jro::::res://scripts/themes/default_theme.tres<>res://scripts/menus/main_menu.gd<>uid://duc7vbwhatvpe::::res://assets/ia_battle.png<>res://assets/background_animation.ogv<>uid://cxrjbihbo0njl::::res://fonts/kenney_kenney-fonts/Fonts/Kenney High.ttf<>uid://um8mmg471h7m::::res://assets/sounds/mouse_hover.ogg<>uid://bd6d6v05782bw::::res://assets/sounds/Clic03.ogg
-options_menu.tscn::PackedScene::610379853141612600::1729365886::0::1::::<><>::uid://cxrjbihbo0njl::::res://fonts/kenney_kenney-fonts/Fonts/Kenney High.ttf
-pause_menu.tscn::PackedScene::8456858637762376299::1729365886::0::1::::<><>::res://scripts/menus/pause_menu.gd<>uid://cxrjbihbo0njl::::res://fonts/kenney_kenney-fonts/Fonts/Kenney High.ttf<>uid://61fhng54q71s::::res://assets/asepritefiles/tilemap_white_packed.png<>uid://bd6d6v05782bw::::res://assets/sounds/Clic03.ogg<>uid://um8mmg471h7m::::res://assets/sounds/mouse_hover.ogg
-game_over.tscn::PackedScene::5356600547665153422::1729365886::0::1::::<><>::
+::res://scenes/::1729382934
+game_scene.tscn::PackedScene::3402070148485563824::1729382934::0::1::::<><>::uid://dd2gh2ti6h23::::res://icon.svg<>res://player.gd<>uid://bqeojlr7a8ggk::::res://assets/player_punch.png
+::res://scenes/menus/::1729382961
+main_menu.tscn::PackedScene::7663560617917158423::1729382934::0::1::::<><>::uid://bwp50pxnj3jro::::res://scripts/themes/default_theme.tres<>res://scripts/menus/main_menu.gd<>uid://duc7vbwhatvpe::::res://assets/ia_battle.png<>uid://cxrjbihbo0njl::::res://fonts/kenney_kenney-fonts/Fonts/Kenney High.ttf<>uid://um8mmg471h7m::::res://assets/sounds/mouse_hover.ogg<>uid://bd6d6v05782bw::::res://assets/sounds/Clic03.ogg
+options_menu.tscn::PackedScene::610379853141612600::1729382961::0::1::::<><>::uid://cxrjbihbo0njl::::res://fonts/kenney_kenney-fonts/Fonts/Kenney High.ttf<>res://scripts/menus/options_menu.gd
+pause_menu.tscn::PackedScene::8456858637762376299::1729382934::0::1::::<><>::res://scripts/menus/pause_menu.gd<>uid://cxrjbihbo0njl::::res://fonts/kenney_kenney-fonts/Fonts/Kenney High.ttf<>uid://61fhng54q71s::::res://assets/asepritefiles/tilemap_white_packed.png<>uid://bd6d6v05782bw::::res://assets/sounds/Clic03.ogg<>uid://um8mmg471h7m::::res://assets/sounds/mouse_hover.ogg
+game_over.tscn::PackedScene::5356600547665153422::1729382934::0::1::::<><>::
 ::res://scripts/::1729294119
 menu.gd::GDScript::-1::1729294119::0::1::::<>Control<>::
-::res://scripts/menus/::1729365863
-main_menu.gd::GDScript::-1::1729349716::0::1::::<>Control<>::
-options_menu.gd::GDScript::-1::1729299718::0::1::::<>Control<>::
-pause_menu.gd::GDScript::-1::1729365863::0::1::::<>Control<>::
+::res://scripts/menus/::1729382961
+main_menu.gd::GDScript::-1::1729378492::0::1::::<>Control<>::
+options_menu.gd::GDScript::-1::1729382961::0::1::::<>Control<>::
+pause_menu.gd::GDScript::-1::1729381297::0::1::::<>Control<>::
 ::res://scripts/themes/::1729223729
 default_theme.tres::Theme::3963407888655879236::1729223729::0::1::::<><>::

@@ -45,8 +45,42 @@ text = "Opciones"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ajustes" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="labels" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ajustes"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="sonido" type="Label" parent="MarginContainer/VBoxContainer/ajustes/labels"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_0w5ht")
+theme_override_font_sizes/font_size = 42
+text = "sonido"
+
+[node name="brillo" type="Label" parent="MarginContainer/VBoxContainer/ajustes/labels"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_0w5ht")
+theme_override_font_sizes/font_size = 42
+text = "brillo
+"
+
+[node name="settings" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ajustes"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="sonidoSlider" type="HSlider" parent="MarginContainer/VBoxContainer/ajustes/settings"]
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="brilloSlider" type="HSlider" parent="MarginContainer/VBoxContainer/ajustes/settings"]
+layout_mode = 2
+
 [node name="botones" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 
 [node name="volver" type="Button" parent="MarginContainer/VBoxContainer/botones"]
 layout_mode = 2
