@@ -3,10 +3,4 @@ res://kill_animation.tres
 res://wallress.tres
 res://muro.tscn
 res://scenes/test_zone.tscn
-res://scripts/tauro.gd
-res://teleporters.gd
-res://scripts/LARAplayer.gd
-res://scripts/player.gd
 res://scripts/soga.gd
-res://main.gd
-res://scripts/espada.gd
