@@ -18,6 +18,7 @@ func _on_opciones_pressed():
 	hide()
 
 func _on_menu_pressed():
+	click.play()
 	main_menu.emit()
 	hide()
 
