@@ -6,6 +6,9 @@ extends Node2D
 
 @onready var kill_animation_res : SpriteFrames = preload("res://kill_animation.tres")
 
+var is_player_grabbed : bool = false
+var is_tauro_killed : bool = false
+
 var faded_in : bool = false
 var fade_speed : float = 2
 
@@ -25,12 +28,29 @@ func _process(delta):
 			player.light.energy = 0.7
 			faded_in = true
 			game_playing(true)
+		return
+	if is_player_grabbed:
+		if catch_timer.is_stopped():
+			catch_timer.wait_time = 3
+			catch_timer.start()
+		if is_tauro_killed:
+			catch_timer.stop()
+			player.global_position = tauro.global_position
+			tauro.visible = false
+			tauro.global_position = Vector2(5000, 5000)
+			player.catched = false
+			player.animated_sprite.visible = true
+			is_player_grabbed = false
+
+func _on_catched_timer_timeout():
+	player.visible = false
+	finish_game()
 
 func finish_game():
 	pass
 
 func kill_tauro():
-	print("killed tauro")
+	is_tauro_killed = true
 
 func grabbed_player():
 	#tauro.sprite.stop()
@@ -40,11 +60,7 @@ func grabbed_player():
 	player.animated_sprite.stop()
 	player.animated_sprite.visible = false
 	tauro.sprite.sprite_frames = kill_animation_res
-	catch_timer.wait_time = 3
-	catch_timer.start()
-	await catch_timer.timeout
-	player.visible = false
-	finish_game()
+	is_player_grabbed = true
 
 func game_playing(is_playing : bool):
 	player.set_physics_process(is_playing)
