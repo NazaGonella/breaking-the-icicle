@@ -465,7 +465,6 @@ texture = ExtResource("8_r1j7q")
 texture_scale = 0.8
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.05, 0.01, 0, 1)
 
 [node name="Duplicados" type="Node2D" parent="." node_paths=PackedStringArray("player", "tauro")]

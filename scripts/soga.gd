@@ -24,7 +24,8 @@ func _process(delta):
 				if share_tile(tauro.griddedpos,player.globalhistory[j]/32):
 					#print("tauro:",tauro.griddedpos,"player:",player.globalhistory[j]/32)
 					restos.append(player.globalhistory[j])
-					player.globalhistory=player.globalhistory.slice(j+1,len(player.globalhistory)-1)
+					player.tphistory.append(player.globalhistory[j+1])
+					player.globalhistory=player.globalhistory.slice(0,j-5)+player.globalhistory.slice(j+1,len(player.globalhistory)-1)
 					player.griddedhistory=player.griddedhistory.slice(i+1,len(player.griddedhistory)-1)
 
 					#print(player.globalhistory)
@@ -50,8 +51,8 @@ func _draw():
 		for s in strings:
 			draw_polyline(s, Color.DARK_RED, ANCHO_SOGA)
 		for casilla in restos:
-			draw_rect(Rect2(casilla.x+despl.x,casilla.y+despl.y,3,3),Color.DARK_RED)
-			draw_rect(Rect2(casilla.x+despl.x+10,casilla.y+despl.y+10,3,6),Color.DARK_RED)
+			draw_rect(Rect2(casilla.x+despl.x,casilla.y+despl.y,2,2),Color.DARK_RED)
+			draw_rect(Rect2(casilla.x+despl.x+10,casilla.y+despl.y+10,2,4),Color.DARK_RED)
 	
 func share_tile(vector1 : Vector2, vector2 : Vector2):
 	var dist : Vector2 = (vector2)-(vector1)
