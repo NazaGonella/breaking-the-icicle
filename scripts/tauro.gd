@@ -15,7 +15,8 @@ var playing_animation : bool = false
 
 var colliding_player : CharacterBody2D = null
 
-const SPEED = 45.0
+#const SPEED = 45.0
+const SPEED = 80.0
 const CHASE_SPEED = 100.0
 
 func _physics_process(delta):

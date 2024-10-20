@@ -8,7 +8,8 @@ signal grab_item
 signal kill_tauro
 
 var playing_animation : bool = false
-const SPEED : float = 30.0
+#const SPEED : float = 30.0
+const SPEED : float = 150.0
 
 var catched : bool = false
 
@@ -67,6 +68,8 @@ func colocar_ovillo():
 			globalhistory.append(mano.global_position)
 			#print(mano.global_position)
 			drawNow=true
+	else:
+		drawNow=true
 	if canSwitch and Input.is_action_just_pressed("interactuar"):
 		if hasOvillo:
 			hasOvillo=false
@@ -76,6 +79,7 @@ func colocar_ovillo():
 			hasOvillo=true
 			animated_sprite.animation="default"
 			grab_item.emit()
+		
 
 func _kill_tauro():
 	kill_tauro.emit()
