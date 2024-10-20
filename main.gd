@@ -4,6 +4,7 @@ extends Node2D
 @export var tauro : CharacterBody2D
 @export var catch_timer : Timer
 
+@export var canvas_modulate : CanvasModulate
 @export var exit_lights : Node2D
 @export var teleporters : Node2D
 @export var soga : Node2D
@@ -65,6 +66,7 @@ func after_tauro_killed():
 	# aca tendría que haber una transición
 	player.light.energy = 0
 	exit_lights.light_energy = 0
+	canvas_modulate.color.a = 255
 	faded_in = false
 	game_playing(false)
 	
