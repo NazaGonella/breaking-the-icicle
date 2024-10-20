@@ -17,7 +17,8 @@ var playing_animation : bool = false
 var colliding_player : CharacterBody2D = null
 
 #const SPEED = 45.0
-const SPEED = 80.0
+#const SPEED = 80.0
+const SPEED = 200
 const CHASE_SPEED = 150.0
 
 func _physics_process(delta):
@@ -42,7 +43,6 @@ func check_for_chase():
 				start_chase((r.get_collider().global_position - global_position).normalized())
 
 func start_chase(direction):
-	print("a")
 	#if not CHASING:
 		#temp_vel = direction * CHASE_SPEED
 	CHASING = true

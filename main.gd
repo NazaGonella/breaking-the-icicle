@@ -9,6 +9,8 @@ extends Node2D
 @export var soga : Node2D
 
 @onready var kill_animation_res : SpriteFrames = preload("res://kill_animation.tres")
+@onready var mino_muerto_texture : Texture = preload("res://assets/mino_muerto.png")
+@onready var mino_muerto_sprite_frame : SpriteFrames = preload("res://minotaur_corpse.tres")
 
 var is_player_grabbed : bool = false
 var is_tauro_killed : bool = false
@@ -34,6 +36,10 @@ func _process(delta):
 			player.light.energy = 0.7
 			faded_in = true
 			game_playing(true)
+		exit_lights.light_energy += 0.2 * delta * fade_speed
+		if exit_lights.light_energy >= 2:
+			exit_lights.light_energy = 2
+			#game_playing(true)
 		return
 	if is_player_grabbed:
 		if catch_timer.is_stopped():
@@ -41,12 +47,14 @@ func _process(delta):
 			catch_timer.start()
 		if is_tauro_killed:
 			after_tauro_killed()
+	
 
 func _on_catched_timer_timeout():
 	player.visible = false
 	finish_game(false)
 
 func after_tauro_killed():
+	#set_process(false)
 	catch_timer.stop()
 	tauro.visible = false
 	tauro.global_position = Vector2(5000, 5000)
@@ -55,6 +63,19 @@ func after_tauro_killed():
 	is_player_grabbed = false
 	
 	# aca tendría que haber una transición
+	player.light.energy = 0
+	exit_lights.light_energy = 0
+	faded_in = false
+	game_playing(false)
+	
+	var mino_muerto : AnimatedSprite2D = AnimatedSprite2D.new()
+	mino_muerto.sprite_frames = mino_muerto_sprite_frame
+	mino_muerto.play()
+	print(2 * Vector2(cos(player.rotation), sin(player.rotation)))
+	mino_muerto.global_position = player.global_position + 32 * Vector2(cos(player.rotation - PI/2), sin(player.rotation - PI/2))
+	add_child(mino_muerto)
+	move_child(mino_muerto, 2)
+	
 	teleporters.deactivate()
 	exit_lights.activate()
 	soga.remove_outer_drawings()
