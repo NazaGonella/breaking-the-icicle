@@ -69,6 +69,7 @@ Kill={
 2d_physics/layer_2="Tauro"
 2d_physics/layer_3="Pared"
 2d_physics/layer_4="Interactive"
+2d_physics/layer_5="Salida"
 
 [rendering]
 

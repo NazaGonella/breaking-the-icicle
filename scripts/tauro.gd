@@ -9,7 +9,7 @@ var griddedpos: Vector2i = Vector2i(0,0)
 @export var rotated_tauro : Node2D
 @export var patrulla_component : Node2D
 @export var raycasts : Node2D
-@export var reaction_timer : Timer
+#@export var reaction_timer : Timer
 
 var temp_vel = Vector2.ZERO
 var playing_animation : bool = false
@@ -18,7 +18,7 @@ var colliding_player : CharacterBody2D = null
 
 #const SPEED = 45.0
 const SPEED = 80.0
-const CHASE_SPEED = 100.0
+const CHASE_SPEED = 150.0
 
 func _physics_process(delta):
 	#print(reaction_timer.time_left)
@@ -42,12 +42,13 @@ func check_for_chase():
 				start_chase((r.get_collider().global_position - global_position).normalized())
 
 func start_chase(direction):
+	print("a")
 	#if not CHASING:
 		#temp_vel = direction * CHASE_SPEED
 	CHASING = true
-	if reaction_timer.is_stopped():
-		reaction_timer.start()
-	await reaction_timer.timeout
+	#if reaction_timer.is_stopped():
+		#reaction_timer.start()
+	#await reaction_timer.timeout
 	temp_vel = direction * CHASE_SPEED
 
 func reproducir_sonidos():

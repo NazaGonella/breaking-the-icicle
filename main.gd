@@ -4,6 +4,10 @@ extends Node2D
 @export var tauro : CharacterBody2D
 @export var catch_timer : Timer
 
+@export var exit_lights : Node2D
+@export var teleporters : Node2D
+@export var soga : Node2D
+
 @onready var kill_animation_res : SpriteFrames = preload("res://kill_animation.tres")
 
 var is_player_grabbed : bool = false
@@ -36,22 +40,29 @@ func _process(delta):
 			catch_timer.wait_time = 3
 			catch_timer.start()
 		if is_tauro_killed:
-			catch_timer.stop()
-			var old_tau_pos = tauro.global_position
-			tauro.visible = false
-			tauro.global_position = Vector2(5000, 5000)
-			#player.global_position = old_tau_pos
-			player.catched = false
-			player.animated_sprite.visible = true
-			is_player_grabbed = false
+			after_tauro_killed()
 
 func _on_catched_timer_timeout():
 	player.visible = false
 	finish_game(false)
 
+func after_tauro_killed():
+	catch_timer.stop()
+	tauro.visible = false
+	tauro.global_position = Vector2(5000, 5000)
+	player.catched = false
+	player.animated_sprite.visible = true
+	is_player_grabbed = false
+	
+	# aca tendría que haber una transición
+	teleporters.deactivate()
+	exit_lights.activate()
+	soga.remove_outer_drawings()
+
 func finish_game(killed_tauro : bool):
 	if not killed_tauro:
 		set_process(false)
+		# Tiempo para que se cierre el juego después de morir
 		catch_timer.wait_time = 2
 		catch_timer.start()
 		await catch_timer.timeout

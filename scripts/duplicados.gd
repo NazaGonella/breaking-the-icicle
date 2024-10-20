@@ -5,7 +5,7 @@ extends Node2D
 
 @onready var players : Node2D = $Players
 @onready var tauros : Node2D = $Tauros
-var despl : Array = [Vector2(-368-112,400-176),Vector2(592-112,432-176),Vector2(112-112,176-656),Vector2(-368-112,-80-176),Vector2(592-112,-48-176),Vector2(112-112,-304-176)]
+var despl : Array = [Vector2(-368-112,400-176),Vector2(592-112,432-176),Vector2(112-112,-(-304-176)),Vector2(-368-112,-80-176),Vector2(592-112,-48-176),Vector2(112-112,-304-176)]
 
 
 func _physics_process(delta):

@@ -61,3 +61,9 @@ func share_tile(vector1 : Vector2, vector2 : Vector2):
 	var dist : Vector2 = (vector2)-(vector1)
 	if dist.x<1 and dist.x>=0 and dist.y<1 and dist.y>=0:
 		return true
+
+func remove_outer_drawings():
+	var temp_espejos = []
+	for i in range(len(espejos)):
+		temp_espejos.append(Vector2(0,0))
+	espejos = temp_espejos

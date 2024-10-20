@@ -7,3 +7,7 @@ res://main.gd
 res://scripts/tauro.gd
 res://scripts/soga.gd
 res://scripts/patrulla_component.gd
+res://scripts/duplicados.gd
+res://teleporters.gd
+res://scripts/player.gd
+res://exit_lights.gd
