@@ -9,6 +9,7 @@ var griddedpos: Vector2i = Vector2i(0,0)
 @export var rotated_tauro : Node2D
 @export var patrulla_component : Node2D
 @export var raycasts : Node2D
+@export var reaction_timer : Timer
 
 var temp_vel = Vector2.ZERO
 var playing_animation : bool = false
@@ -20,6 +21,7 @@ const SPEED = 80.0
 const CHASE_SPEED = 100.0
 
 func _physics_process(delta):
+	print(reaction_timer.time_left)
 	griddedpos= Vector2i(global_position.x/32,global_position.y/32)
 	if not check_for_player():
 		reproducir_sonidos()
@@ -37,9 +39,16 @@ func check_for_chase():
 	for r in raycasts.get_children():
 		if r.is_colliding():
 			if r.get_collider().name == "Player":
-				if not CHASING:
-					temp_vel = (r.get_collider().global_position - global_position).normalized() * CHASE_SPEED
-				CHASING = true
+				start_chase((r.get_collider().global_position - global_position).normalized())
+
+func start_chase(direction):
+	#if not CHASING:
+		#temp_vel = direction * CHASE_SPEED
+	CHASING = true
+	if reaction_timer.is_stopped():
+		reaction_timer.start()
+	await  reaction_timer.timeout
+	temp_vel = direction * CHASE_SPEED
 
 func reproducir_sonidos():
 	# checkear si velocity.length != 0 y reproducir sonido de pisadas

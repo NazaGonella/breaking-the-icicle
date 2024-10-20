@@ -443,7 +443,6 @@ mano = NodePath("Mano")
 light = NodePath("PointLight2D")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(4, 4)
 position_smoothing_speed = 16.0
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Player"]
@@ -466,6 +465,7 @@ texture = ExtResource("8_r1j7q")
 texture_scale = 0.8
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0.05, 0.01, 0, 1)
 
 [node name="Duplicados" type="Node2D" parent="." node_paths=PackedStringArray("player", "tauro")]
@@ -549,7 +549,7 @@ texture = ExtResource("13_r6wwb")
 position = Vector2(240, -240)
 texture = ExtResource("13_r6wwb")
 
-[node name="Tauro" type="CharacterBody2D" parent="." node_paths=PackedStringArray("sprite", "rotated_tauro", "patrulla_component", "raycasts")]
+[node name="Tauro" type="CharacterBody2D" parent="." node_paths=PackedStringArray("sprite", "rotated_tauro", "patrulla_component", "raycasts", "reaction_timer")]
 position = Vector2(240, 240)
 collision_layer = 2
 collision_mask = 4
@@ -558,6 +558,7 @@ sprite = NodePath("RotatedTauro/Sprite2D")
 rotated_tauro = NodePath("RotatedTauro")
 patrulla_component = NodePath("PatrullaComponent")
 raycasts = NodePath("RotatedTauro/Raycasts")
+reaction_timer = NodePath("ReactionTimer")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tauro"]
@@ -617,6 +618,9 @@ timer = NodePath("Timer")
 [node name="Timer" type="Timer" parent="Tauro/PatrullaComponent"]
 wait_time = 0.05
 one_shot = true
+
+[node name="ReactionTimer" type="Timer" parent="Tauro"]
+wait_time = 2.0
 
 [node name="TauroCheckpoints" type="Node2D" parent="."]
 

@@ -23,7 +23,7 @@ func _ready():
 func _process(delta):
 	#print(catch_timer.time_left)
 	#print("pos: ", player.global_position)
-	print(catch_timer.time_left)
+	#print(catch_timer.time_left)
 	if not faded_in:
 		player.light.energy += 0.1 * delta * fade_speed
 		if player.light.energy >= 0.7:
@@ -50,7 +50,8 @@ func _on_catched_timer_timeout():
 	finish_game(false)
 
 func finish_game(killed_tauro : bool):
-	if killed_tauro:
+	if not killed_tauro:
+		set_process(false)
 		catch_timer.wait_time = 2
 		catch_timer.start()
 		await catch_timer.timeout
