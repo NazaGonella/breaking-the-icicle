@@ -1,12 +1,12 @@
 extends Node2D
 
-@onready var main_menu: Control = $Menus/MainMenu
+@onready var main_menu: Control = $CanvasLayer/Menus/MainMenu
 #@onready var game_scene : Node2D = $game
 #@onready var camera : Camera2D = $Camera2D
-@onready var options_menu : Control = $Menus/OptionsMenu
-@onready var pause_menu : Control = $Menus/PauseMenu
+@onready var options_menu : Control = $CanvasLayer/Menus/OptionsMenu
+@onready var pause_menu : Control = $CanvasLayer/Menus/PauseMenu
 @onready var button_switching = $button_switching
-@onready var menus = $Menus
+@onready var menus = $CanvasLayer/Menus
 
 var game_scene : Node2D = null
 
@@ -35,6 +35,7 @@ func game_started():
 	#camera.visible = true
 	main_menu.hide()
 	game_scene = preloaded_game_scene.instantiate()
+	game_scene.process_mode = Node.PROCESS_MODE_PAUSABLE
 	add_child(game_scene)
 	
 func reload_pause_menu(): 
@@ -67,7 +68,8 @@ func reopen_main_menu():
 
 func _process(_delta):
 	if game_scene:
-		if Input.is_action_just_pressed("pausa"): 
+		if Input.is_action_just_pressed("Pausa"):
+			#print("hola")
 			button_switching.play()
 			pause()
 
@@ -79,5 +81,5 @@ func pause():
 	else: 
 		get_tree().paused = false
 		pause_menu.hide()
-		
+	#print(get_tree().paused)
 		

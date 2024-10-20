@@ -11,32 +11,34 @@
 process_mode = 3
 script = ExtResource("1_q5g2e")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="button_switching" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_truni")
 volume_db = 20.662
 
-[node name="Menus" type="Control" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Menus" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="GameOver" parent="Menus" instance=ExtResource("3_yjqnw")]
+[node name="GameOver" parent="CanvasLayer/Menus" instance=ExtResource("3_yjqnw")]
+visible = false
 layout_mode = 1
 offset_right = 984.0
 offset_bottom = 856.0
 
-[node name="MainMenu" parent="Menus" instance=ExtResource("4_642k5")]
+[node name="MainMenu" parent="CanvasLayer/Menus" instance=ExtResource("4_642k5")]
 layout_mode = 1
 offset_left = 0.0
 offset_right = 984.0
 offset_bottom = 856.0
 
-[node name="PauseMenu" parent="Menus" instance=ExtResource("5_b16rx")]
-visible = false
+[node name="PauseMenu" parent="CanvasLayer/Menus" instance=ExtResource("5_b16rx")]
 layout_mode = 1
 
-[node name="OptionsMenu" parent="Menus" instance=ExtResource("6_6uohw")]
+[node name="OptionsMenu" parent="CanvasLayer/Menus" instance=ExtResource("6_6uohw")]
 visible = false
 layout_mode = 1
 offset_right = 984.0
