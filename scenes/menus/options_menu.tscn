@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ixw4qiyfr64k"]
+[gd_scene load_steps=4 format=3 uid="uid://ixw4qiyfr64k"]
 
 [ext_resource type="FontFile" uid="uid://cxrjbihbo0njl" path="res://fonts/kenney_kenney-fonts/Fonts/Kenney High.ttf" id="1_0w5ht"]
 [ext_resource type="Script" path="res://scripts/menus/options_menu.gd" id="1_mv8d3"]
+[ext_resource type="Theme" uid="uid://clckg0a47ipn8" path="res://assets/botones.tres" id="3_4plxo"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -74,6 +75,7 @@ size_flags_vertical = 0
 
 [node name="volver" type="Button" parent="MarginContainer/VBoxContainer/botones"]
 layout_mode = 2
+theme = ExtResource("3_4plxo")
 theme_override_fonts/font = ExtResource("1_0w5ht")
 theme_override_font_sizes/font_size = 42
 text = "Volver"

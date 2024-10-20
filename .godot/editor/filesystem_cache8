@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1729386885
+::res://::1729390779
 icon.svg::CompressedTexture2D::218410147992761830::1729288364::1729288760::1::::<><>::
-main.gd::GDScript::-1::1729381322::0::1::::<>Node2D<>::
-main.tscn::PackedScene::4228501162161572019::1729386782::0::1::::<><>::res://main.gd<>uid://bop8ulvpw1vh5::::res://scenes/game_scene.tscn<>uid://cik1otii6myr3::::res://scenes/menus/game_over.tscn<>uid://ixw4qiyfr64k::::res://scenes/menus/options_menu.tscn<>uid://dsqthxqvefxlr::::res://scenes/menus/pause_menu.tscn<>uid://dhgjyuu76ffv8::::res://scenes/menus/main_menu.tscn<>uid://um8mmg471h7m::::res://assets/sounds/mouse_hover.ogg
+main.gd::GDScript::-1::1729389830::0::1::::<>Node2D<>::
+main.tscn::PackedScene::4228501162161572019::1729390779::0::1::::<><>::res://main.gd<>uid://bop8ulvpw1vh5::::res://scenes/game_scene.tscn<>uid://cik1otii6myr3::::res://scenes/menus/game_over.tscn<>uid://ixw4qiyfr64k::::res://scenes/menus/options_menu.tscn<>uid://dsqthxqvefxlr::::res://scenes/menus/pause_menu.tscn<>uid://dhgjyuu76ffv8::::res://scenes/menus/main_menu.tscn<>uid://um8mmg471h7m::::res://assets/sounds/mouse_hover.ogg
 player.gd::GDScript::-1::1729374567::0::1::::<>CharacterBody2D<>::
 README.md::TextFile::-1::1729288364::0::1::::<><>::
 ::res://assets/::1729382736
@@ -12,7 +12,7 @@ player.png::CompressedTexture2D::3853370360586435676::1729288364::1729288364::1:
 player_punch.png::CompressedTexture2D::3518566408435497270::1729288364::1729288364::1::::<><>::
 ::res://assets/asepritefiles/::1729352274
 tilemap_white_packed.png::CompressedTexture2D::2229844753380586262::1707070744::1729352274::1::::<><>::
-::res://assets/sounds/::1729387177
+::res://assets/sounds/::1729387235
 button_switching.ogg::AudioStreamOggVorbis::4649795944380693040::1729312745::1729313452::1::::<><>::
 button_switching.wav::AudioStreamWAV::8080040404041241933::1729312505::1729313452::1::::<><>::
 button_switching_audacity.ogg::AudioStreamOggVorbis::4943120514559113808::1729313361::1729313452::1::::<><>::
@@ -51,18 +51,21 @@ Kenney Pixel Square.ttf::FontFile::173403162636443594::1729217949::1729288760::1
 Kenney Pixel.ttf::FontFile::330394504395347440::1729217949::1729288760::1::::<><>::
 Kenney Rocket Square.ttf::FontFile::7671915616807192104::1729217949::1729288760::1::::<><>::
 Kenney Rocket.ttf::FontFile::5890026179401830720::1729217949::1729288760::1::::<><>::
-::res://scenes/::1729386698
-game_scene.tscn::PackedScene::3402070148485563824::1729386698::0::1::::<><>::uid://dd2gh2ti6h23::::res://icon.svg<>res://player.gd<>uid://bqeojlr7a8ggk::::res://assets/player_punch.png
-::res://scenes/menus/::1729386845
-game_over.tscn::PackedScene::5356600547665153422::1729386697::0::1::::<><>::
-main_menu.tscn::PackedScene::7663560617917158423::1729386697::0::1::::<><>::uid://bwp50pxnj3jro::::res://scripts/themes/default_theme.tres<>res://scripts/menus/main_menu.gd<>uid://duc7vbwhatvpe::::res://assets/ia_battle.png<>res://assets/background_animation.ogv<>uid://cxrjbihbo0njl::::res://fonts/kenney_kenney-fonts/Fonts/Kenney High.ttf<>uid://um8mmg471h7m::::res://assets/sounds/mouse_hover.ogg<>uid://bd6d6v05782bw::::res://assets/sounds/Clic03.ogg
-options_menu.tscn::PackedScene::610379853141612600::1729386845::0::1::::<><>::uid://cxrjbihbo0njl::::res://fonts/kenney_kenney-fonts/Fonts/Kenney High.ttf<>res://scripts/menus/options_menu.gd
-pause_menu.tscn::PackedScene::8456858637762376299::1729386697::0::1::::<><>::res://scripts/menus/pause_menu.gd<>uid://cxrjbihbo0njl::::res://fonts/kenney_kenney-fonts/Fonts/Kenney High.ttf<>uid://61fhng54q71s::::res://assets/asepritefiles/tilemap_white_packed.png<>uid://bd6d6v05782bw::::res://assets/sounds/Clic03.ogg<>uid://um8mmg471h7m::::res://assets/sounds/mouse_hover.ogg
+::res://scenes/::1729390779
+game_scene.tscn::PackedScene::3402070148485563824::1729390779::0::1::::<><>::uid://dd2gh2ti6h23::::res://icon.svg<>res://player.gd<>uid://bqeojlr7a8ggk::::res://assets/player_punch.png
+::res://scenes/menus/::1729390779
+game_over.tscn::PackedScene::5356600547665153422::1729390779::0::1::::<><>::
+main_menu.tscn::PackedScene::7663560617917158423::1729391077::0::1::::<><>::uid://bwp50pxnj3jro::::res://scripts/themes/default_theme.tres<>res://scripts/menus/main_menu.gd<>uid://duc7vbwhatvpe::::res://assets/ia_battle.png<>res://assets/background_animation.ogv<>uid://cxrjbihbo0njl::::res://fonts/kenney_kenney-fonts/Fonts/Kenney High.ttf<>uid://um8mmg471h7m::::res://assets/sounds/mouse_hover.ogg<>uid://bd6d6v05782bw::::res://assets/sounds/Clic03.ogg
+options_menu.tscn::PackedScene::610379853141612600::1729390779::0::1::::<><>::uid://cxrjbihbo0njl::::res://fonts/kenney_kenney-fonts/Fonts/Kenney High.ttf<>res://scripts/menus/options_menu.gd
+pause_menu.tscn::PackedScene::8456858637762376299::1729390779::0::1::::<><>::res://scripts/menus/pause_menu.gd<>uid://cxrjbihbo0njl::::res://fonts/kenney_kenney-fonts/Fonts/Kenney High.ttf<>uid://61fhng54q71s::::res://assets/asepritefiles/tilemap_white_packed.png<>uid://bd6d6v05782bw::::res://assets/sounds/Clic03.ogg<>uid://um8mmg471h7m::::res://assets/sounds/mouse_hover.ogg
+botones.tres::Theme::3183795395238742535::1729391094::0::1::::<><>::
+world_environment.tscn::PackedScene::495278642413447377::1729389834::0::1::::<><>::
 ::res://scripts/::1729294119
 menu.gd::GDScript::-1::1729294119::0::1::::<>Control<>::
-::res://scripts/menus/::1729382961
-main_menu.gd::GDScript::-1::1729378492::0::1::::<>Control<>::
-options_menu.gd::GDScript::-1::1729382961::0::1::::<>Control<>::
-pause_menu.gd::GDScript::-1::1729381297::0::1::::<>Control<>::
+::res://scripts/menus/::1729389111
+main_menu.gd::GDScript::-1::1729387239::0::1::::<>Control<>::
+options_menu.gd::GDScript::-1::1729389055::0::1::::<>Control<>::
+pause_menu.gd::GDScript::-1::1729389111::0::1::::<>Control<>::
+brilloSlider.gd::GDScript::-1::1729388866::0::1::::<>HSlider<>::
 ::res://scripts/themes/::1729223729
 default_theme.tres::Theme::3963407888655879236::1729223729::0::1::::<><>::

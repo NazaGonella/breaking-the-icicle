@@ -61,7 +61,7 @@ func reopen_main_menu():
 	get_tree().reload_current_scene()
 
 
-func _process(delta):
+func _process(_delta):
 	if game_scene.visible:
 		if Input.is_action_just_pressed("pausa"): 
 			button_switching.play()

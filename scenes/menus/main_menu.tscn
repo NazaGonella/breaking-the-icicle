@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhgjyuu76ffv8"]
+[gd_scene load_steps=9 format=3 uid="uid://dhgjyuu76ffv8"]
 
 [ext_resource type="Theme" uid="uid://bwp50pxnj3jro" path="res://scripts/themes/default_theme.tres" id="1_fbkf6"]
 [ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="2_bjjfn"]
@@ -6,6 +6,7 @@
 [ext_resource type="VideoStream" path="res://assets/background_animation.ogv" id="4_6l8oe"]
 [ext_resource type="FontFile" uid="uid://cxrjbihbo0njl" path="res://fonts/kenney_kenney-fonts/Fonts/Kenney High.ttf" id="4_rsa7s"]
 [ext_resource type="AudioStream" uid="uid://um8mmg471h7m" path="res://assets/sounds/mouse_hover.ogg" id="5_axtv3"]
+[ext_resource type="Theme" uid="uid://clckg0a47ipn8" path="res://assets/botones.tres" id="6_2karj"]
 [ext_resource type="AudioStream" uid="uid://bd6d6v05782bw" path="res://assets/sounds/Clic03.ogg" id="6_trhj6"]
 
 [node name="MainMenu" type="Control"]
@@ -86,6 +87,7 @@ focus_neighbor_top = NodePath("../QuitGameButton")
 focus_neighbor_bottom = NodePath("../OptionsButton")
 focus_next = NodePath("../OptionsButton")
 focus_previous = NodePath("../QuitGameButton")
+theme = ExtResource("6_2karj")
 theme_override_fonts/font = ExtResource("4_rsa7s")
 theme_override_font_sizes/font_size = 42
 text = "Jugar"
@@ -93,6 +95,7 @@ text = "Jugar"
 [node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("6_2karj")
 theme_override_fonts/font = ExtResource("4_rsa7s")
 theme_override_font_sizes/font_size = 42
 text = "Opciones"
@@ -105,6 +108,7 @@ focus_neighbor_top = NodePath("../OptionsButton")
 focus_neighbor_bottom = NodePath("../StartGame")
 focus_next = NodePath("../StartGame")
 focus_previous = NodePath("../StartGame")
+theme = ExtResource("6_2karj")
 theme_override_fonts/font = ExtResource("4_rsa7s")
 theme_override_font_sizes/font_size = 42
 text = "Salir"
