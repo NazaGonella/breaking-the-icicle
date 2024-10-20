@@ -8,8 +8,8 @@ signal grab_item
 signal kill_tauro
 
 var playing_animation : bool = false
-const SPEED : float = 30.0
-#const SPEED : float = 150.0
+#const SPEED : float = 30.0
+const SPEED : float = 150.0
 
 var catched : bool = false
 

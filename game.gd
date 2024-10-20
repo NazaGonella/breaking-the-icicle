@@ -28,9 +28,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#print(catch_timer.time_left)
-	#print("pos: ", player.global_position)
-	#print(catch_timer.time_left)
 	if not faded_in:
 		player.light.energy += 0.1 * delta * fade_speed
 		if player.light.energy >= 0.7:
@@ -44,7 +41,6 @@ func _process(delta):
 		return
 	if is_player_grabbed:
 		if catch_timer.is_stopped():
-			catch_timer.wait_time = 3
 			catch_timer.start()
 		if is_tauro_killed:
 			after_tauro_killed()
@@ -58,6 +54,7 @@ func after_tauro_killed():
 	#set_process(false)
 	catch_timer.stop()
 	tauro.visible = false
+	var dead_body_pos = tauro.griddedpos
 	tauro.global_position = Vector2(5000, 5000)
 	player.catched = false
 	player.animated_sprite.visible = true
@@ -74,7 +71,9 @@ func after_tauro_killed():
 	mino_muerto.sprite_frames = mino_muerto_sprite_frame
 	mino_muerto.play()
 	print(2 * Vector2(cos(player.rotation), sin(player.rotation)))
-	mino_muerto.global_position = player.global_position + 32 * Vector2(cos(player.rotation - PI/2), sin(player.rotation - PI/2))
+	#mino_muerto.global_position = player.global_position + 32 * Vector2(cos(player.rotation - PI/2), sin(player.rotation - PI/2))
+	mino_muerto.global_position = (dead_body_pos * 32 ) + Vector2i(16, 16)
+	#mino_muerto.global_position = player.global_position
 	add_child(mino_muerto)
 	move_child(mino_muerto, 2)
 	

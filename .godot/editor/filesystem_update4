@@ -12,3 +12,5 @@ res://teleporters.gd
 res://scripts/player.gd
 res://exit_lights.gd
 res://minotaur_corpse.tres
+res://scripts/item.gd
+res://game.gd

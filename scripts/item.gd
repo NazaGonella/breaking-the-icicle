@@ -5,7 +5,7 @@ extends Area2D
 var item_on_ground : String = "ESPADA"
 
 @onready var espada_texture : Texture = preload("res://assets/espada.png")
-@onready var soga_texture : Texture = preload("res://assets/soga.png")
+@onready var soga_texture : Texture = preload("res://assets/ovillo.png")
 
 func _on_body_entered(body):
 	if body.name == "Player":
