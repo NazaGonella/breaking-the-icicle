@@ -21,7 +21,7 @@ const SPEED = 80.0
 const CHASE_SPEED = 100.0
 
 func _physics_process(delta):
-	print(reaction_timer.time_left)
+	#print(reaction_timer.time_left)
 	griddedpos= Vector2i(global_position.x/32,global_position.y/32)
 	if not check_for_player():
 		reproducir_sonidos()
@@ -47,7 +47,7 @@ func start_chase(direction):
 	CHASING = true
 	if reaction_timer.is_stopped():
 		reaction_timer.start()
-	await  reaction_timer.timeout
+	await reaction_timer.timeout
 	temp_vel = direction * CHASE_SPEED
 
 func reproducir_sonidos():

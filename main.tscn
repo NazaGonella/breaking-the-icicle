@@ -620,7 +620,7 @@ wait_time = 0.05
 one_shot = true
 
 [node name="ReactionTimer" type="Timer" parent="Tauro"]
-wait_time = 2.0
+one_shot = true
 
 [node name="TauroCheckpoints" type="Node2D" parent="."]
 
