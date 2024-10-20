@@ -12,6 +12,7 @@ var playing_animation : bool = false
 const SPEED : float = 150.0
 
 @export var sound : AudioStreamPlayer2D
+#@onready var kill_action = $CanvasLayer/killAction
 
 var walking_sound = preload("res://assets/sounds2/teseo.mp3")
 var slash2_sound = preload("res://assets/sounds2/pickupsword.mp3")
@@ -30,12 +31,12 @@ var hasOvillo: bool = true
 
 func _physics_process(delta):
 	#print(hasOvillo)
-	if velocity != Vector2.ZERO:
-		if sound.playing == false:
-			sound.stream = walking_sound
-			sound.play()
-	else:
-		sound.stream = null
+	#if velocity != Vector2.ZERO:
+		#if sound.playing == false:
+			#sound.stream = walking_sound
+			#sound.play()
+	#else:
+		#sound.stream = null
 	colocar_ovillo()
 	if not catched:
 		var velocity_length = handle_movement()
@@ -44,6 +45,7 @@ func _physics_process(delta):
 		handle_animations()
 		move_and_slide()
 	elif not hasOvillo:
+		#kill_action.visible = true
 		if Input.is_action_just_pressed("Kill"):
 			_kill_tauro()
 
@@ -93,7 +95,12 @@ func colocar_ovillo():
 			animated_sprite.animation="default"
 			get_parent().play_sound(soga_sound)
 			grab_item.emit()
-		
 
 func _kill_tauro():
 	kill_tauro.emit()
+
+#func show_kill_action():
+	#kill_action.show
+	
+#func hide_kill_action():
+	#kill_action.hide()

@@ -2,6 +2,11 @@ extends Node2D
 
 signal go_to_menu
 
+@export var wasd : Control
+@export var esc : Node2D
+@export var kill_action_button : Sprite2D
+var kill_action_button_freed = false
+
 @export var player : CharacterBody2D
 @export var tauro : CharacterBody2D
 @export var catch_timer : Timer
@@ -34,6 +39,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if not kill_action_button_freed:
+		kill_action_button.global_position = player.global_position + Vector2(16 * 3, -16 * 3)
 	if not faded_in:
 		player.light.energy += 0.1 * delta * fade_speed
 		if player.light.energy >= 0.7:
@@ -45,6 +52,13 @@ func _process(delta):
 			exit_lights.light_energy = 2
 			#game_playing(true)
 		return
+	else:
+		wasd.visible = false
+		esc.visible = false
+		#if wasd:
+			#wasd.queue_free()
+		#if esc:
+			#esc.queue_free()
 	if is_player_grabbed:
 		if catch_timer.is_stopped():
 			catch_timer.start()
@@ -53,6 +67,7 @@ func _process(delta):
 			after_tauro_killed()
 
 func _on_catched_timer_timeout():
+	player.hide_kill_action()
 	player.visible = false
 	play_sound(crush_sound)
 	finish_game(false)
@@ -77,6 +92,9 @@ func after_tauro_killed():
 	#var mino_muerto : AnimatedSprite2D = AnimatedSprite2D.new()
 	#mino_muerto.sprite_frames = mino_muerto_sprite_frame
 	#mino_muerto.play()
+	kill_action_button.visible = false
+	#kill_action_button.queue_free()
+	kill_action_button_freed = true
 	var mino_muerto : Sprite2D = Sprite2D.new()
 	mino_muerto.texture = preload("res://assets/mino_muerto.png")
 	#print(2 * Vector2(cos(player.rotation), sin(player.rotation)))
@@ -84,7 +102,8 @@ func after_tauro_killed():
 	mino_muerto.global_position = (dead_body_pos * 32 ) + Vector2i(16, 16)
 	#mino_muerto.global_position = player.global_position
 	add_child(mino_muerto)
-	move_child(mino_muerto, 2)
+	move_child(mino_muerto, 5)
+	
 	
 	teleporters.deactivate()
 	exit_lights.activate()
@@ -107,6 +126,8 @@ func kill_tauro():
 func grabbed_player():
 	#tauro.sprite.stop()
 	#colliding_player.visible = false
+	#player.show_kill_action()
+	kill_action_button.visible = true
 	tauro.change_sonido_to(null, false)
 	tauro.set_physics_process(false)
 	player.catched = true

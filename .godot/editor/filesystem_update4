@@ -10,3 +10,5 @@ res://raiz_menu.gd
 res://scenes/ambiente.tscn
 res://assets/raiz_menu.tscn
 res://default_bus_layout.tres
+res://scripts/item.gd
+res://scripts/menus/options_menu.gd

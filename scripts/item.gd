@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var sprite : Sprite2D
+@onready var pick_up_action_signal : TextureRect = $pick_up
 
 var item_on_ground : String = "ESPADA"
 
@@ -11,11 +12,13 @@ func _on_body_entered(body):
 	if body.name == "Player":
 		body.canSwitch = true
 		body.grab_item.connect(cambiar_sprite)
+		pick_up_action_signal.visible = true
 		
 
 func _on_body_exited(body):
 	if body.name == "Player":
 		body.canSwitch = false
+		pick_up_action_signal.visible = false
 
 func cambiar_sprite():
 	if item_on_ground == "ESPADA":

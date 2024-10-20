@@ -26,6 +26,7 @@ func _ready():
 	for menu in menus.get_children(): 
 		if menu == main_menu: 
 			menu.visible = true
+			menu.refocus()
 		else: 
 			menu.visible = false
 	#camera.visible = false

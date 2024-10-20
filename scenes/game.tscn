@@ -1,10 +1,15 @@
-[gd_scene load_steps=77 format=3 uid="uid://b1ik2ctx5ysx4"]
+[gd_scene load_steps=84 format=3 uid="uid://b1ik2ctx5ysx4"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_3pu6e"]
+[ext_resource type="Texture2D" uid="uid://dpgkc14ewvct3" path="res://assets/teclas/tile_0086.png" id="2_7uo0p"]
 [ext_resource type="Texture2D" uid="uid://cv0yc8xfobx27" path="res://assets/piso_01.png" id="2_q236j"]
+[ext_resource type="Texture2D" uid="uid://by7m54drrpr4h" path="res://assets/teclas/tile_0017.png" id="2_wj1nq"]
+[ext_resource type="Texture2D" uid="uid://b1n6wyh57cguw" path="res://assets/teclas/tile_0120.png" id="3_5xigu"]
 [ext_resource type="Texture2D" uid="uid://c3c67e56ssvml" path="res://assets/fondo.png" id="3_bfano"]
+[ext_resource type="Texture2D" uid="uid://c1c40fl7c6ikp" path="res://assets/teclas/tile_0121.png" id="4_8t8ys"]
 [ext_resource type="Script" path="res://scripts/soga.gd" id="4_shlr5"]
 [ext_resource type="Texture2D" uid="uid://c4q33xi6w710e" path="res://assets/muro.png" id="5_77ba7"]
+[ext_resource type="Texture2D" uid="uid://c7jbyyynslm6f" path="res://assets/teclas/tile_0122.png" id="5_ke5gu"]
 [ext_resource type="Texture2D" uid="uid://bnxaijpkuhu6s" path="res://assets/muros_3.png" id="6_qmg12"]
 [ext_resource type="Texture2D" uid="uid://c3p0fwjpxxu12" path="res://assets/muros_4.png" id="7_0aafh"]
 [ext_resource type="Texture2D" uid="uid://b6kgfqs0rwms5" path="res://assets/muros_2.png" id="8_tt4bh"]
@@ -17,12 +22,14 @@
 [ext_resource type="Texture2D" uid="uid://b2hi1xcjkheo5" path="res://assets/Prota wenardo con cuchillo.png" id="15_ry13l"]
 [ext_resource type="Texture2D" uid="uid://cxidut0x032cc" path="res://assets/Prota_wenardo_caminando.png" id="16_o7ejy"]
 [ext_resource type="Script" path="res://scripts/duplicados.gd" id="17_1dvoj"]
+[ext_resource type="Texture2D" uid="uid://by3b0ceg5rmj5" path="res://assets/teclas/tile_0123.png" id="18_fsvsk"]
 [ext_resource type="Texture2D" uid="uid://dp5jf6p2djomn" path="res://assets/mino_corre.png" id="18_nexxf"]
 [ext_resource type="Script" path="res://scripts/tauro.gd" id="19_6qwbs"]
 [ext_resource type="AudioStream" uid="uid://dr7lph748vsl" path="res://assets/sounds2/robot-heavy-mechanical-footsteps-194039.mp3" id="20_urmk5"]
 [ext_resource type="Texture2D" uid="uid://cg7eiwkxwxp1l" path="res://assets/mino_caminata.png" id="20_ybsii"]
 [ext_resource type="Script" path="res://scripts/patrulla_component.gd" id="21_70qtj"]
 [ext_resource type="Script" path="res://scripts/tauro_checkpoint.gd" id="22_jhj7p"]
+[ext_resource type="Texture2D" uid="uid://bdtqw7v46b5gw" path="res://assets/teclas/tile_0156.png" id="23_bvt3l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v0psn"]
 texture = ExtResource("2_q236j")
@@ -451,8 +458,11 @@ animations = [{
 radius = 13.0
 height = 40.0
 
-[node name="game" type="Node2D" node_paths=PackedStringArray("player", "tauro", "catch_timer", "instant_sound", "canvas_modulate", "exit_lights", "teleporters", "soga")]
+[node name="game" type="Node2D" node_paths=PackedStringArray("wasd", "esc", "kill_action_button", "player", "tauro", "catch_timer", "instant_sound", "canvas_modulate", "exit_lights", "teleporters", "soga")]
 script = ExtResource("1_3pu6e")
+wasd = NodePath("wasd")
+esc = NodePath("esc")
+kill_action_button = NodePath("X")
 player = NodePath("Player")
 tauro = NodePath("Tauro")
 catch_timer = NodePath("CatchedTimer")
@@ -461,6 +471,58 @@ canvas_modulate = NodePath("CanvasModulate")
 exit_lights = NodePath("Laberinto/ExitLights")
 teleporters = NodePath("Laberinto/Teleporters")
 soga = NodePath("Laberinto/Soga")
+
+[node name="esc" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(144, 143)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_wj1nq")
+metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="esc"]
+position = Vector2(-1.90735e-06, 1.90735e-06)
+scale = Vector2(0.1125, 0.1125)
+color = Color(1, 1, 0.682353, 1)
+texture = ExtResource("11_wljn1")
+
+[node name="wasd" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 117.0
+offset_top = 215.0
+offset_right = 159.0
+offset_bottom = 255.0
+metadata/_edit_group_ = true
+
+[node name="w" type="Sprite2D" parent="wasd"]
+z_index = 2
+position = Vector2(22, 18)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_7uo0p")
+
+[node name="a" type="Sprite2D" parent="wasd"]
+z_index = 2
+position = Vector2(10, 30)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_5xigu")
+
+[node name="s" type="Sprite2D" parent="wasd"]
+z_index = 2
+position = Vector2(22, 30)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_8t8ys")
+
+[node name="d" type="Sprite2D" parent="wasd"]
+z_index = 2
+position = Vector2(34, 30)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("5_ke5gu")
+
+[node name="PointLight2D" type="PointLight2D" parent="wasd"]
+position = Vector2(21, 24)
+scale = Vector2(0.25, 0.175)
+color = Color(1, 1, 0.682353, 1)
+texture = ExtResource("11_wljn1")
 
 [node name="InstantSounds" type="AudioStreamPlayer" parent="."]
 volume_db = -5.0
@@ -696,6 +758,16 @@ shape = SubResource("RectangleShape2D_8boyr")
 position = Vector2(-16, 400)
 shape = SubResource("RectangleShape2D_8boyr")
 
+[node name="X" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-789, -613)
+texture = ExtResource("23_bvt3l")
+
+[node name="PointLight2D" type="PointLight2D" parent="X"]
+scale = Vector2(0.25, 0.175)
+color = Color(1, 1, 0.682353, 1)
+texture = ExtResource("11_wljn1")
+
 [node name="Item" type="Area2D" parent="." node_paths=PackedStringArray("sprite")]
 position = Vector2(464, 400)
 collision_layer = 8
@@ -708,6 +780,22 @@ texture = ExtResource("13_cfymd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Item"]
 shape = SubResource("RectangleShape2D_jprmb")
 
+[node name="pick_up" type="TextureRect" parent="Item"]
+visible = false
+offset_left = -7.0
+offset_top = -37.0
+offset_right = 9.0
+offset_bottom = -21.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("18_fsvsk")
+metadata/_edit_group_ = true
+
+[node name="PointLight2D2" type="PointLight2D" parent="Item/pick_up"]
+position = Vector2(7.5, 7.49999)
+scale = Vector2(0.117188, 0.117187)
+color = Color(1, 1, 0.682353, 1)
+texture = ExtResource("11_wljn1")
+
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animated_sprite", "mano", "light", "sound")]
 position = Vector2(176, 176)
 collision_mask = 28
@@ -715,15 +803,14 @@ script = ExtResource("14_urdup")
 animated_sprite = NodePath("Sprite2D")
 mano = NodePath("Mano")
 light = NodePath("PointLight2D")
-sound = NodePath("AudioStreamPlayer2D")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
+sound = NodePath("")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="Player"]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
 position_smoothing_speed = 16.0
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Player"]
 rotation = 3.14159
