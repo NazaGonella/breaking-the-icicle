@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://8wk01cw8kc5x"]
+[gd_scene load_steps=8 format=3 uid="uid://8wk01cw8kc5x"]
 
 [ext_resource type="Script" path="res://raiz_menu.gd" id="1_q5g2e"]
 [ext_resource type="AudioStream" uid="uid://um8mmg471h7m" path="res://assets/sounds/mouse_hover.ogg" id="2_truni"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dhgjyuu76ffv8" path="res://scenes/menus/main_menu.tscn" id="4_642k5"]
 [ext_resource type="PackedScene" uid="uid://dsqthxqvefxlr" path="res://scenes/menus/pause_menu.tscn" id="5_b16rx"]
 [ext_resource type="PackedScene" uid="uid://ixw4qiyfr64k" path="res://scenes/menus/options_menu.tscn" id="6_6uohw"]
+[ext_resource type="VideoStream" path="res://videos/VideoTadeoFile.ogv" id="7_t3ein"]
 
 [node name="RaizMenu" type="Node2D"]
 process_mode = 3
@@ -43,3 +44,11 @@ visible = false
 layout_mode = 1
 offset_right = 984.0
 offset_bottom = 856.0
+
+[node name="VideoTadeo" type="VideoStreamPlayer" parent="CanvasLayer/Menus"]
+visible = false
+offset_right = 1024.0
+offset_bottom = 896.0
+stream = ExtResource("7_t3ein")
+
+[connection signal="finished" from="CanvasLayer/Menus/VideoTadeo" to="." method="_on_video_stream_player_2_finished"]

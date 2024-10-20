@@ -8,3 +8,5 @@ res://raiz_menu.gd
 res://scenes/menus/pause_menu.tscn
 res://scenes/menus/main_menu.tscn
 res://scenes/menus/options_menu.tscn
+res://scripts/player.gd
+res://scenes/video_tadeo.tscn

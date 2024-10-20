@@ -710,6 +710,7 @@ mano = NodePath("Mano")
 light = NodePath("PointLight2D")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(4, 4)
 position_smoothing_speed = 16.0
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Player"]
@@ -732,7 +733,6 @@ texture = ExtResource("11_wljn1")
 texture_scale = 0.8
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.0509804, 0.0117647, 0, 0.960784)
 
 [node name="Duplicados" type="Node2D" parent="." node_paths=PackedStringArray("player", "tauro")]

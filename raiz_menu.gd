@@ -7,6 +7,7 @@ extends Node2D
 @onready var pause_menu : Control = $CanvasLayer/Menus/PauseMenu
 @onready var button_switching = $button_switching
 @onready var menus = $CanvasLayer/Menus
+@onready var video_tadeo = $CanvasLayer/Menus/VideoTadeo
 
 var game_scene : Node2D = null
 
@@ -34,9 +35,11 @@ func game_started():
 	#game_scene.visible = true
 	#camera.visible = true
 	main_menu.hide()
-	game_scene = preloaded_game_scene.instantiate()
-	game_scene.process_mode = Node.PROCESS_MODE_PAUSABLE
-	add_child(game_scene)
+	#game_scene = preloaded_game_scene.instantiate()
+	#game_scene.process_mode = Node.PROCESS_MODE_PAUSABLE
+	#add_child(game_scene)
+	video_tadeo.visible = true
+	video_tadeo.play()
 	
 func reload_pause_menu(): 
 	pause_menu.queue_free()
@@ -82,4 +85,8 @@ func pause():
 		get_tree().paused = false
 		pause_menu.hide()
 	#print(get_tree().paused)
-		
+
+func _on_video_stream_player_2_finished():
+	game_scene = preloaded_game_scene.instantiate()
+	game_scene.process_mode = Node.PROCESS_MODE_PAUSABLE
+	add_child(game_scene)
