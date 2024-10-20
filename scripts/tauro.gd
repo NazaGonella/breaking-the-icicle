@@ -5,11 +5,17 @@ signal grabbed_player
 var CHASING : bool = false
 var griddedpos: Vector2i = Vector2i(0,0)
 
+@export var sound : AudioStreamPlayer2D
+@export var instant_sound : AudioStreamPlayer2D
 @export var sprite : AnimatedSprite2D
 @export var rotated_tauro : Node2D
 @export var patrulla_component : Node2D
 @export var raycasts : Node2D
-#@export var reaction_timer : Timer
+var is_playing_embestida : bool = false
+
+var embestida_sound = preload("res://assets/sounds2/tauro_embestida.ogg")
+var patrulla_sound = preload("res://assets/sounds2/robot-heavy-mechanical-footsteps-194039.mp3")
+var choque_sound = preload("res://assets/sounds2/thud2.mp3")
 
 var temp_vel = Vector2.ZERO
 var playing_animation : bool = false
@@ -25,7 +31,6 @@ func _physics_process(delta):
 	#print(reaction_timer.time_left)
 	griddedpos= Vector2i(global_position.x/32,global_position.y/32)
 	if not check_for_player():
-		reproducir_sonidos()
 		check_for_chase()
 		handle_movement()
 		handle_animation()
@@ -51,13 +56,13 @@ func start_chase(direction):
 	#await reaction_timer.timeout
 	temp_vel = direction * CHASE_SPEED
 
-func reproducir_sonidos():
-	# checkear si velocity.length != 0 y reproducir sonido de pisadas
-	# si CHASING == true reproducir rugido y pisadas más rápido
-	pass
-
 func handle_movement():
 	if CHASING:
+		if not is_playing_embestida:
+			#sonido.stream = embestida_sound
+			#sonido.playing = true
+			change_sonido_to(embestida_sound)
+			is_playing_embestida = true
 		if abs(temp_vel.x) > abs(temp_vel.y):
 			temp_vel.y = 0
 		else:
@@ -65,10 +70,20 @@ func handle_movement():
 		velocity = temp_vel
 		move_and_slide()
 	if CHASING and velocity.length() < 1:
+		play_sound(choque_sound)
+		is_playing_embestida = false
+		#sonido.stream = patrulla_sound
+		#sonido.playing = true
+		#if not is_playing_patrulla:
+		change_sonido_to(patrulla_sound)
+		#is_playing_patrulla = true
 		CHASING = false
 		patrulla_component._tauro_crash()
 	if not patrulla_component.WAITING and not CHASING:
 		#print("patrolling")
+		#sonido.stream = null
+		if sound.playing == false:
+			change_sonido_to(patrulla_sound)
 		velocity = patrulla_component.direction * SPEED
 		move_and_slide()
 
@@ -85,3 +100,12 @@ func _on_area_2d_body_entered(body):
 func _on_area_2d_body_exited(body):
 	if body.name == "Player":
 		colliding_player = null
+
+func change_sonido_to(new_sonido, play : bool = true):
+	#var sonidos_c = sonidos.get_children()
+	sound.stream = new_sonido
+	sound.playing = true
+
+func play_sound(new_sound):
+	instant_sound.stream = new_sound
+	instant_sound.play()

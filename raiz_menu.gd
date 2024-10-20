@@ -89,4 +89,9 @@ func pause():
 func _on_video_stream_player_2_finished():
 	game_scene = preloaded_game_scene.instantiate()
 	game_scene.process_mode = Node.PROCESS_MODE_PAUSABLE
+	game_scene.go_to_menu.connect(return_menu)
 	add_child(game_scene)
+
+func return_menu():
+	reopen_main_menu()
+	#main_menu.show()

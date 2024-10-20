@@ -47,6 +47,7 @@ offset_bottom = 856.0
 
 [node name="VideoTadeo" type="VideoStreamPlayer" parent="CanvasLayer/Menus"]
 visible = false
+layout_mode = 0
 offset_right = 1024.0
 offset_bottom = 896.0
 stream = ExtResource("7_t3ein")

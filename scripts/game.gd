@@ -1,5 +1,7 @@
 extends Node2D
 
+signal go_to_menu
+
 @export var player : CharacterBody2D
 @export var tauro : CharacterBody2D
 @export var catch_timer : Timer
@@ -85,10 +87,12 @@ func finish_game(killed_tauro : bool):
 	if not killed_tauro:
 		set_process(false)
 		# Tiempo para que se cierre el juego después de morir
-		catch_timer.wait_time = 2
+		catch_timer.wait_time = 4
 		catch_timer.start()
 		await catch_timer.timeout
-		get_tree().quit()
+		#get_tree().quit()
+		go_to_menu.emit()
+		queue_free()
 
 func kill_tauro():
 	is_tauro_killed = true
@@ -96,6 +100,7 @@ func kill_tauro():
 func grabbed_player():
 	#tauro.sprite.stop()
 	#colliding_player.visible = false
+	tauro.change_sonido_to(null, false)
 	tauro.set_physics_process(false)
 	player.catched = true
 	player.animated_sprite.stop()

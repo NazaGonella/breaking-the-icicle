@@ -1,0 +1,14 @@
+res://assets/botones.tres::f57b971a0e7f015bae0f5d052d635cb7::1729392189::res://.godot/exported/133200997/export-8f268010885a4d0a11812692c21647a9-botones.res
+res://fonts/kenney_kenney-fonts/Fonts/botones.tres::493bc5c755173882c1cdbcaca3863dd8::1729392189::res://.godot/exported/133200997/export-6066c95303e5dc48e52d29fadb8a286e-botones.res
+res://resources/kill_animation.tres::4cdc2f6c4cba1639233a9b3efa87f81e::1729412401::res://.godot/exported/133200997/export-2504b89d7be2355ee75715dd7c139ca5-kill_animation.res
+res://resources/minotaur_corpse.tres::ce851c2fb02823d4b419d4a02ee58078::1729412401::res://.godot/exported/133200997/export-6358a564278f04fbae7f62e5a18606ce-minotaur_corpse.res
+res://scenes/menus/game_over.tscn::2322a2163393e417d22d811037432f3d::1729392189::res://.godot/exported/133200997/export-db70bb3330dff2b89723f91e66a14387-game_over.scn
+res://scenes/menus/main_menu.tscn::d2b5ef95009b57720f40f605739a39c5::1729413729::res://.godot/exported/133200997/export-f47f7d670953862d9d781ab785fd547c-main_menu.scn
+res://scenes/menus/options_menu.tscn::22fcb2e8385b92db6d4df99e0fda9799::1729413729::res://.godot/exported/133200997/export-493f90f3fb28eefb0a20512e246dd5b6-options_menu.scn
+res://scenes/menus/pause_menu.tscn::5df9abbf76fd08f6fc4d8e55d7e7b6b8::1729419689::res://.godot/exported/133200997/export-3ee0f857d137fa1f52f74ae3e5abb6d6-pause_menu.scn
+res://scenes/menus/world_environment.tscn::87d7742964015cdd683f4a3482327258::1729392189::res://.godot/exported/133200997/export-b9ead0f4b5f9ff333dd4611537fff059-world_environment.scn
+res://scenes/game.tscn::49483a77ee57fa39e745eaa7aa2d3c37::1729418420::res://.godot/exported/133200997/export-c2a7af834e91ff64325daddf58e45dc0-game.scn
+res://scenes/test_zone.tscn::0b0500d29fce58942291888fca69e615::1729412323::res://.godot/exported/133200997/export-46c3f5168c7f9f06e45185778e8e0f46-test_zone.scn
+res://scripts/themes/default_theme.tres::6fc72614f51dd9bfb5bdc273e4dc6584::1729392189::res://.godot/exported/133200997/export-f217bd205070703df6488bdc5ae0735e-default_theme.res
+res://raiz_menu.tscn::e79b0ab019bc1101988a116fd25ad3f0::1729419689::res://.godot/exported/133200997/export-1260d70450dd05613034ad50cc3ed86f-raiz_menu.scn
+res://wallress.tres::f34a074712b25bf0e2dcdbcc27b4bea5::1729412323::res://.godot/exported/133200997/export-239de3ee5e7948a1727030cf566b05a6-wallress.res
