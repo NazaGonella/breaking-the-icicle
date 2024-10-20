@@ -1,37 +1,37 @@
 [gd_scene load_steps=75 format=3 uid="uid://b1ik2ctx5ysx4"]
 
-[ext_resource type="Script" path="res://game.gd" id="1_6onwb"]
-[ext_resource type="Texture2D" uid="uid://cv0yc8xfobx27" path="res://assets/piso_01.png" id="2_3uxio"]
-[ext_resource type="Texture2D" uid="uid://c4q33xi6w710e" path="res://assets/muro.png" id="2_hl7ng"]
-[ext_resource type="Texture2D" uid="uid://c3c67e56ssvml" path="res://assets/fondo.png" id="2_mrnkn"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="2_n4jk3"]
-[ext_resource type="Texture2D" uid="uid://b6kgfqs0rwms5" path="res://assets/muros_2.png" id="3_ahkdu"]
-[ext_resource type="Texture2D" uid="uid://bnxaijpkuhu6s" path="res://assets/muros_3.png" id="5_vkofa"]
-[ext_resource type="Script" path="res://exit_lights.gd" id="6_6ivec"]
-[ext_resource type="Script" path="res://teleporters.gd" id="6_ndj6h"]
-[ext_resource type="Texture2D" uid="uid://c3p0fwjpxxu12" path="res://assets/muros_4.png" id="7_r45uu"]
-[ext_resource type="Texture2D" uid="uid://cxidut0x032cc" path="res://assets/Prota_wenardo_caminando.png" id="8_o4oal"]
-[ext_resource type="Texture2D" uid="uid://bap5sls2vvgrb" path="res://assets/light_01.png" id="8_r1j7q"]
-[ext_resource type="Texture2D" uid="uid://b2hi1xcjkheo5" path="res://assets/Prota wenardo con cuchillo.png" id="10_fkyvb"]
-[ext_resource type="Script" path="res://scripts/duplicados.gd" id="11_hv18s"]
-[ext_resource type="Script" path="res://scripts/tauro.gd" id="12_xuscl"]
-[ext_resource type="Texture2D" uid="uid://cg7eiwkxwxp1l" path="res://assets/mino_caminata.png" id="14_fc3n6"]
-[ext_resource type="Script" path="res://scripts/patrulla_component.gd" id="14_jv4t2"]
-[ext_resource type="Texture2D" uid="uid://dp5jf6p2djomn" path="res://assets/mino_corre.png" id="15_67rnf"]
-[ext_resource type="Script" path="res://tauro_checkpoint.gd" id="15_wpwh7"]
-[ext_resource type="Script" path="res://scripts/soga.gd" id="17_o2rhp"]
-[ext_resource type="Script" path="res://scripts/item.gd" id="19_jg6ch"]
-[ext_resource type="Texture2D" uid="uid://cru7qck5yigsj" path="res://assets/espada.png" id="19_nvri5"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_3pu6e"]
+[ext_resource type="Texture2D" uid="uid://cv0yc8xfobx27" path="res://assets/piso_01.png" id="2_q236j"]
+[ext_resource type="Texture2D" uid="uid://c3c67e56ssvml" path="res://assets/fondo.png" id="3_bfano"]
+[ext_resource type="Script" path="res://scripts/soga.gd" id="4_shlr5"]
+[ext_resource type="Texture2D" uid="uid://c4q33xi6w710e" path="res://assets/muro.png" id="5_77ba7"]
+[ext_resource type="Texture2D" uid="uid://bnxaijpkuhu6s" path="res://assets/muros_3.png" id="6_qmg12"]
+[ext_resource type="Texture2D" uid="uid://c3p0fwjpxxu12" path="res://assets/muros_4.png" id="7_0aafh"]
+[ext_resource type="Texture2D" uid="uid://b6kgfqs0rwms5" path="res://assets/muros_2.png" id="8_tt4bh"]
+[ext_resource type="Script" path="res://scripts/teleporters.gd" id="9_31cm3"]
+[ext_resource type="Script" path="res://scripts/exit_lights.gd" id="10_s5naw"]
+[ext_resource type="Texture2D" uid="uid://bap5sls2vvgrb" path="res://assets/light_01.png" id="11_wljn1"]
+[ext_resource type="Script" path="res://scripts/item.gd" id="12_wu4u7"]
+[ext_resource type="Texture2D" uid="uid://cru7qck5yigsj" path="res://assets/espada.png" id="13_cfymd"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="14_urdup"]
+[ext_resource type="Texture2D" uid="uid://b2hi1xcjkheo5" path="res://assets/Prota wenardo con cuchillo.png" id="15_ry13l"]
+[ext_resource type="Texture2D" uid="uid://cxidut0x032cc" path="res://assets/Prota_wenardo_caminando.png" id="16_o7ejy"]
+[ext_resource type="Script" path="res://scripts/duplicados.gd" id="17_1dvoj"]
+[ext_resource type="Texture2D" uid="uid://dp5jf6p2djomn" path="res://assets/mino_corre.png" id="18_nexxf"]
+[ext_resource type="Script" path="res://scripts/tauro.gd" id="19_6qwbs"]
+[ext_resource type="Texture2D" uid="uid://cg7eiwkxwxp1l" path="res://assets/mino_caminata.png" id="20_ybsii"]
+[ext_resource type="Script" path="res://scripts/patrulla_component.gd" id="21_70qtj"]
+[ext_resource type="Script" path="res://scripts/tauro_checkpoint.gd" id="22_jhj7p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v0psn"]
-texture = ExtResource("2_3uxio")
+texture = ExtResource("2_q236j")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_oekgb"]
 sources/0 = SubResource("TileSetAtlasSource_v0psn")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qevnq"]
-texture = ExtResource("2_hl7ng")
+texture = ExtResource("5_77ba7")
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -39,7 +39,7 @@ texture = ExtResource("2_hl7ng")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tqmbm"]
-texture = ExtResource("5_vkofa")
+texture = ExtResource("6_qmg12")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -91,7 +91,7 @@ texture_region_size = Vector2i(32, 32)
 polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jwrqn"]
-texture = ExtResource("7_r45uu")
+texture = ExtResource("7_0aafh")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_1t8kw")
@@ -103,7 +103,7 @@ texture_region_size = Vector2i(32, 32)
 polygon = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mpx4j"]
-texture = ExtResource("3_ahkdu")
+texture = ExtResource("8_tt4bh")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -166,7 +166,7 @@ sources/3 = SubResource("TileSetAtlasSource_jwrqn")
 size = Vector2(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_alyvq"]
-texture = ExtResource("3_ahkdu")
+texture = ExtResource("8_tt4bh")
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 2:0/size_in_atlas = Vector2i(2, 2)
@@ -209,67 +209,67 @@ size = Vector2(32, 32)
 size = Vector2(32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eylf3"]
-atlas = ExtResource("10_fkyvb")
+atlas = ExtResource("15_ry13l")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w16wt"]
-atlas = ExtResource("10_fkyvb")
+atlas = ExtResource("15_ry13l")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ot0vv"]
-atlas = ExtResource("10_fkyvb")
+atlas = ExtResource("15_ry13l")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jq6fr"]
-atlas = ExtResource("10_fkyvb")
+atlas = ExtResource("15_ry13l")
 region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ays16"]
-atlas = ExtResource("10_fkyvb")
+atlas = ExtResource("15_ry13l")
 region = Rect2(64, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1y4ti"]
-atlas = ExtResource("10_fkyvb")
+atlas = ExtResource("15_ry13l")
 region = Rect2(80, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1l3uo"]
-atlas = ExtResource("10_fkyvb")
+atlas = ExtResource("15_ry13l")
 region = Rect2(96, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1v6u3"]
-atlas = ExtResource("10_fkyvb")
+atlas = ExtResource("15_ry13l")
 region = Rect2(112, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jm7db"]
-atlas = ExtResource("8_o4oal")
+atlas = ExtResource("16_o7ejy")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ax38k"]
-atlas = ExtResource("8_o4oal")
+atlas = ExtResource("16_o7ejy")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4temy"]
-atlas = ExtResource("8_o4oal")
+atlas = ExtResource("16_o7ejy")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wqfay"]
-atlas = ExtResource("8_o4oal")
+atlas = ExtResource("16_o7ejy")
 region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2u2bs"]
-atlas = ExtResource("8_o4oal")
+atlas = ExtResource("16_o7ejy")
 region = Rect2(64, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hmdvr"]
-atlas = ExtResource("8_o4oal")
+atlas = ExtResource("16_o7ejy")
 region = Rect2(80, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_da2va"]
-atlas = ExtResource("8_o4oal")
+atlas = ExtResource("16_o7ejy")
 region = Rect2(96, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sgkrv"]
-atlas = ExtResource("8_o4oal")
+atlas = ExtResource("16_o7ejy")
 region = Rect2(112, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ytphf"]
@@ -340,70 +340,70 @@ height = 8.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_hff34"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rwk63"]
-atlas = ExtResource("15_67rnf")
+atlas = ExtResource("18_nexxf")
 region = Rect2(0, 0, 28, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1lv7h"]
-atlas = ExtResource("15_67rnf")
+atlas = ExtResource("18_nexxf")
 region = Rect2(0, 0, 28, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o1a1i"]
-atlas = ExtResource("15_67rnf")
+atlas = ExtResource("18_nexxf")
 region = Rect2(0, 0, 28, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jnlbw"]
-atlas = ExtResource("15_67rnf")
+atlas = ExtResource("18_nexxf")
 region = Rect2(0, 0, 28, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8b0er"]
-atlas = ExtResource("15_67rnf")
+atlas = ExtResource("18_nexxf")
 region = Rect2(0, 0, 28, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3b7mo"]
-atlas = ExtResource("15_67rnf")
+atlas = ExtResource("18_nexxf")
 region = Rect2(0, 0, 28, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsg3v"]
 size = Vector2(30, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lcd23"]
-atlas = ExtResource("14_fc3n6")
+atlas = ExtResource("20_ybsii")
 region = Rect2(0, 0, 28, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wauwk"]
-atlas = ExtResource("14_fc3n6")
+atlas = ExtResource("20_ybsii")
 region = Rect2(28, 0, 28, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b4i0q"]
-atlas = ExtResource("14_fc3n6")
+atlas = ExtResource("20_ybsii")
 region = Rect2(56, 0, 28, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3niry"]
-atlas = ExtResource("14_fc3n6")
+atlas = ExtResource("20_ybsii")
 region = Rect2(84, 0, 28, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n24p2"]
-atlas = ExtResource("14_fc3n6")
+atlas = ExtResource("20_ybsii")
 region = Rect2(112, 0, 28, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rjqfk"]
-atlas = ExtResource("14_fc3n6")
+atlas = ExtResource("20_ybsii")
 region = Rect2(140, 0, 28, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xa2o3"]
-atlas = ExtResource("14_fc3n6")
+atlas = ExtResource("20_ybsii")
 region = Rect2(168, 0, 28, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ycmm"]
-atlas = ExtResource("14_fc3n6")
+atlas = ExtResource("20_ybsii")
 region = Rect2(196, 0, 28, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jq5xl"]
-atlas = ExtResource("14_fc3n6")
+atlas = ExtResource("20_ybsii")
 region = Rect2(224, 0, 28, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m1nmh"]
-atlas = ExtResource("14_fc3n6")
+atlas = ExtResource("20_ybsii")
 region = Rect2(252, 0, 28, 28)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xf603"]
@@ -449,7 +449,7 @@ radius = 13.0
 height = 40.0
 
 [node name="game" type="Node2D" node_paths=PackedStringArray("player", "tauro", "catch_timer", "canvas_modulate", "exit_lights", "teleporters", "soga")]
-script = ExtResource("1_6onwb")
+script = ExtResource("1_3pu6e")
 player = NodePath("Player")
 tauro = NodePath("Tauro")
 catch_timer = NodePath("CatchedTimer")
@@ -473,34 +473,34 @@ metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Laberinto/old_texture"]
 position = Vector2(-224, 0)
-texture = ExtResource("2_mrnkn")
+texture = ExtResource("3_bfano")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Laberinto/old_texture"]
 position = Vector2(768, 32)
-texture = ExtResource("2_mrnkn")
+texture = ExtResource("3_bfano")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Laberinto/old_texture"]
 position = Vector2(256, -224)
-texture = ExtResource("2_mrnkn")
+texture = ExtResource("3_bfano")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Laberinto/old_texture"]
 position = Vector2(-224, 480)
-texture = ExtResource("2_mrnkn")
+texture = ExtResource("3_bfano")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Laberinto/old_texture"]
 position = Vector2(736, 512)
-texture = ExtResource("2_mrnkn")
+texture = ExtResource("3_bfano")
 
 [node name="Sprite2D6" type="Sprite2D" parent="Laberinto/old_texture"]
 position = Vector2(256, 736)
-texture = ExtResource("2_mrnkn")
+texture = ExtResource("3_bfano")
 
 [node name="Sprite2D7" type="Sprite2D" parent="Laberinto/old_texture"]
 position = Vector2(256, 256)
-texture = ExtResource("2_mrnkn")
+texture = ExtResource("3_bfano")
 
 [node name="Soga" type="Node2D" parent="Laberinto" node_paths=PackedStringArray("player", "tauro")]
-script = ExtResource("17_o2rhp")
+script = ExtResource("4_shlr5")
 player = NodePath("../../Player")
 tauro = NodePath("../../Tauro")
 
@@ -510,7 +510,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(983040, 65540, 1, 983041, 65540, 1, 983043, 65540, 1, 983044, 65540, 1, 983045, 65540, 1, 983046, 65540, 1, 983047, 65540, 1, 983048, 65540, 1, 983049, 65540, 1, 983051, 65540, 1, 983052, 65540, 1, 983053, 65540, 1, 983054, 65540, 1, 983055, 65540, 1, 917519, 65540, 1, 851983, 65540, 1, 786447, 65540, 1, 720911, 65540, 1, 589839, 65540, 1, 524303, 65540, 1, 458767, 65540, 1, 393231, 65540, 1, 262159, 65540, 1, 196623, 65540, 1, 131087, 65540, 1, 65551, 65540, 1, 15, 65540, 1, 13, 65540, 1, 12, 65540, 1, 11, 65540, 1, 9, 65540, 1, 8, 65540, 1, 7, 65540, 1, 6, 65540, 1, 5, 65540, 1, 4, 65540, 1, 3, 65540, 1, 1, 65540, 1, 0, 65540, 1, 65536, 65540, 1, 196608, 65540, 1, 262144, 65540, 1, 327680, 65540, 1, 393216, 65540, 1, 458752, 65540, 1, 524288, 65540, 1, 589824, 65540, 1, 655360, 65540, 1, 720896, 65540, 1, 851968, 65540, 1, 917504, 65540, 1, 131074, 65540, 1, 196610, 65540, 1, 196611, 65540, 1, 196612, 65540, 1, 65540, 65540, 1, 65542, 65540, 1, 131078, 65540, 1, 196614, 65540, 1, 262150, 65540, 1, 327681, 65540, 1, 327682, 65540, 1, 327684, 65540, 1, 393220, 65540, 1, 458756, 65540, 1, 458755, 65540, 1, 458754, 65540, 1, 327686, 65540, 1, 393222, 65540, 1, 458758, 65540, 1, 589826, 65540, 1, 655362, 65540, 1, 720898, 65540, 1, 720899, 65540, 1, 589828, 65540, 1, 589829, 65540, 1, 655365, 65540, 1, 720901, 65540, 1, 786437, 65540, 1, 917509, 65540, 1, 851969, 65540, 1, 851970, 65540, 1, 851971, 65540, 1, 655367, 65540, 1, 720903, 65540, 1, 786439, 65540, 1, 851975, 65540, 1, 851976, 65540, 1, 851977, 65540, 1, 655369, 65540, 1, 720905, 65540, 1, 786441, 65540, 1, 720906, 65540, 1, 720907, 65540, 1, 851978, 65540, 1, 851979, 65540, 1, 917515, 65540, 1, 851981, 65540, 1, 786445, 65540, 1, 720909, 65540, 1, 720910, 65540, 1, 589838, 65540, 1, 589837, 65540, 1, 458765, 65540, 1, 393229, 65540, 1, 327693, 65540, 1, 262157, 65540, 1, 196621, 65540, 1, 65549, 65540, 1, 131083, 65540, 1, 65547, 65540, 1, 131082, 65540, 1, 131081, 65540, 1, 131080, 65540, 1, 262152, 65540, 1, 262153, 65540, 1, 393224, 65540, 1, 393225, 65540, 1, 327689, 65540, 1, 327690, 65540, 1, 327691, 65540, 1, 262155, 65540, 1, 393227, 65540, 1, 524296, 65540, 1, 524299, 65540, 1, 589835, 65540, 1, 524297, 65540, 1, 524298, 65540, 1, 524273, 65540, 1, 589809, 65540, 1, 720881, 65540, 1, 786417, 65540, 1, 851953, 65540, 1, 917489, 65540, 1, 983025, 65540, 1, 1048561, 65540, 1, 1114097, 65540, 1, 1179633, 65540, 1, 1245169, 65540, 1, 1376241, 65540, 1, 1441777, 65540, 1, 1507313, 65540, 1, 524274, 65540, 1, 851954, 65540, 1, 1376242, 65540, 1, 1507314, 65540, 1, 655347, 65540, 1, 720883, 65540, 1, 851955, 65540, 1, 983027, 65540, 1, 1114099, 65540, 1, 1179635, 65540, 1, 1245171, 65540, 1, 1376243, 65540, 1, 1507315, 65540, 1, 524276, 65540, 1, 720884, 65540, 1, 983028, 65540, 1, 1245172, 65540, 1, 1376244, 65540, 1, 1507316, 65540, 1, 524277, 65540, 1, 589813, 65540, 1, 720885, 65540, 1, 851957, 65540, 1, 917493, 65540, 1, 983029, 65540, 1, 1114101, 65540, 1, 1507317, 65540, 1, 524278, 65540, 1, 1114102, 65540, 1, 1179638, 65540, 1, 1245174, 65540, 1, 1310710, 65540, 1, 1441782, 65540, 1, 1507318, 65540, 1, 524279, 65540, 1, 589815, 65540, 1, 655351, 65540, 1, 720887, 65540, 1, 786423, 65540, 1, 851959, 65540, 1, 917495, 65540, 1, 983031, 65540, 1, 1507319, 65540, 1, 524280, 65540, 1, 1179640, 65540, 1, 1245176, 65540, 1, 1310712, 65540, 1, 1376248, 65540, 1, 1507320, 65540, 1, 524281, 65540, 1, 655353, 65540, 1, 786425, 65540, 1, 917497, 65540, 1, 1048569, 65540, 1, 1376249, 65540, 1, 1507321, 65540, 1, 524282, 65540, 1, 655354, 65540, 1, 786426, 65540, 1, 851962, 65540, 1, 917498, 65540, 1, 1048570, 65540, 1, 1179642, 65540, 1, 1245178, 65540, 1, 1310714, 65540, 1, 1376250, 65540, 1, 1507322, 65540, 1, 655355, 65540, 1, 851963, 65540, 1, 1048571, 65540, 1, 1245179, 65540, 1, 1376251, 65540, 1, 1507323, 65540, 1, 524284, 65540, 1, 589820, 65540, 1, 655356, 65540, 1, 786428, 65540, 1, 851964, 65540, 1, 917500, 65540, 1, 1048572, 65540, 1, 1114108, 65540, 1, 1245180, 65540, 1, 1376252, 65540, 1, 1441788, 65540, 1, 1507324, 65540, 1, 524285, 65540, 1, 1507325, 65540, 1, 524286, 65540, 1, 589822, 65540, 1, 720894, 65540, 1, 786430, 65540, 1, 851966, 65540, 1, 917502, 65540, 1, 983038, 65540, 1, 1114110, 65540, 1, 1245182, 65540, 1, 1310718, 65540, 1, 1376254, 65540, 1, 1507326, 65540, 1, 524287, 65540, 1, 1114111, 65540, 1, 1245183, 65540, 1, 1507327, 65540, 1, 1048576, 65540, 1, 1179648, 65540, 1, 1245184, 65540, 1, 1310720, 65540, 1, 1376256, 65540, 1, 1441792, 65540, 1, 1048591, 65540, 1, 1114127, 65540, 1, 1179663, 65540, 1, 1245199, 65540, 1, 1376271, 65540, 1, 1441807, 65540, 1, 1507343, 65540, 1, 524304, 65540, 1, 851984, 65540, 1, 1376272, 65540, 1, 1507344, 65540, 1, 655377, 65540, 1, 720913, 65540, 1, 851985, 65540, 1, 983057, 65540, 1, 1114129, 65540, 1, 1179665, 65540, 1, 1245201, 65540, 1, 1376273, 65540, 1, 1507345, 65540, 1, 524306, 65540, 1, 720914, 65540, 1, 983058, 65540, 1, 1245202, 65540, 1, 1376274, 65540, 1, 1507346, 65540, 1, 524307, 65540, 1, 589843, 65540, 1, 720915, 65540, 1, 851987, 65540, 1, 917523, 65540, 1, 983059, 65540, 1, 1114131, 65540, 1, 1507347, 65540, 1, 524308, 65540, 1, 1114132, 65540, 1, 1179668, 65540, 1, 1245204, 65540, 1, 1310740, 65540, 1, 1441812, 65540, 1, 1507348, 65540, 1, 524309, 65540, 1, 589845, 65540, 1, 655381, 65540, 1, 720917, 65540, 1, 786453, 65540, 1, 851989, 65540, 1, 917525, 65540, 1, 983061, 65540, 1, 1507349, 65540, 1, 524310, 65540, 1, 1179670, 65540, 1, 1245206, 65540, 1, 1310742, 65540, 1, 1376278, 65540, 1, 1507350, 65540, 1, 524311, 65540, 1, 655383, 65540, 1, 786455, 65540, 1, 917527, 65540, 1, 1048599, 65540, 1, 1376279, 65540, 1, 1507351, 65540, 1, 524312, 65540, 1, 655384, 65540, 1, 786456, 65540, 1, 851992, 65540, 1, 917528, 65540, 1, 1048600, 65540, 1, 1179672, 65540, 1, 1245208, 65540, 1, 1310744, 65540, 1, 1376280, 65540, 1, 1507352, 65540, 1, 655385, 65540, 1, 851993, 65540, 1, 1048601, 65540, 1, 1245209, 65540, 1, 1376281, 65540, 1, 1507353, 65540, 1, 524314, 65540, 1, 589850, 65540, 1, 655386, 65540, 1, 786458, 65540, 1, 851994, 65540, 1, 917530, 65540, 1, 1048602, 65540, 1, 1114138, 65540, 1, 1245210, 65540, 1, 1376282, 65540, 1, 1441818, 65540, 1, 1507354, 65540, 1, 524315, 65540, 1, 1507355, 65540, 1, 524316, 65540, 1, 589852, 65540, 1, 720924, 65540, 1, 786460, 65540, 1, 851996, 65540, 1, 917532, 65540, 1, 983068, 65540, 1, 1114140, 65540, 1, 1245212, 65540, 1, 1310748, 65540, 1, 1376284, 65540, 1, 1507356, 65540, 1, 524317, 65540, 1, 1114141, 65540, 1, 1245213, 65540, 1, 1507357, 65540, 1, 524318, 65540, 1, 589854, 65540, 1, 655390, 65540, 1, 720926, 65540, 1, 786462, 65540, 1, 917534, 65540, 1, 983070, 65540, 1, 1048606, 65540, 1, 1114142, 65540, 1, 1245214, 65540, 1, 1310750, 65540, 1, 1376286, 65540, 1, 1441822, 65540, 1, 1507358, 65540, 1, -458737, 65540, 1, -393201, 65540, 1, -262129, 65540, 1, -196593, 65540, 1, -131057, 65540, 1, -65521, 65540, 1, -458736, 65540, 1, -131056, 65540, 1, 393232, 65540, 1, -327663, 65540, 1, -262127, 65540, 1, -131055, 65540, 1, 17, 65540, 1, 131089, 65540, 1, 196625, 65540, 1, 262161, 65540, 1, 393233, 65540, 1, -458734, 65540, 1, -262126, 65540, 1, 18, 65540, 1, 262162, 65540, 1, 393234, 65540, 1, -458733, 65540, 1, -393197, 65540, 1, -262125, 65540, 1, -131053, 65540, 1, -65517, 65540, 1, 19, 65540, 1, 131091, 65540, 1, -458732, 65540, 1, 131092, 65540, 1, 196628, 65540, 1, 262164, 65540, 1, 327700, 65540, 1, 458772, 65540, 1, -458731, 65540, 1, -393195, 65540, 1, -327659, 65540, 1, -262123, 65540, 1, -196587, 65540, 1, -131051, 65540, 1, -65515, 65540, 1, 21, 65540, 1, -458730, 65540, 1, 196630, 65540, 1, 262166, 65540, 1, 327702, 65540, 1, 393238, 65540, 1, -458729, 65540, 1, -327657, 65540, 1, -196585, 65540, 1, -65513, 65540, 1, 65559, 65540, 1, 393239, 65540, 1, -458728, 65540, 1, -327656, 65540, 1, -196584, 65540, 1, -131048, 65540, 1, -65512, 65540, 1, 65560, 65540, 1, 196632, 65540, 1, 262168, 65540, 1, 327704, 65540, 1, 393240, 65540, 1, -327655, 65540, 1, -131047, 65540, 1, 65561, 65540, 1, 262169, 65540, 1, 393241, 65540, 1, -458726, 65540, 1, -393190, 65540, 1, -327654, 65540, 1, -196582, 65540, 1, -131046, 65540, 1, -65510, 65540, 1, 65562, 65540, 1, 131098, 65540, 1, 262170, 65540, 1, 393242, 65540, 1, 458778, 65540, 1, -458725, 65540, 1, -458724, 65540, 1, -393188, 65540, 1, -262116, 65540, 1, -196580, 65540, 1, -131044, 65540, 1, -65508, 65540, 1, 28, 65540, 1, 131100, 65540, 1, 262172, 65540, 1, 327708, 65540, 1, 393244, 65540, 1, -458723, 65540, 1, 131101, 65540, 1, 262173, 65540, 1, -458722, 65540, 1, -393186, 65540, 1, -327650, 65540, 1, -262114, 65540, 1, -196578, 65540, 1, -65506, 65540, 1, 30, 65540, 1, 65566, 65540, 1, 131102, 65540, 1, 262174, 65540, 1, 327710, 65540, 1, 393246, 65540, 1, 458782, 65540, 1, -458767, 65540, 1, -393231, 65540, 1, -262159, 65540, 1, -196623, 65540, 1, -131087, 65540, 1, -65551, 65540, 1, -15, 65540, 1, 65521, 65540, 1, 131057, 65540, 1, 196593, 65540, 1, 262129, 65540, 1, 393201, 65540, 1, 458737, 65540, 1, -458766, 65540, 1, -131086, 65540, 1, 393202, 65540, 1, -327693, 65540, 1, -262157, 65540, 1, -131085, 65540, 1, -13, 65540, 1, 131059, 65540, 1, 196595, 65540, 1, 262131, 65540, 1, 393203, 65540, 1, -458764, 65540, 1, -262156, 65540, 1, -12, 65540, 1, 262132, 65540, 1, 393204, 65540, 1, -458763, 65540, 1, -393227, 65540, 1, -262155, 65540, 1, -131083, 65540, 1, -65547, 65540, 1, -11, 65540, 1, 131061, 65540, 1, -458762, 65540, 1, 131062, 65540, 1, 196598, 65540, 1, 262134, 65540, 1, 327670, 65540, 1, 458742, 65540, 1, -458761, 65540, 1, -393225, 65540, 1, -327689, 65540, 1, -262153, 65540, 1, -196617, 65540, 1, -131081, 65540, 1, -65545, 65540, 1, -9, 65540, 1, -458760, 65540, 1, 196600, 65540, 1, 262136, 65540, 1, 327672, 65540, 1, 393208, 65540, 1, -458759, 65540, 1, -327687, 65540, 1, -196615, 65540, 1, -65543, 65540, 1, 65529, 65540, 1, 393209, 65540, 1, -458758, 65540, 1, -327686, 65540, 1, -196614, 65540, 1, -131078, 65540, 1, -65542, 65540, 1, 65530, 65540, 1, 196602, 65540, 1, 262138, 65540, 1, 327674, 65540, 1, 393210, 65540, 1, -327685, 65540, 1, -131077, 65540, 1, 65531, 65540, 1, 262139, 65540, 1, 393211, 65540, 1, -458756, 65540, 1, -393220, 65540, 1, -327684, 65540, 1, -196612, 65540, 1, -131076, 65540, 1, -65540, 65540, 1, 65532, 65540, 1, 131068, 65540, 1, 262140, 65540, 1, 393212, 65540, 1, 458748, 65540, 1, -458755, 65540, 1, -458754, 65540, 1, -393218, 65540, 1, -262146, 65540, 1, -196610, 65540, 1, -131074, 65540, 1, -65538, 65540, 1, -2, 65540, 1, 131070, 65540, 1, 262142, 65540, 1, 327678, 65540, 1, 393214, 65540, 1, -458753, 65540, 1, 131071, 65540, 1, 262143, 65540, 1, -524288, 65540, 1, -458752, 65540, 1, -393216, 65540, 1, -327680, 65540, 1, -262144, 65540, 1, -131072, 65540, 1, -65536, 65540, 1, 1507328, 65540, 1, 1572864, 65540, 1, 1638400, 65540, 1, 1703936, 65540, 1, 1835008, 65540, 1, 1900544, 65540, 1, 1966080, 65540, 1, 1310721, 65540, 1, 1835009, 65540, 1, 1966081, 65540, 1, 1114114, 65540, 1, 1179650, 65540, 1, 1310722, 65540, 1, 1441794, 65540, 1, 1572866, 65540, 1, 1638402, 65540, 1, 1703938, 65540, 1, 1835010, 65540, 1, 1966082, 65540, 1, 1179651, 65540, 1, 1441795, 65540, 1, 1703939, 65540, 1, 1835011, 65540, 1, 1966083, 65540, 1, 1048580, 65540, 1, 1179652, 65540, 1, 1310724, 65540, 1, 1376260, 65540, 1, 1441796, 65540, 1, 1572868, 65540, 1, 1966084, 65540, 1, 1572869, 65540, 1, 1638405, 65540, 1, 1703941, 65540, 1, 1769477, 65540, 1, 1900549, 65540, 1, 1966085, 65540, 1, 1048582, 65540, 1, 1114118, 65540, 1, 1179654, 65540, 1, 1245190, 65540, 1, 1310726, 65540, 1, 1376262, 65540, 1, 1441798, 65540, 1, 1966086, 65540, 1, 1638407, 65540, 1, 1703943, 65540, 1, 1769479, 65540, 1, 1835015, 65540, 1, 1966087, 65540, 1, 1114120, 65540, 1, 1245192, 65540, 1, 1376264, 65540, 1, 1507336, 65540, 1, 1835016, 65540, 1, 1966088, 65540, 1, 1114121, 65540, 1, 1245193, 65540, 1, 1310729, 65540, 1, 1376265, 65540, 1, 1507337, 65540, 1, 1638409, 65540, 1, 1703945, 65540, 1, 1769481, 65540, 1, 1835017, 65540, 1, 1966089, 65540, 1, 1114122, 65540, 1, 1310730, 65540, 1, 1507338, 65540, 1, 1703946, 65540, 1, 1835018, 65540, 1, 1966090, 65540, 1, 1048587, 65540, 1, 1114123, 65540, 1, 1245195, 65540, 1, 1310731, 65540, 1, 1376267, 65540, 1, 1507339, 65540, 1, 1572875, 65540, 1, 1703947, 65540, 1, 1835019, 65540, 1, 1900555, 65540, 1, 1966091, 65540, 1, 1966092, 65540, 1, 1048589, 65540, 1, 1179661, 65540, 1, 1245197, 65540, 1, 1310733, 65540, 1, 1376269, 65540, 1, 1441805, 65540, 1, 1572877, 65540, 1, 1703949, 65540, 1, 1769485, 65540, 1, 1835021, 65540, 1, 1966093, 65540, 1, 1572878, 65540, 1, 1703950, 65540, 1, 1966094, 65540, 1, 1572879, 65540, 1, 1703951, 65540, 1, 1769487, 65540, 1, 1835023, 65540, 1, 1900559, 65540, 1, 1966095, 65540, 1, -983040, 65540, 1, -917504, 65540, 1, -786432, 65540, 1, -720896, 65540, 1, -655360, 65540, 1, -589824, 65540, 1, -983039, 65540, 1, -655359, 65540, 1, -851966, 65540, 1, -786430, 65540, 1, -655358, 65540, 1, -983037, 65540, 1, -786429, 65540, 1, -983036, 65540, 1, -917500, 65540, 1, -786428, 65540, 1, -655356, 65540, 1, -983035, 65540, 1, -983034, 65540, 1, -917498, 65540, 1, -851962, 65540, 1, -786426, 65540, 1, -720890, 65540, 1, -655354, 65540, 1, -983033, 65540, 1, -983032, 65540, 1, -851960, 65540, 1, -983031, 65540, 1, -851959, 65540, 1, -851958, 65540, 1, -983029, 65540, 1, -917493, 65540, 1, -851957, 65540, 1, -983028, 65540, 1, -983027, 65540, 1, -917491, 65540, 1, -983026, 65540, 1, -983025, 65540, 1, -917489, 65540, 1, -851953, 65540, 1, -786417, 65540, 1, -720881, 65540, 1, -589809, 65540, 1, -524273, 65540, 1, 14, 65540, 1, -131071, 65540, 1, -524286, 65540, 1, -393214, 65540, 1, -327678, 65540, 1, -262142, 65540, 1, -131070, 65540, 1, -524285, 65540, 1, -262141, 65540, 1, -131069, 65540, 1, -589820, 65540, 1, -524284, 65540, 1, -393212, 65540, 1, -393211, 65540, 1, -327675, 65540, 1, -262139, 65540, 1, -196603, 65540, 1, -65531, 65540, 1, -589818, 65540, 1, -524282, 65540, 1, -327673, 65540, 1, -262137, 65540, 1, -196601, 65540, 1, -131065, 65540, 1, -720888, 65540, 1, -589816, 65540, 1, -458744, 65540, 1, -131064, 65540, 1, -720887, 65540, 1, -655351, 65540, 1, -589815, 65540, 1, -458743, 65540, 1, -327671, 65540, 1, -262135, 65540, 1, -196599, 65540, 1, -131063, 65540, 1, -655350, 65540, 1, -458742, 65540, 1, -262134, 65540, 1, -131062, 65540, 1, -720885, 65540, 1, -655349, 65540, 1, -589813, 65540, 1, -458741, 65540, 1, -393205, 65540, 1, -262133, 65540, 1, -131061, 65540, 1, -65525, 65540, 1, -786419, 65540, 1, -720883, 65540, 1, -655347, 65540, 1, -589811, 65540, 1, -524275, 65540, 1, -393203, 65540, 1, -262131, 65540, 1, -196595, 65540, 1, -131059, 65540, 1, -393202, 65540, 1, -262130, 65540, 1)
 
 [node name="Teleporters" type="Node2D" parent="Laberinto"]
-script = ExtResource("6_ndj6h")
+script = ExtResource("9_31cm3")
 
 [node name="L1" type="Area2D" parent="Laberinto/Teleporters"]
 position = Vector2(-32, 64)
@@ -570,7 +570,7 @@ shape = SubResource("RectangleShape2D_04386")
 
 [node name="ExitLights" type="Node2D" parent="Laberinto" node_paths=PackedStringArray("exit", "lights")]
 visible = false
-script = ExtResource("6_6ivec")
+script = ExtResource("10_s5naw")
 exit = NodePath("Exit")
 lights = NodePath("Lights")
 
@@ -587,7 +587,7 @@ color = Color(1, 0.494118, 0.219608, 1)
 energy = 2.0
 shadow_enabled = true
 shadow_filter_smooth = 1.5
-texture = ExtResource("8_r1j7q")
+texture = ExtResource("11_wljn1")
 
 [node name="PointLight2D2" type="PointLight2D" parent="Laberinto/ExitLights/Lights"]
 position = Vector2(80, -48)
@@ -596,7 +596,7 @@ energy = 2.0
 shadow_enabled = true
 shadow_filter_smooth = 1.5
 shadow_item_cull_mask = 2
-texture = ExtResource("8_r1j7q")
+texture = ExtResource("11_wljn1")
 
 [node name="PointLight2D3" type="PointLight2D" parent="Laberinto/ExitLights/Lights"]
 position = Vector2(336, -48)
@@ -605,7 +605,7 @@ energy = 2.0
 shadow_enabled = true
 shadow_filter_smooth = 1.5
 shadow_item_cull_mask = 2
-texture = ExtResource("8_r1j7q")
+texture = ExtResource("11_wljn1")
 
 [node name="PointLight2D4" type="PointLight2D" parent="Laberinto/ExitLights/Lights"]
 position = Vector2(560, 176)
@@ -614,7 +614,7 @@ energy = 2.0
 shadow_enabled = true
 shadow_filter_smooth = 1.5
 shadow_item_cull_mask = 2
-texture = ExtResource("8_r1j7q")
+texture = ExtResource("11_wljn1")
 
 [node name="PointLight2D5" type="PointLight2D" parent="Laberinto/ExitLights/Lights"]
 position = Vector2(560, 336)
@@ -623,7 +623,7 @@ energy = 2.0
 shadow_enabled = true
 shadow_filter_smooth = 1.5
 shadow_item_cull_mask = 2
-texture = ExtResource("8_r1j7q")
+texture = ExtResource("11_wljn1")
 
 [node name="PointLight2D6" type="PointLight2D" parent="Laberinto/ExitLights/Lights"]
 position = Vector2(336, 560)
@@ -632,7 +632,7 @@ energy = 2.0
 shadow_enabled = true
 shadow_filter_smooth = 1.5
 shadow_item_cull_mask = 2
-texture = ExtResource("8_r1j7q")
+texture = ExtResource("11_wljn1")
 
 [node name="PointLight2D7" type="PointLight2D" parent="Laberinto/ExitLights/Lights"]
 position = Vector2(80, 560)
@@ -641,7 +641,7 @@ energy = 2.0
 shadow_enabled = true
 shadow_filter_smooth = 1.5
 shadow_item_cull_mask = 2
-texture = ExtResource("8_r1j7q")
+texture = ExtResource("11_wljn1")
 
 [node name="PointLight2D8" type="PointLight2D" parent="Laberinto/ExitLights/Lights"]
 position = Vector2(-48, 400)
@@ -650,7 +650,7 @@ energy = 2.0
 shadow_enabled = true
 shadow_filter_smooth = 1.5
 shadow_item_cull_mask = 2
-texture = ExtResource("8_r1j7q")
+texture = ExtResource("11_wljn1")
 
 [node name="Exit" type="Area2D" parent="Laberinto/ExitLights"]
 collision_layer = 16
@@ -692,11 +692,11 @@ shape = SubResource("RectangleShape2D_8boyr")
 [node name="Item" type="Area2D" parent="." node_paths=PackedStringArray("sprite")]
 position = Vector2(464, 400)
 collision_layer = 8
-script = ExtResource("19_jg6ch")
+script = ExtResource("12_wu4u7")
 sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="Item"]
-texture = ExtResource("19_nvri5")
+texture = ExtResource("13_cfymd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Item"]
 shape = SubResource("RectangleShape2D_jprmb")
@@ -704,7 +704,7 @@ shape = SubResource("RectangleShape2D_jprmb")
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animated_sprite", "mano", "light")]
 position = Vector2(272, 336)
 collision_mask = 28
-script = ExtResource("2_n4jk3")
+script = ExtResource("14_urdup")
 animated_sprite = NodePath("Sprite2D")
 mano = NodePath("Mano")
 light = NodePath("PointLight2D")
@@ -728,7 +728,7 @@ color = Color(1, 0.690196, 0.501961, 1)
 energy = 0.0
 shadow_enabled = true
 shadow_filter_smooth = 1.5
-texture = ExtResource("8_r1j7q")
+texture = ExtResource("11_wljn1")
 texture_scale = 0.8
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -736,7 +736,7 @@ visible = false
 color = Color(0.0509804, 0.0117647, 0, 0.960784)
 
 [node name="Duplicados" type="Node2D" parent="." node_paths=PackedStringArray("player", "tauro")]
-script = ExtResource("11_hv18s")
+script = ExtResource("17_1dvoj")
 player = NodePath("../Player")
 tauro = NodePath("../Tauro")
 
@@ -820,7 +820,7 @@ texture = SubResource("AtlasTexture_3b7mo")
 position = Vector2(240, 240)
 collision_layer = 2
 collision_mask = 4
-script = ExtResource("12_xuscl")
+script = ExtResource("19_6qwbs")
 sprite = NodePath("RotatedTauro/Sprite2D")
 rotated_tauro = NodePath("RotatedTauro")
 patrulla_component = NodePath("PatrullaComponent")
@@ -875,7 +875,7 @@ target_position = Vector2(0, 400)
 collision_mask = 5
 
 [node name="PatrullaComponent" type="Node2D" parent="Tauro" node_paths=PackedStringArray("tauro", "rotated_tauro", "timer")]
-script = ExtResource("14_jv4t2")
+script = ExtResource("21_70qtj")
 group_name = "TauroCheckpoint"
 tauro = NodePath("..")
 rotated_tauro = NodePath("../RotatedTauro")
@@ -892,99 +892,99 @@ one_shot = true
 
 [node name="Marker2D" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
 position = Vector2(240, 240)
-script = ExtResource("15_wpwh7")
+script = ExtResource("22_jhj7p")
 lookout_directions = 4
 
 [node name="Marker2D2" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
 position = Vector2(240, 272)
-script = ExtResource("15_wpwh7")
+script = ExtResource("22_jhj7p")
 
 [node name="Marker2D3" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
 position = Vector2(112, 272)
-script = ExtResource("15_wpwh7")
+script = ExtResource("22_jhj7p")
 
 [node name="Marker2D4" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
 position = Vector2(112, 336)
-script = ExtResource("15_wpwh7")
+script = ExtResource("22_jhj7p")
 
 [node name="Marker2D5" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
 position = Vector2(144, 336)
-script = ExtResource("15_wpwh7")
+script = ExtResource("22_jhj7p")
 
 [node name="Marker2D6" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
 position = Vector2(144, 432)
-script = ExtResource("15_wpwh7")
+script = ExtResource("22_jhj7p")
 
 [node name="Marker2D7" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
 position = Vector2(208, 432)
-script = ExtResource("15_wpwh7")
+script = ExtResource("22_jhj7p")
 lookout_directions = 3
 
 [node name="Marker2D8" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
 position = Vector2(208, 304)
-script = ExtResource("15_wpwh7")
+script = ExtResource("22_jhj7p")
 
 [node name="Marker2D9" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
 position = Vector2(240, 304)
-script = ExtResource("15_wpwh7")
+script = ExtResource("22_jhj7p")
 
 [node name="Marker2D10" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
 position = Vector2(240, 112)
-script = ExtResource("15_wpwh7")
+script = ExtResource("22_jhj7p")
 lookout_directions = 6
 
 [node name="Marker2D11" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
 position = Vector2(400, 112)
-script = ExtResource("15_wpwh7")
+script = ExtResource("22_jhj7p")
 lookout_directions = 2
 
 [node name="Marker2D12" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
 position = Vector2(400, 80)
-script = ExtResource("15_wpwh7")
+script = ExtResource("22_jhj7p")
 
 [node name="Marker2D13" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
 position = Vector2(464, 80)
-script = ExtResource("15_wpwh7")
+script = ExtResource("22_jhj7p")
 
 [node name="Marker2D14" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
 position = Vector2(464, 272)
-script = ExtResource("15_wpwh7")
+script = ExtResource("22_jhj7p")
 lookout_directions = 1
 
 [node name="Marker2D15" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
 position = Vector2(400, 272)
-script = ExtResource("15_wpwh7")
+script = ExtResource("22_jhj7p")
 lookout_directions = 1
 
 [node name="Marker2D16" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
 position = Vector2(400, 464)
-script = ExtResource("15_wpwh7")
+script = ExtResource("22_jhj7p")
 lookout_directions = 4
 
 [node name="Marker2D17" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
 position = Vector2(464, 464)
-script = ExtResource("15_wpwh7")
+script = ExtResource("22_jhj7p")
 lookout_directions = 1
 
 [node name="Marker2D18" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
 position = Vector2(400, 464)
-script = ExtResource("15_wpwh7")
+script = ExtResource("22_jhj7p")
 
 [node name="Marker2D19" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
 position = Vector2(400, 336)
-script = ExtResource("15_wpwh7")
+script = ExtResource("22_jhj7p")
 
 [node name="Marker2D20" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
 position = Vector2(336, 336)
-script = ExtResource("15_wpwh7")
+script = ExtResource("22_jhj7p")
 
 [node name="Marker2D21" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
 position = Vector2(336, 304)
-script = ExtResource("15_wpwh7")
+script = ExtResource("22_jhj7p")
 
 [node name="Marker2D22" type="Marker2D" parent="TauroCheckpoints" groups=["TauroCheckpoint"]]
 position = Vector2(240, 304)
-script = ExtResource("15_wpwh7")
+script = ExtResource("22_jhj7p")
 
 [node name="CatchedTimer" type="Timer" parent="."]
 one_shot = true

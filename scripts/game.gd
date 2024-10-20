@@ -9,9 +9,9 @@ extends Node2D
 @export var teleporters : Node2D
 @export var soga : Node2D
 
-@onready var kill_animation_res : SpriteFrames = preload("res://kill_animation.tres")
+@onready var kill_animation_res : SpriteFrames = preload("res://resources/kill_animation.tres")
 @onready var mino_muerto_texture : Texture = preload("res://assets/mino_muerto.png")
-@onready var mino_muerto_sprite_frame : SpriteFrames = preload("res://minotaur_corpse.tres")
+@onready var mino_muerto_sprite_frame : SpriteFrames = preload("res://resources/minotaur_corpse.tres")
 
 var is_player_grabbed : bool = false
 var is_tauro_killed : bool = false
