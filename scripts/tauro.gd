@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
+signal grabbed_player
+
 var CHASING : bool = false
 var griddedpos: Vector2i = Vector2i(0,0)
-
-@onready var kill_animation_res : SpriteFrames = preload("res://kill_animation.tres")
 
 @export var sprite : AnimatedSprite2D
 @export var rotated_tauro : Node2D
@@ -15,13 +15,11 @@ var playing_animation : bool = false
 
 var colliding_player : CharacterBody2D = null
 
-const SPEED = 30.0
+const SPEED = 45.0
 const CHASE_SPEED = 100.0
 
 func _physics_process(delta):
-	#print(sprite.is_playing())
 	griddedpos= Vector2i(global_position.x/32,global_position.y/32)
-	#print(sprite.frame)
 	if not check_for_player():
 		reproducir_sonidos()
 		check_for_chase()
@@ -30,15 +28,7 @@ func _physics_process(delta):
 
 func check_for_player():
 	if colliding_player:
-		#colliding_player.velocity = Vector2.ZERO
-		velocity = Vector2.ZERO
-		sprite.stop()
-		#colliding_player.visible = false
-		colliding_player.catched = true
-		colliding_player.animated_sprite.stop()
-		colliding_player.visible = false
-		sprite.sprite_frames = kill_animation_res
-		sprite.play()
+		grabbed_player.emit()
 		return true
 	return false
 
